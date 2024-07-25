@@ -1,2 +1,2 @@
 # First-Person-Game
-Game Design Second semester project
+Game Design SEM 2 project
