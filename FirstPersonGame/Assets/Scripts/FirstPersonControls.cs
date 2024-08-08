@@ -37,6 +37,12 @@ public class FirstPersonControls : MonoBehaviour
     public float pickUpRange = 3f; // Range within which objects can be picked up
     private bool holdingGun = false;
 
+    [Header("CROUCH HEIGHT SETTINGS")]
+    [Space(5)]
+    public float crouchHeight = 1f;
+    public float standingHeight = 2f;
+    public float crouchSpeed = 0.5f;
+    private bool isCrouching = false;
 
     private void Awake()
     {
@@ -68,6 +74,9 @@ public class FirstPersonControls : MonoBehaviour
 
         // Subscribe to the pick-up input event
         playerInput.Player.PickUp.performed += ctx => PickUpObject(); // Call the PickUpObject method when pick-up input is performed
+
+        // Subscribe to the crouch input event
+        playerInput.Player.Crouch.performed += ctx => ToggleCrouch(); // Call the Crouch method when crouch input is performed
     }
 
     private void Update()
@@ -85,6 +94,16 @@ public class FirstPersonControls : MonoBehaviour
 
         // Transform direction from local to world space
         move = transform.TransformDirection(move);
+
+        float currentSpeed;
+        if (isCrouching)
+        {
+            currentSpeed = crouchSpeed;
+        }
+        else
+        {
+            currentSpeed = moveSpeed;
+        }
 
         // Move the character controller based on the movement vector and speed
         characterController.Move(move * moveSpeed * Time.deltaTime);
@@ -191,4 +210,19 @@ public class FirstPersonControls : MonoBehaviour
         }
     }
 
+    public void ToggleCrouch()
+    {
+        if(isCrouching)
+        {
+            //Stand up
+            characterController.height = standingHeight;
+            isCrouching = false;
+        }
+        else
+        {
+            //Crouch down
+            characterController.height = crouchHeight;
+            isCrouching = true;
+        }
+    }
 }
