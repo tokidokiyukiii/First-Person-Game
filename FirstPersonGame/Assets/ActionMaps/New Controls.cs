@@ -62,6 +62,15 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""20fba4bc-2cb1-47c7-b75e-c536a656161f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -251,6 +260,28 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b9c6c067-cd82-4146-b121-58ff341a8cf3"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4d2ca76f-0628-4107-8857-b149ea34b7ab"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -286,6 +317,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         m_Player_LookAround = m_Player.FindAction("LookAround", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -351,6 +383,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_LookAround;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_PickUp;
     public struct PlayerActions
     {
         private @NewControls m_Wrapper;
@@ -359,6 +392,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         public InputAction @LookAround => m_Wrapper.m_Player_LookAround;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @PickUp => m_Wrapper.m_Player_PickUp;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -380,6 +414,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
+            @PickUp.started += instance.OnPickUp;
+            @PickUp.performed += instance.OnPickUp;
+            @PickUp.canceled += instance.OnPickUp;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -396,6 +433,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
+            @PickUp.started -= instance.OnPickUp;
+            @PickUp.performed -= instance.OnPickUp;
+            @PickUp.canceled -= instance.OnPickUp;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -437,5 +477,6 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         void OnLookAround(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnPickUp(InputAction.CallbackContext context);
     }
 }
