@@ -6,17 +6,6 @@ public class ObstaclePush : MonoBehaviour
 {
     [SerializeField]
     private float forceMagnitude;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -24,11 +13,22 @@ public class ObstaclePush : MonoBehaviour
 
         if (rigidbody != null)
         {
-            Vector3 forceDirection = hit.gameObject.transform.position - transform.position;
-            forceDirection.y = 0;
-            forceDirection.Normalize();
+            if (hit.collider.CompareTag("Movable"))
+            {
+                // Enable interpolation to smooth out the movement
+                rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
 
-            rigidbody.AddForceAtPosition(forceDirection * forceMagnitude, transform.position, ForceMode.Impulse);
+                // Use the hit move direction for a more accurate force application
+                Vector3 forceDirection = hit.moveDirection;
+                forceDirection.y = 0; // Keep force direction on the horizontal plane
+                forceDirection.Normalize();
+
+                // Adjust the force magnitude based on the mass of the object
+                float adjustedForceMagnitude = forceMagnitude / rigidbody.mass;
+
+                // Apply the force using VelocityChange for immediate response
+                rigidbody.AddForce(forceDirection * adjustedForceMagnitude, ForceMode.VelocityChange);
+            }
         }
     }
 
