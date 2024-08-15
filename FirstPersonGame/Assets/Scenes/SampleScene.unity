@@ -185,6 +185,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: L3 A
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bff5d8465ae462b418becfc1b2097a67,
+        type: 3}
+      propertyPath: m_TagString
+      value: Movable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2382,6 +2387,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: L4 T
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63308ac2932fa154caebc6ceb02b5473,
+        type: 3}
+      propertyPath: m_TagString
+      value: Movable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2854,6 +2864,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: L1 W
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7b2ec10303a19d14294b87c4d325747b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Movable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3509,6 +3524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: L2 R
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 08eb8a19ed64d98498426ae7c5312eb7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Movable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4534,6 +4554,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: L5 H
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db28783da52714f469eca1ab4ecf93ef,
+        type: 3}
+      propertyPath: m_TagString
+      value: Movable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
