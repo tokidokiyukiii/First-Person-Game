@@ -35,6 +35,20 @@ public class FirstPersonControls : MonoBehaviour
     private GameObject heldObject; // Reference to the currently held object
     public float pickUpRange = 3f; // Range within which objects can be picked up
     private bool holdingGun = false;
+    
+    [Header("PULLING SETTINGS")]
+    [Space(5)]
+    public Transform grabPosition; // Position where the picked-up object will be held
+    private GameObject grabbedObject; // Reference to the object currently being grabbed
+    public float grabRange = 3f; // Range within which objects can be grabbed from
+    private bool isGrabbing = false;
+    private float pullForce = 10.0f;
+
+    [Header("ROTATE SETTINGS")] 
+    [Space(5)] 
+    private GameObject objectRotate;
+    private bool isRotating;
+    public float rotateRange = 5f;
 
     [Header("CROUCH HEIGHT SETTINGS")]
     [Space(5)]
@@ -73,6 +87,12 @@ public class FirstPersonControls : MonoBehaviour
 
         // Subscribe to the pick-up input event
         playerInput.Player.PickUp.performed += ctx => PickUpObject(); // Call the PickUpObject method when pick-up input is performed
+        
+        // Subscribe to the pick-up input event
+        playerInput.Player.Pull.performed += ctx => PullObject(); // Call the PullObject method when grab input is performed
+        
+        // Subscribe to the pick-up input event
+        playerInput.Player.Rotate.performed += ctx => RotateObject(); // Call the RotateObject method when grab input is performed
 
         // Subscribe to the crouch input event
         playerInput.Player.Crouch.performed += ctx => ToggleCrouch(); // Call the Crouch method when crouch input is performed
@@ -208,6 +228,92 @@ public class FirstPersonControls : MonoBehaviour
             }
         }
     }
+
+    /*public void PullObject()
+    {
+        Debug.Log("Grabbing");
+        if (grabbedObject != null)
+        {
+            grabbedObject.GetComponent<Rigidbody>().isKinematic = false; // Enable physics
+            grabbedObject.transform.parent = null;
+            //grabbedObject = null;
+            //return;
+        }
+
+        // Perform a raycast from the camera's position forward
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        RaycastHit hit;
+
+        // Debugging: Draw the ray in the Scene view
+        Debug.DrawRay(playerCamera.position, playerCamera.forward * grabRange, Color.red, 2f);
+
+
+        if (Physics.Raycast(ray, out hit, grabRange))
+        {
+            // Check if the hit object has the tag "Movable"
+            if (hit.collider.CompareTag("Movable"))
+            {
+                // Grab the object
+                grabbedObject = hit.collider.gameObject;
+                //grabbedObject.GetComponent<Rigidbody>().isKinematic = true; // Disable physics
+
+                // Attach the object to the hold position
+                grabbedObject.transform.position = grabPosition.position;
+                grabbedObject.transform.rotation = grabPosition.rotation;
+                grabbedObject.transform.parent = grabPosition;
+            }
+        }
+    }*/
+
+    public void PullObject()
+    {
+        
+    }
+
+    public void RotateObject()
+    {
+        // Perform a raycast from the camera's position forward
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        RaycastHit hit;
+
+        // Debugging: Draw the ray in the Scene view
+        Debug.DrawRay(playerCamera.position, playerCamera.forward * rotateRange, Color.red, 2f);
+
+
+        if (Physics.Raycast(ray, out hit, rotateRange))
+        {
+            // Check if the hit object has the tag "Movable"
+            if (hit.collider.CompareTag("Movable"))
+            {
+                objectRotate = hit.collider.gameObject;
+                if (objectRotate != null)
+                {
+                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        // Rotate 90 degrees around the x-axis
+                        objectRotate.transform.Rotate(Vector3.up * -90f);
+                    }
+                    if (Input.GetKeyDown(KeyCode.DownArrow))
+                    {
+                        // Rotate 90 degrees around the x-axis
+                        objectRotate.transform.Rotate(Vector3.up * 90f);
+                    }
+                    if (Input.GetKeyDown(KeyCode.LeftArrow))
+                    {
+                        // Rotate 90 degrees around the y-axis
+                        objectRotate.transform.Rotate(Vector3.right * 90f);
+                    }
+                    if (Input.GetKeyDown(KeyCode.RightArrow))
+                    {
+                        // Rotate 90 degrees around the y-axis
+                        objectRotate.transform.Rotate(Vector3.right * -90f);
+                    }
+                }
+            }
+        }
+    }
+
+
 
     public void ToggleCrouch()
     {
