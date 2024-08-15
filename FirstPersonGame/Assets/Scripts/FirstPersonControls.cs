@@ -1,10 +1,6 @@
 
 using System.Collections;
 using System.Collections.Generic;
-<<<<<<< HEAD
-=======
-//using UnityEditor.ShaderGraph;
->>>>>>> 20ff6409814993bc68286c66c7c757c68a9bf51d
 using UnityEngine;
 using UnityEngine.InputSystem;
 
