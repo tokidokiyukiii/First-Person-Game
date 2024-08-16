@@ -2145,12 +2145,12 @@ Transform:
   m_GameObject: {fileID: 561046721}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 2.5543084, y: 6.4049425, z: 25}
-  m_LocalScale: {x: 0.23743536, y: 2.776422, z: 5.9049406}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.23743537, y: 2.7764223, z: 5.90494}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 264766072}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2133329965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &658547608
 PrefabInstance:
@@ -7017,6 +7017,38 @@ Transform:
   - {fileID: 1602322448}
   m_Father: {fileID: 1053650226}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2133329964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2133329965}
+  m_Layer: 0
+  m_Name: 'door parent '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2133329965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133329964}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5543084, y: 6.4049425, z: 25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 561046723}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7024,7 +7056,7 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 375996366}
   - {fileID: 1053650226}
-  - {fileID: 561046723}
+  - {fileID: 2133329965}
   - {fileID: 420405704}
   - {fileID: 1020289033}
   - {fileID: 1116642210}
