@@ -5,10 +5,10 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public Animator anim; 
-    bool toggle = false; 
+    bool toggle; 
     
-    // Omogonix. (2023). How to Make Doors in Unity.[Online video]. Available at: https://youtu.be/wzNykqSPa0M?si=Ypm6S-bhQYVisCDZ (Accessed: 16 August 2024).
-    public void openClose()
+    // Start is called before the first frame update
+    void openClose()
     {
         toggle = !toggle;
         if (toggle == false)
