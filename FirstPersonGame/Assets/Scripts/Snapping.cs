@@ -4,7 +4,7 @@ public class Snapping : MonoBehaviour
 {
     public Transform snapTarget; // The target position and rotation to snap to
     public GameObject target;// The percentage of overlap needed to trigger the snap
-    private bool isSnapped = false;
+    public bool isSnapped = false;
 
     private void OnTriggerEnter(Collider other)
     {

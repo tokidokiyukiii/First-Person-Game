@@ -7,6 +7,9 @@
     <list default="true" id="ee58ddc8-76b9-4c00-b5d4-bd37a1809121" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Blocks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Blocks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Snapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Snapping.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +18,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -96,6 +102,7 @@
       <workItem from="1723737836878" duration="8964000" />
       <workItem from="1723817232343" duration="649000" />
       <workItem from="1723825085684" duration="668000" />
+      <workItem from="1723834993554" duration="5224000" />
     </task>
     <servers />
   </component>
