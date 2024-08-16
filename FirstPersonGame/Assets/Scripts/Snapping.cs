@@ -28,6 +28,7 @@ public class Snapping : MonoBehaviour
         snapPosition.y += snapTarget.GetComponent<Collider>().bounds.extents.y + boxHeight / 2;
         
         boxTransform.localPosition = snapPosition;
+        boxTransform.localRotation = snapTarget.rotation;
         
         Rigidbody rb = boxTransform.GetComponent<Rigidbody>();
         if (rb != null)
