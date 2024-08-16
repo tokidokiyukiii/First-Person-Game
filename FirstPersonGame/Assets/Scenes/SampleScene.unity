@@ -122,90 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
-=======
---- !u!1001 &59219276
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.0955763
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -15.346645
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      propertyPath: m_Name
-      value: L3 A
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      propertyPath: m_TagString
-      value: Movable
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 91001642}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bff5d8465ae462b418becfc1b2097a67,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 91001641}
-  m_SourcePrefab: {fileID: 100100000, guid: bff5d8465ae462b418becfc1b2097a67, type: 3}
->>>>>>> Melissa2
 --- !u!1 &82744094 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 63308ac2932fa154caebc6ceb02b5473,
@@ -220,15 +136,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82744094}
   serializedVersion: 4
-<<<<<<< HEAD
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-=======
-  m_Mass: 3.5
-  m_Drag: 1
-  m_AngularDrag: 1
->>>>>>> Melissa2
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -308,15 +218,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122588605}
   serializedVersion: 4
-<<<<<<< HEAD
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-=======
-  m_Mass: 3.5
-  m_Drag: 1
-  m_AngularDrag: 1
->>>>>>> Melissa2
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1198,7 +1102,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1733962867}
-  - {fileID: 386208289}
   m_Father: {fileID: 375996366}
   m_LocalEulerAnglesHint: {x: 0, y: 154.284, z: 0}
 --- !u!114 &330585547
@@ -1412,9 +1315,6 @@ MonoBehaviour:
   projectileSpeed: 20
   holdPosition: {fileID: 1733962867}
   pickUpRange: 5
-  grabPosition: {fileID: 386208289}
-  grabRange: 3
-  rotateRange: 5
   crouchHeight: 1
   standingHeight: 2
   crouchSpeed: 0.5
@@ -1431,37 +1331,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceMagnitude: 1
---- !u!1 &386208288
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 386208289}
-  m_Layer: 0
-  m_Name: Grabbing Position
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &386208289
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386208288}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3227889, y: -0.8148806, z: 0.5043577}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 330585546}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &396615721
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,13 +2529,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836104570}
   serializedVersion: 4
-<<<<<<< HEAD
   m_Mass: 2
   m_Drag: 0
-=======
-  m_Mass: 3.5
-  m_Drag: 1
->>>>>>> Melissa2
   m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -3176,11 +3040,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 63308ac2932fa154caebc6ceb02b5473,
         type: 3}
       propertyPath: m_LocalRotation.w
-<<<<<<< HEAD
       value: 0.6777879
-=======
-      value: 0.7071068
->>>>>>> Melissa2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63308ac2932fa154caebc6ceb02b5473,
         type: 3}
@@ -3195,11 +3055,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 63308ac2932fa154caebc6ceb02b5473,
         type: 3}
       propertyPath: m_LocalRotation.z
-<<<<<<< HEAD
       value: 0.20150332
-=======
-      value: 0
->>>>>>> Melissa2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63308ac2932fa154caebc6ceb02b5473,
         type: 3}
@@ -3253,15 +3109,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993789128}
   serializedVersion: 4
-<<<<<<< HEAD
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-=======
-  m_Mass: 3.5
-  m_Drag: 1
-  m_AngularDrag: 1
->>>>>>> Melissa2
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -3762,11 +3612,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7b2ec10303a19d14294b87c4d325747b,
         type: 3}
       propertyPath: m_LocalRotation.w
-<<<<<<< HEAD
       value: 0.7004682
-=======
-      value: 0.7071068
->>>>>>> Melissa2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b2ec10303a19d14294b87c4d325747b,
         type: 3}
@@ -3781,11 +3627,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7b2ec10303a19d14294b87c4d325747b,
         type: 3}
       propertyPath: m_LocalRotation.z
-<<<<<<< HEAD
       value: -0.096665695
-=======
-      value: 0
->>>>>>> Melissa2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b2ec10303a19d14294b87c4d325747b,
         type: 3}
@@ -4552,11 +4394,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08eb8a19ed64d98498426ae7c5312eb7,
         type: 3}
       propertyPath: m_LocalRotation.w
-<<<<<<< HEAD
       value: 0.6715257
-=======
-      value: 0.7071068
->>>>>>> Melissa2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08eb8a19ed64d98498426ae7c5312eb7,
         type: 3}
@@ -4571,11 +4409,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08eb8a19ed64d98498426ae7c5312eb7,
         type: 3}
       propertyPath: m_LocalRotation.z
-<<<<<<< HEAD
       value: 0.22147962
-=======
-      value: 0
->>>>>>> Melissa2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08eb8a19ed64d98498426ae7c5312eb7,
         type: 3}
@@ -5318,15 +5152,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757942593}
   serializedVersion: 4
-<<<<<<< HEAD
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-=======
-  m_Mass: 3.5
-  m_Drag: 1
-  m_AngularDrag: 1
->>>>>>> Melissa2
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5807,11 +5635,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: db28783da52714f469eca1ab4ecf93ef,
         type: 3}
       propertyPath: m_LocalRotation.w
-<<<<<<< HEAD
       value: 0.6841485
-=======
-      value: 0.7071068
->>>>>>> Melissa2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db28783da52714f469eca1ab4ecf93ef,
         type: 3}
@@ -5826,11 +5650,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: db28783da52714f469eca1ab4ecf93ef,
         type: 3}
       propertyPath: m_LocalRotation.z
-<<<<<<< HEAD
       value: 0.17871998
-=======
-      value: 0
->>>>>>> Melissa2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db28783da52714f469eca1ab4ecf93ef,
         type: 3}
