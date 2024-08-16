@@ -5,10 +5,10 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public Animator anim; 
-    bool toggle; 
+    bool toggle = false; 
     
     // Start is called before the first frame update
-    void openClose()
+    public void openClose()
     {
         toggle = !toggle;
         if (toggle == false)
