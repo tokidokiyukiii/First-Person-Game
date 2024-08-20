@@ -8,6 +8,8 @@ TagManager:
   - pickUp
   - Gun
   - Movable
+  - Switch
+  - Door
   layers:
   - Default
   - TransparentFX
