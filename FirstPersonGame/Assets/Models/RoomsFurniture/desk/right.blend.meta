@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 01208dd99bf069f40bc2fd7c3beb95a7
+guid: 1161514d25c37964abe3b7d12597ba26
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,23 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: f5739fa1e840a8e4f8bb0a9593ef2323, type: 2}
+      name: bisque
+    second: {fileID: 2100000, guid: 935e7638f6aa5da47b7429d7b716401d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: a63ba2f12605e164b83b1e51ed74250b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: 234b54a6d4e220243ad335e597b6474d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: ab6b6e08ff7a91e4e9c8d8441bd9afe8, type: 2}
+      name: cream
+    second: {fileID: 2100000, guid: 95835b3cb15a16f48bf72d91a21be5d7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

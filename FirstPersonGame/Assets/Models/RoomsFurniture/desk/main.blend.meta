@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 004ff0d0551cf814c9ccef14b9857256
+guid: c86963948c3901b4fbe110e82d8cbd1c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beige cream
+    second: {fileID: 2100000, guid: e4f595cf1be742a41b60b95d204ed359, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
