@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: b9db5a0786f7ce94f9079fd67a1a57b5
+guid: 3ed55e67f6694924bb5c71a0fbb2454c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Curtain
+    second: {fileID: 2100000, guid: c498e43c0224a4241986428f249d5454, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Pipe
+    second: {fileID: 2100000, guid: fd4b8be72b1d66b42af09908d8a0a5a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal.001
+    second: {fileID: 2100000, guid: 5c9b446be7f92054bb56215abfc1204a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

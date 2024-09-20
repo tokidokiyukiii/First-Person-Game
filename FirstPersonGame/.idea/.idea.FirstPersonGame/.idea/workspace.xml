@@ -13,6 +13,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -105,6 +108,7 @@
       <workItem from="1723915609200" duration="614000" />
       <workItem from="1724143211207" duration="2361000" />
       <workItem from="1726810106928" duration="9000" />
+      <workItem from="1726854109678" duration="15000" />
     </task>
     <servers />
   </component>

@@ -3,7 +3,307 @@ guid: 21414de54f0af14439f6fc68f84b8fec
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Attic Wallpaper
+    second: {fileID: 2100000, guid: a5654a5be108f1848b114f25f85b0d07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Attic Floor
+    second: {fileID: 2100000, guid: 59821cca2f40c3c4d9c054ab8b4454d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Attic Walls
+    second: {fileID: 2100000, guid: 9d6810406925f9949b9538c761a21690, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Balcony Sliding Door Frame
+    second: {fileID: 2100000, guid: 01a67965e6aa2d043b56e1ba3da8030b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Base
+    second: {fileID: 2100000, guid: 280c2e17c06baca4885f7dd8c1737350, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Bathroom Door
+    second: {fileID: 2100000, guid: ea0e75c22eadb9640a66938515e3d056, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Bathroom Sliding Door Frame
+    second: {fileID: 2100000, guid: 56fa536f89592c3488c5bc4f7227e55e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Bedroom Door
+    second: {fileID: 2100000, guid: 44773f425bd205749883953a7244ab6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked First Floor
+    second: {fileID: 2100000, guid: e2ef6107dce891e439635fec15a5d827, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked First Floor Bathroom Door
+    second: {fileID: 2100000, guid: c228e490a8cd419489a0f87879ec555d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked First Floor Ceiling
+    second: {fileID: 2100000, guid: cb10f59857308ca428b4f854a09e7568, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked First Floor Frames
+    second: {fileID: 2100000, guid: 539b2f79a73209849bfd827da15891f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked First Floor Windows
+    second: {fileID: 2100000, guid: 19f0491dd8fb3974d95db8211da43601, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked First Floor Wood Ceiling
+    second: {fileID: 2100000, guid: 1352d24789dbbe44dae08485074d25be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Floor 2 Ceiling
+    second: {fileID: 2100000, guid: a5a35651b315fa04e9b25d5f4d2eea02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Floor 2 Wood Ceiling
+    second: {fileID: 2100000, guid: 46fe19ab483909f4a9f4f3a5896f7ef8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Front Door 1_
+    second: {fileID: 2100000, guid: a1156e179054c5548ab92903b280d14b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Front Door 2
+    second: {fileID: 2100000, guid: 07aef56861ea0664b93d12770e2478fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Main Bedroom Door
+    second: {fileID: 2100000, guid: 12788d9f51198ef4db6531d3d0a637b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Main Walls
+    second: {fileID: 2100000, guid: 67cbc8890f25d414ea6dcf7417ba1ca9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Office Door
+    second: {fileID: 2100000, guid: 589057324b0a92440b155edb697e253c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Parent Bedroom Ceiling
+    second: {fileID: 2100000, guid: 33f5ec8180f576f4bb315f206d7d3111, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Parent Door
+    second: {fileID: 2100000, guid: 9f2c7a60c49c70548a5c0adb63ddd952, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Roof
+    second: {fileID: 2100000, guid: 3a06a08ac162cce41ab96394ba2585db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Second Floor Bedroom
+    second: {fileID: 2100000, guid: 16b8d5aaf8e88bf4fbaa77e2feac75b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Second Floor Frames
+    second: {fileID: 2100000, guid: d09a35e59da937a498defe6a06e662e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Second Floor Main Walls
+    second: {fileID: 2100000, guid: ad0894ca64693824f916f706908ab045, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Second Floor Tiles
+    second: {fileID: 2100000, guid: b4589dc0dcff5634eacc1f0555239385, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Second Floor Windows
+    second: {fileID: 2100000, guid: 9aa9cb648fcc3c248bfc365a2264fac0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Sliding Door Frame
+    second: {fileID: 2100000, guid: 28989640dc0283645af3cc144174e215, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Sliding Glass
+    second: {fileID: 2100000, guid: 0799de6aec7046c4e8d3412575a71489, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Storage Door
+    second: {fileID: 2100000, guid: ee0eaddcb07d12f469823c4992637224, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Door
+    second: {fileID: 2100000, guid: 9bea2e3cacd68c64b9231917e7fb4517, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Door Frames
+    second: {fileID: 2100000, guid: f8cc16fc46528c3418416a1a14ace1a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Floor 1
+    second: {fileID: 2100000, guid: 4847e229da1130d45a81bd3560a32aa6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Floor 2
+    second: {fileID: 2100000, guid: e5a1a813d9eacd243a66404642f8993a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Floor 3
+    second: {fileID: 2100000, guid: f9e6ff82cb4ad9a4e8ef614048e4f7a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Ladder
+    second: {fileID: 2100000, guid: 43faf0120fdb2cb478da9fd69c3feab8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Roof
+    second: {fileID: 2100000, guid: 9330d28260754bd4ba1788aae46fb518, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Slide Ladder
+    second: {fileID: 2100000, guid: 75fea52fdb4cde84180a32e2cc181727, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Stairs
+    second: {fileID: 2100000, guid: e7c8229fcc612b142ad503ba1ec0f56a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Walls
+    second: {fileID: 2100000, guid: ffbef276c8a791a42ad41487e61aa5fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Under Floor
+    second: {fileID: 2100000, guid: 5f6f05ee45c302b47bc4b03335595854, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Balcony Railing
+    second: {fileID: 2100000, guid: 36a797a05b250344a82cc2b01ac78f64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bathroom Handle
+    second: {fileID: 2100000, guid: 9a6121bdbbf83434390a7e7e821ac1fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bathroom Wallpaper
+    second: {fileID: 2100000, guid: d5e8fbb1920cbce418c1b2be5c21db41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bedroom Handle
+    second: {fileID: 2100000, guid: c84053bd5c971384d964ab8c7693e17b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bedroom Wallpaper
+    second: {fileID: 2100000, guid: 4aa0a5fb634a5ca41a86fda9ab571de3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ceiling Sky
+    second: {fileID: 2100000, guid: 6bcee950961a47b43a2bb84552dd3c17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kitchen Wallpaper
+    second: {fileID: 2100000, guid: 749b544d5a5bd104789bb1a0de0d4664, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main Bathroom Wallpaper
+    second: {fileID: 2100000, guid: 6b3c7417bdc82dc49a01c4016430928f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main Bedroom Handle
+    second: {fileID: 2100000, guid: 01651950249f2ad42994015c11c39c2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main Bedroom Wallpaper
+    second: {fileID: 2100000, guid: d058be469c1f6b04a9227b5f60e86302, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main Handle
+    second: {fileID: 2100000, guid: d916822e1ca4daf41a275d420d6b5906, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Office Handle
+    second: {fileID: 2100000, guid: ad69102a4c01aef4fac125e0bbf24c02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Outside Railing
+    second: {fileID: 2100000, guid: 0f094a82aabce7f49b31f64b057d1a6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stair Middle
+    second: {fileID: 2100000, guid: 50c68d348889beb4099139c3127078b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stair Railing
+    second: {fileID: 2100000, guid: 621bb22a06ea4c64f9b6603fdb8dd6cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stairs Side
+    second: {fileID: 2100000, guid: 4a1eec58d42b20247ba50e260e329f6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower Handle
+    second: {fileID: 2100000, guid: 5efdde03c29ce7a4c80be02d31f92aa7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
