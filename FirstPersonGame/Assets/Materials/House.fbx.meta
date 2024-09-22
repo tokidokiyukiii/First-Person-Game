@@ -3,7 +3,917 @@ guid: 40255485b4d38bb4a9ef928d60078aeb
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Attic Wallpaper
+    second: {fileID: 2100000, guid: ff552af63dda8bd42acaed64d8957063, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Attic Floor
+    second: {fileID: 2100000, guid: cab36ce6ab97dd94baca69027cb98af3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Attic Walls
+    second: {fileID: 2100000, guid: 1e69f288af1652441a71eed03f572cad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Balcony Sliding Door Frame
+    second: {fileID: 2100000, guid: 50bbec855b73ae94886074b4dfc0e6bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Base
+    second: {fileID: 2100000, guid: 6abd27224034e3b43a169394c4186bf2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Bathroom Door
+    second: {fileID: 2100000, guid: 01ac346ebe999da4ea1319667897b44c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Bathroom Sliding Door Frame
+    second: {fileID: 2100000, guid: e5d896b6518b76646b40657ff04ffbd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Bathroom Tiles
+    second: {fileID: 2100000, guid: f1bcc53a8694794489904b81fb75bf1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Bedroom Door
+    second: {fileID: 2100000, guid: 136b024459720244388273192dbf824c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked First Bathroom
+    second: {fileID: 2100000, guid: c0766ad1b33f28740bce848e3a255679, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked First Floor
+    second: {fileID: 2100000, guid: 459043b8b1a294d4283c04120bd7405a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked First Floor Ceiling
+    second: {fileID: 2100000, guid: 6b5992a9e03223a4bbc61ebde33a9421, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked First Floor Frames
+    second: {fileID: 2100000, guid: 9bbbf49d33af7074d9a746b87b7177b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked First Floor Windows
+    second: {fileID: 2100000, guid: 68e42e322483e464bae5c4882dad7666, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked First Floor Wood Ceiling
+    second: {fileID: 2100000, guid: c15f13f05984f844ab2ea7ecafea2ee6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Floor 2 Ceiling
+    second: {fileID: 2100000, guid: 375cdd507d1adf34082c5a06734f6800, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Floor 2 Wood Ceiling
+    second: {fileID: 2100000, guid: 88879f9545120ca4a81b7dadba8d37a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Front Door 1_
+    second: {fileID: 2100000, guid: 8967366b16abcf9479914e2de9049a3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Front Door 2
+    second: {fileID: 2100000, guid: 4adc78a6a37266c4aaea1435fc3d9286, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Main Bedroom Door
+    second: {fileID: 2100000, guid: d95c8b5c71563bd4da1048382bfeea6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Main Walls
+    second: {fileID: 2100000, guid: c3cad0c70c09e1648b97c38274c8c3e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Office Door
+    second: {fileID: 2100000, guid: 067fa486f9c68ce4081315e14f11cdbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Parent Bedroom Ceiling
+    second: {fileID: 2100000, guid: d506eeff393381e4281cac0e738820cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Parent Door
+    second: {fileID: 2100000, guid: e3422686ace2b17479c7ab578b97e77b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Roof
+    second: {fileID: 2100000, guid: 3458f00df48f2b248bf705492d37e0de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Second Floor Bedroom
+    second: {fileID: 2100000, guid: b31bc1bec7bd77c4f95c4f935063c15a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Second Floor Frames
+    second: {fileID: 2100000, guid: 2fbf3d98a3a82e2468a924b5cef3ac5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Second Floor Main Walls
+    second: {fileID: 2100000, guid: bf45e04222921524cac27c8776b6a96d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Second Floor Sides.001
+    second: {fileID: 2100000, guid: e6c3cd9b827090e4c84d8cb631391829, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Second Floor Tiles
+    second: {fileID: 2100000, guid: c967e8d1e1bd99044995c57f0d2f7a60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Second Floor Windows
+    second: {fileID: 2100000, guid: e1ba68c2d8745dd4db8d7958625f92aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Sliding Door Frame
+    second: {fileID: 2100000, guid: d4c09d27904475a44b2a4d9637c34175, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Sliding Glass
+    second: {fileID: 2100000, guid: e5d38a3aa766cdd48af051f4da14fbbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Storage Door
+    second: {fileID: 2100000, guid: 8728b8d1e6c2c4e4b8e79348df281ebe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Door
+    second: {fileID: 2100000, guid: d3542fb23afcabb44af25120ad455688, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Door Frames
+    second: {fileID: 2100000, guid: adae9bb4283fb5e4bb9a11fc040fc40c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Floor 1
+    second: {fileID: 2100000, guid: af338642f035c5f40896427cd1c70ea4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Floor 2
+    second: {fileID: 2100000, guid: 2f34b6be202f4c645be06963c5e0e9b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Floor 3
+    second: {fileID: 2100000, guid: b3dd350956021cb4e9d309b153092ff7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Ladder
+    second: {fileID: 2100000, guid: 31202b081ac598d48a2e1f0c682d1432, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Roof
+    second: {fileID: 2100000, guid: 35dae0901d09ee84f81ff05613163c18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Slide Ladder
+    second: {fileID: 2100000, guid: 46df6a9dde454d949a8472c03e87512a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Stairs
+    second: {fileID: 2100000, guid: 675ad238283679e4f93850529fa3ddf5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Tower Walls
+    second: {fileID: 2100000, guid: 74d2496ed616d474bbd0c6ac5cedec41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baked Under Floor
+    second: {fileID: 2100000, guid: c77e8c9296ba99840975da2a9643498d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Balcony Railing
+    second: {fileID: 2100000, guid: db36ced0264012646a30abdc330ee09d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bathroom Handle
+    second: {fileID: 2100000, guid: 09c55686f96af414088b013de13e5a4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bathroom Wallpaper
+    second: {fileID: 2100000, guid: 7b19e448ce376db4f95e31ce59b734dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bedroom Handle
+    second: {fileID: 2100000, guid: 543b4b8cd5d7f2e42985e94d3cd1d6d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bedroom Wallpaper
+    second: {fileID: 2100000, guid: 8fc60766ad272474a89fef6022dc0f33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ceiling Sky
+    second: {fileID: 2100000, guid: 661218a0edad4af49a4930dfd9abd58f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kitchen Wallpaper
+    second: {fileID: 2100000, guid: 92d480f22a008bd429af556fce760d2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main Bathroom Wallpaper
+    second: {fileID: 2100000, guid: 295f8b95b2b039843b14b958e25d52af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main Bedroom Handle
+    second: {fileID: 2100000, guid: b2d931802ba7935469cb3f03dd91d84f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main Bedroom Wallpaper
+    second: {fileID: 2100000, guid: 13dfac78c7c3ce24aaf5d016bccf80f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main Handle
+    second: {fileID: 2100000, guid: b178e258b4c13da499e79a3ec04d52fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Office Handle
+    second: {fileID: 2100000, guid: c8f67146c2752e84a8610a9cbbc07252, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Outside Railing
+    second: {fileID: 2100000, guid: 4e20cb463c805554b8dd2f728df96e16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stair Middle
+    second: {fileID: 2100000, guid: 5c2c1735a0ef4fd41a527c0e001520d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stair Railing
+    second: {fileID: 2100000, guid: f72e30e9b9b9ee94490bd9396a552cde, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stairs Side
+    second: {fileID: 2100000, guid: cbcfc9854b2918a45a8f37bc66023cc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower Handle
+    second: {fileID: 2100000, guid: 721abea31ece97f41b29c9ce4a76ae07, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Attic Floor Diffuse
+    second: {fileID: 2800000, guid: 697bd91430eb02242a7c91c2106f0ae3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Attic Floor Normal
+    second: {fileID: 2800000, guid: ddfe4213ba8ae7a46b7988c936135cf9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Attic Floor Roughness
+    second: {fileID: 2800000, guid: b6d623f1e291bb443a48fb915a9afda6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Attic Walls Difuse
+    second: {fileID: 2800000, guid: 003acfe86bb52fe4d9127f3d06f45e63, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Attic Walls Normal
+    second: {fileID: 2800000, guid: 10e3aa590128a6c48b2cd0268ef4b306, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Attic Walls Roughness
+    second: {fileID: 2800000, guid: c2d643cfa8077c94cbf7f7530003eb1b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Back Sliding Door Frame 1 Diffuse
+    second: {fileID: 2800000, guid: 95435f5811b3f1e469db5b4255ff66c0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Back Sliding Door Frame 1 Roughness
+    second: {fileID: 2800000, guid: 6be93171c7c7d5948840ef5e659eb0b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Back Sliding Door Glass Normal
+    second: {fileID: 2800000, guid: e2670700fa453084395ea70ab0fcfab7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Balcony Sliding Door Frame Normal
+    second: {fileID: 2800000, guid: 6bc1468513b30b442883b6213b76dc56, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Balcony Sliding door Frame Diffuse
+    second: {fileID: 2800000, guid: 961ae1f4dee9886428f5b2c7d26c25dc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Balcony Sliding door Frame Roughness
+    second: {fileID: 2800000, guid: 5ba43f17dd1393246a274d66adb53236, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Base Diffuse
+    second: {fileID: 2800000, guid: 43b2339e7f93bc84595fae617c058339, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Base Normal
+    second: {fileID: 2800000, guid: c37aca8b44a00b0498f588ef34490634, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Base Roughness
+    second: {fileID: 2800000, guid: da2a47709c54e4d49aceae8f40536901, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bathroom Sliding Door Frame Diffuse
+    second: {fileID: 2800000, guid: 9aa0bffd99a18ca4f84bb43e67363bfd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bathroom Sliding Door Frame Normal
+    second: {fileID: 2800000, guid: 418391240f0f7584a86e39e4ae56596b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bathroom Sliding Door Frame Roughness
+    second: {fileID: 2800000, guid: 160dbed60944241458d78e979f92b1e3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bathroom Tiles Diffuse
+    second: {fileID: 2800000, guid: e52c35987555b4b409cb546541651c14, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bathroom Tiles Normal
+    second: {fileID: 2800000, guid: 1e4be408828d7564f971bde3125f529d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bathroom Tiles Roughness
+    second: {fileID: 2800000, guid: 23e744d14f52fe94e9f4f70280254dc5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bedroom Door Diffuse
+    second: {fileID: 2800000, guid: d97d4a100e6d042429857259a75b66bd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bedroom Door Normal
+    second: {fileID: 2800000, guid: 3ad8ccba0e2b9164c951ffbb14c65d0e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bedroom Door Roughness
+    second: {fileID: 2800000, guid: 26c2c4889ee35744da24dd1d914a09e0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Diffuse First Floor
+    second: {fileID: 2800000, guid: 75e85fa65f901d441ba2bb88757fca3c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Diffuse Under Floor
+    second: {fileID: 2800000, guid: 2feffb55e1aa9a448993c58fb49f18d8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Floor Ceiling Diffuse
+    second: {fileID: 2800000, guid: 998b6bba94b555349a9974e023512a85, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Floor Ceiling Normal
+    second: {fileID: 2800000, guid: bc36be239a6878047a67092e4d3213f9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Floor Ceiling Roughness
+    second: {fileID: 2800000, guid: c204e4ea93439ca4baef9ed77ee25c4e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Floor Frames Diffuse
+    second: {fileID: 2800000, guid: 095718db8c2e6b7409ccdcc930bb2b41, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Floor Frames Normal
+    second: {fileID: 2800000, guid: a6a3e49449ad9f6459cd86906c68b240, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Floor Frames Roughness
+    second: {fileID: 2800000, guid: 3ec0644f9f1421a4c8cba9ed95922d23, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Floor Window Glass Normal
+    second: {fileID: 2800000, guid: dd257a71dd2501e4494ede2ada4aeb5a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Floor Window Glass Roughness
+    second: {fileID: 2800000, guid: 42dae0cd126a41a4288ced4fe6c58723, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Floor Wood Ceiling Diffuse
+    second: {fileID: 2800000, guid: 558ed186103e32443b28cae0fd0b41af, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Floor Wood Ceiling Normal
+    second: {fileID: 2800000, guid: f6398d82e4ff7db4f9f53458fd5c6fd0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Floor Wood Ceiling Roughness
+    second: {fileID: 2800000, guid: 7e6d4b7df33a5714a8ed4385ab2f0c5c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Main Walls Normal
+    second: {fileID: 2800000, guid: e7836c1f4409ad34884a85bca0223d5b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Main Walls Roughness
+    second: {fileID: 2800000, guid: 83128c5d79cc83342963ec8f6d9c2092, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: First Plain Walls Diffuse
+    second: {fileID: 2800000, guid: 494adb7372757924cb6103dc1432350b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor 2 Ceiling Diffuse
+    second: {fileID: 2800000, guid: baa62d74a13d51e4eae3c95f63314665, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor 2 Ceiling Normal
+    second: {fileID: 2800000, guid: 37b2acfd9483061428e2a37350dffbc9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor 2 Ceiling Roughness
+    second: {fileID: 2800000, guid: 49f9d09a94d696642b0048cf84782404, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor 2 Parent Bedroom Ceiling Diffuse
+    second: {fileID: 2800000, guid: 7169cd42660d47e47a87c651145a4068, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor 2 Parent Bedroom Ceiling Normal
+    second: {fileID: 2800000, guid: b88200113bc7f4040bf8314857130d78, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor 2 Parent Bedroom Ceiling Roughness
+    second: {fileID: 2800000, guid: 51df568326b3596429aa97e812c9d101, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor 2 Tiles Diffuse
+    second: {fileID: 2800000, guid: 5a93fe24b81feb0419f311b3a9c2d6f5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor 2 Tiles Normal
+    second: {fileID: 2800000, guid: f6fa35155adb8b84492a60063d2e8a4a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor 2 Tiles Roughness
+    second: {fileID: 2800000, guid: 26927e6d80809b54881b24a19b468c91, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor 2 Wood Ceiling Diffuse
+    second: {fileID: 2800000, guid: 64c22fa225c9354409c1ec2c623fb9d7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor 2 Wood Ceiling Normal
+    second: {fileID: 2800000, guid: be7a24f4b22b16643b0f1a1990946931, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor 2 Wood Ceiling Roughness
+    second: {fileID: 2800000, guid: d78ea7e71b5af6b4a944008f5a6e640c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Front Door 1 Diffuse
+    second: {fileID: 2800000, guid: fb23f9f89103241408c9e6a1f0b66c84, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Front Door 2 Diffuse
+    second: {fileID: 2800000, guid: d284c5a74ff6e65429311b21158702a0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Front Door Normal 1
+    second: {fileID: 2800000, guid: 01640c35dea85b942924de608cbaa4be, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main Bedroom Door Diffuse
+    second: {fileID: 2800000, guid: 46a4c6ed279044e4c822bfab736a5ca7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main Bedroom Door Diffuse Normal
+    second: {fileID: 2800000, guid: 3ff9b729ab7d1ad45835c8724b795b09, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main Bedroom Door Roughness
+    second: {fileID: 2800000, guid: 96f141b4855f069429c89d0362c6ae8a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Normal First Floor
+    second: {fileID: 2800000, guid: 4ee359a7a09fd9344945b20a70a2a456, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Normal Under Floor
+    second: {fileID: 2800000, guid: 4fda8b8705ff09f4e98dc7aeaa45c5ee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Office Door Diffuse
+    second: {fileID: 2800000, guid: f9ec6ca6b2d919a468f806dc4611c743, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Office Door Roughness
+    second: {fileID: 2800000, guid: ff1de20f61962dc46a97bea41e42bfb4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Parent Room Door Diffuse
+    second: {fileID: 2800000, guid: 8bc3fb4952653604cb2da1a3a4f66d3d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Parent Room Door Normal
+    second: {fileID: 2800000, guid: 7fdd8f1a6c27ac3408bbe260a38055d8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Parent Room Door Roughness
+    second: {fileID: 2800000, guid: 50f8d10ac44b35045870898c52fe00d1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roof Diffuse
+    second: {fileID: 2800000, guid: 93418e3394a34c94eb94de8e14de1dab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roof Normal
+    second: {fileID: 2800000, guid: 3aebcb33b5edd0642825cbd350aef79e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roof Roughness
+    second: {fileID: 2800000, guid: 33efceb892b444540905a18fe5167e78, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roughness First Floor
+    second: {fileID: 2800000, guid: f521c3c94b5060f43b19ccf4736af0ce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roughness Under Floor
+    second: {fileID: 2800000, guid: a1a15516735d76e4ebae545e04032cdc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Bathroom Door Diffuse
+    second: {fileID: 2800000, guid: 21e5706fb11916449ba910e362a71fbd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Bathroom Door Normal
+    second: {fileID: 2800000, guid: 2b0ae2282ded11f4fbe417d1463250b1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Bathroom Door Roughness
+    second: {fileID: 2800000, guid: e6e961951239b2c4398c637afeea1138, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Bedroom Diffuse
+    second: {fileID: 2800000, guid: 9200e68b066b18d44b35b5c1143266be, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Bedroom Normal
+    second: {fileID: 2800000, guid: 5bd782fe08d0ca54a8b53cd8a110c340, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Bedroom Roughness
+    second: {fileID: 2800000, guid: 91ef443a17ab5ff4f8bb568e0bdf7e40, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Main Walls Diffuse
+    second: {fileID: 2800000, guid: aa82d309bd7c9b5448d9e05cda6c0717, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Main Walls Normal
+    second: {fileID: 2800000, guid: 2d75c601952afda4c88fe8ff78c73145, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Main Walls Roughness
+    second: {fileID: 2800000, guid: ede16a98e970ba34cb3013396c339d84, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Sides Normal
+    second: {fileID: 2800000, guid: 07bcdaffcfcfbe54daff8e16a58bc4a1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Sides Roughness
+    second: {fileID: 2800000, guid: aa4d52fbb9d61154ba9948a2ff69e7b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Sliding Glass Roughness
+    second: {fileID: 2800000, guid: d03cf2e0b878d7c428e5ee15bf603491, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Window Glass Normal
+    second: {fileID: 2800000, guid: 50b44e3fdbe51e04d8330c1eaa85cf23, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Window Glass Roughness
+    second: {fileID: 2800000, guid: cf8ee4144f37c2b4faea7e3274aa60d6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Wood Frames Diffuse
+    second: {fileID: 2800000, guid: 569fc73a00469b544a05744acada184d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Wood Frames Normal
+    second: {fileID: 2800000, guid: f450474c47fa7f54b8775007f8350ff2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Second Floor Wood Frames Roughness
+    second: {fileID: 2800000, guid: 0c5399522f9401b47b039ded76151fd3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Storage Door Diffuse
+    second: {fileID: 2800000, guid: 535e9997cbfd6054cb012c7001b88666, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Storage Door Normal
+    second: {fileID: 2800000, guid: 3b6b3afdbc01d904aa0d358a4308c7ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Storage Door Roughness
+    second: {fileID: 2800000, guid: ece14af7414037f42b5586b0129b5a7b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Door 1 Diffuse
+    second: {fileID: 2800000, guid: 48e5e5847fc1c90479a67322cb7fc8fd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Door 1 Normal
+    second: {fileID: 2800000, guid: d0c2272a16d3fb049837c8778c2ec5e2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Door 1 Roughness
+    second: {fileID: 2800000, guid: 8a8691332723d00469cbdc2b32d838d2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Door Frame Diffuse
+    second: {fileID: 2800000, guid: 4f2bb2214b509ee429f06313367aa263, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Door Frame Normal
+    second: {fileID: 2800000, guid: 3670974cf4252a14d87c0a53b4fc4306, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Door Frame Roughness
+    second: {fileID: 2800000, guid: 620921801981f1a4e80fb597f1d68c53, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Floor 1 Diffuse
+    second: {fileID: 2800000, guid: b45754fb9e3f0754fbf93c41fe092a41, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Floor 1 Normal
+    second: {fileID: 2800000, guid: edc687cc10e96fb45876feb79076aeef, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Floor 1 Roughness
+    second: {fileID: 2800000, guid: fac3c2eb6a3b5984dacd34cdf8a284a1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Floor 2 Diffuse
+    second: {fileID: 2800000, guid: 1663032b5a5c0de4cbfe28546ac2890b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Floor 2 Normal
+    second: {fileID: 2800000, guid: 823e9161d3dd96843a38e20bbd39a25d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Floor 2 Roughness
+    second: {fileID: 2800000, guid: 4dd217618a347e648a7bcf4d94b5ada1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Floor 3 Diffuse
+    second: {fileID: 2800000, guid: d4ebeefe9de32e547ae1db6ddeafe410, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Floor 3 Normal
+    second: {fileID: 2800000, guid: e8cc61f3e9ff2f748a757e964555e0bd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Floor 3 Roughness
+    second: {fileID: 2800000, guid: e7f52bf459b94fb41af52344410b1e68, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Ladder Diffuse
+    second: {fileID: 2800000, guid: d162a80ca8319b34bbfa397744737785, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Ladder Normal
+    second: {fileID: 2800000, guid: cd24b97f2f3e1e5498f6990c6fbef79d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Ladder Roughness
+    second: {fileID: 2800000, guid: 069e5a5ec39530b438c9f6206404e169, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Roof Diffuse
+    second: {fileID: 2800000, guid: d1efe12dd632bdc4a8424187c3bb3a63, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Roof Normal
+    second: {fileID: 2800000, guid: 393cdb2da1fdfe649bca993d4900e9ab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Roof Roughness
+    second: {fileID: 2800000, guid: 1bf5e8efa96ac5a459c1d1880071c787, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Slide Ladder Diffuse
+    second: {fileID: 2800000, guid: 5cdee482e1153324fbff4281998e20f1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Slide Ladder Normal
+    second: {fileID: 2800000, guid: f85863a20c0852449be0c1a9b2172e05, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Slide Ladder Roughness
+    second: {fileID: 2800000, guid: 5fd53b56214714541b5bbd6866c0c344, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Stairs Diffuse
+    second: {fileID: 2800000, guid: b32455746141d0e4b95f438dabdff232, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Stairs Normal
+    second: {fileID: 2800000, guid: 5ab0b391644c6b74ba711f499cfea074, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Stairs Roughness
+    second: {fileID: 2800000, guid: c8fc59f88fa9c7d48bb2cd4458425d1d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Walls Diffuse
+    second: {fileID: 2800000, guid: d4848b8a4aab9fb4dbbdd1be4c975920, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Walls Normal
+    second: {fileID: 2800000, guid: 0f5ae394892e89742af40ef52946fa30, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower Walls Roughness
+    second: {fileID: 2800000, guid: 58be1084c965f764b86fd1648be8e1c2, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

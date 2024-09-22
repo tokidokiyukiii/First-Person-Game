@@ -4,7 +4,140 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee58ddc8-76b9-4c00-b5d4-bd37a1809121" name="Changes" comment="" />
+    <list default="true" id="ee58ddc8-76b9-4c00-b5d4-bd37a1809121" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/House.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/House.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/House/Floor 1/Doors/Frames and Windows/Window Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/House/Floor 1/Doors/Frames and Windows/Window Glass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/House.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/House.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/House/Floor 1/Doors/Frames and Windows/Back Sliding Door Glass Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/House/Floor 1/Doors/Frames and Windows/Back Sliding Door Glass Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/House/Floor 1/Doors/Frames and Windows/First Floor Window Glass Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/House/Floor 1/Doors/Frames and Windows/First Floor Window Glass Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/blue-cloud-PNG-transparent-thumb26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/blue-cloud-PNG-transparent-thumb26.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/cloud.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/cloud.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/BakedHouse.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URP/BakedHouse.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Attic Wallpaper.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Attic Wallpaper.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Attic Floor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Attic Floor.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Attic Walls.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Attic Walls.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Balcony Sliding Door Frame.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Balcony Sliding Door Frame.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Base.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Base.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Bathroom Door.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Bathroom Door.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Bathroom Sliding Door Frame.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Bathroom Sliding Door Frame.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Bedroom Door.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Bedroom Door.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked First Floor Bathroom Door.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked First Floor Bathroom Door.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked First Floor Ceiling.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked First Floor Ceiling.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked First Floor Frames.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked First Floor Frames.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked First Floor Windows.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked First Floor Windows.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked First Floor Wood Ceiling.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked First Floor Wood Ceiling.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked First Floor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked First Floor.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Floor 2 Ceiling.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Floor 2 Ceiling.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Floor 2 Wood Ceiling.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Floor 2 Wood Ceiling.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Front Door 1_.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Front Door 1_.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Front Door 2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Front Door 2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Main Bedroom Door.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Main Bedroom Door.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Main Walls.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Main Walls.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Office Door.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Office Door.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Parent Bedroom Ceiling.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Parent Bedroom Ceiling.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Parent Door.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Parent Door.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Roof.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Roof.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Second Floor Bedroom.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Second Floor Bedroom.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Second Floor Frames.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Second Floor Frames.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Second Floor Main Walls.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Second Floor Main Walls.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Second Floor Tiles.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Second Floor Tiles.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Second Floor Windows.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Second Floor Windows.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Sliding Door Frame.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Sliding Door Frame.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Sliding Glass.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Sliding Glass.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Storage Door.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Storage Door.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Door Frames.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Door Frames.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Door.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Door.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Floor 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Floor 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Floor 2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Floor 2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Floor 3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Floor 3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Ladder.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Ladder.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Roof.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Roof.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Slide Ladder.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Slide Ladder.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Stairs.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Stairs.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Walls.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Tower Walls.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Under Floor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Baked Under Floor.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Balcony Railing.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Balcony Railing.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Bathroom Handle.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Bathroom Handle.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Bathroom Wallpaper.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Bathroom Wallpaper.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Bedroom Handle.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Bedroom Handle.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Bedroom Wallpaper.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Bedroom Wallpaper.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Ceiling Sky.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Ceiling Sky.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Kitchen Wallpaper.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Kitchen Wallpaper.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Main Bathroom Wallpaper.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Main Bathroom Wallpaper.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Main Bedroom Handle.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Main Bedroom Handle.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Main Bedroom Wallpaper.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Main Bedroom Wallpaper.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Main Handle.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Main Handle.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Office Handle.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Office Handle.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Outside Railing.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Outside Railing.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Stair Middle.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Stair Middle.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Stair Railing.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Stair Railing.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Stairs Side.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Stairs Side.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Tower Handle.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URP/Materials/Tower Handle.mat.meta" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +179,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Build\FirstPersonGame.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/OneDrive/Documents/Wits/Courses/Year 2/Game Design/Semester 2/Build\FirstPersonGame.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Melissa\Build" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -109,6 +242,7 @@
       <workItem from="1724143211207" duration="2361000" />
       <workItem from="1726810106928" duration="9000" />
       <workItem from="1726854109678" duration="15000" />
+      <workItem from="1727029668981" duration="191000" />
     </task>
     <servers />
   </component>
