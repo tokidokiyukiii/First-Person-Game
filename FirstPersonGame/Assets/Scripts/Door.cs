@@ -45,7 +45,7 @@ public class Door : MonoBehaviour
     }
 
     // Method to toggle door state
-    public void ToggleDoor()
+    public void ToggleDoor(Transform playerTransform)
     {
         // If the door is currently animating, stop the coroutine
         if (doorCoroutine != null)
@@ -106,14 +106,11 @@ public class Door : MonoBehaviour
             // Calculate the sliding step for this frame
             float slidingStep = slidingSpeed * Time.deltaTime * slidingDirectionSign;
 
-            // Ensure that we don't overshoot the target sliding distance
+            // Ensure we don't overshoot the target sliding distance
             if (Mathf.Abs(movedAmount + slidingStep) > Mathf.Abs(slidingAmount))
             {
                 slidingStep = slidingAmount - movedAmount;
             }
-
-            // Apply the sliding motion
-            //transform.Translate(Vector3.right * slidingStep);  // Assuming sliding is along the X-axis
 
             Vector3 movement = slidingDirection.normalized * slidingStep;
             transform.Translate(movement);

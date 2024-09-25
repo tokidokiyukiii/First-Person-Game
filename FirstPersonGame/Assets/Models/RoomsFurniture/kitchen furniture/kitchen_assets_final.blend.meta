@@ -3,7 +3,122 @@ guid: ad54bbbea59dde24ea253c2d839c4679
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cream Tan
+    second: {fileID: 2100000, guid: a25d7226883c6c943b94c363a255b585, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cream Tan 2
+    second: {fileID: 2100000, guid: eeebdab465bb8e04db521703ac8b43ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 14087f7f204631c4c99ba5e94e1d6a88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 9c593cdf37c3ae642a36c23c7256f505, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: ed83fb26643da9f4e8dc596ab931896d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 39fb44e05a1a01d469fafc81716f6f11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal 2
+    second: {fileID: 2100000, guid: 92c69916013be6c4caf08f6a519c4398, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mug
+    second: {fileID: 2100000, guid: b8cbe4848e93c824eaa4a07846a98b1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pink Metal
+    second: {fileID: 2100000, guid: 72f22d53a064a8749b7daea6da3cb54d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pinky
+    second: {fileID: 2100000, guid: d0986f9bdfc1ead44b3790d761336812, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pinky 2
+    second: {fileID: 2100000, guid: c8d6c68a46a98d8488a8e565d55c35c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plate
+    second: {fileID: 2100000, guid: 1d116891999be3348ab59c0a33ab3760, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood Plank
+    second: {fileID: 2100000, guid: feb47e3357872dc45b79d5379c644844, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: board pink
+    second: {fileID: 2100000, guid: 8eeff308fa91c5d4e82ad760ef430e0a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cutlery
+    second: {fileID: 2100000, guid: c42ed14ea7be590449a6d4f4d1f76795, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flower 1
+    second: {fileID: 2100000, guid: 000cc0e574b528c42b244eceaa471bcf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flower 2_
+    second: {fileID: 2100000, guid: 5eff9984e4174a84dabdd2af225b91b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flower petal 2
+    second: {fileID: 2100000, guid: 2794e86e4a391864599b134dea0b538e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flower pink 2
+    second: {fileID: 2100000, guid: 6a58adb6a4179564093b9c655559b8b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stem green
+    second: {fileID: 2100000, guid: 03ae81981e86db74f8d7fc125d402425, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sticky note 1
+    second: {fileID: 2100000, guid: f4fe981f0056ef54eb4b33ec466ab3cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sticky note 2
+    second: {fileID: 2100000, guid: d32d0533dda19c344879d0bd5fcf2270, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vase colour pink
+    second: {fileID: 2100000, guid: b226ef4436ebd804795ba9c64005b4f2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

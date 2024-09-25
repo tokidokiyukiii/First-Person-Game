@@ -394,7 +394,7 @@ public class FirstPersonControls : MonoBehaviour
                 // Start moving the door upwards
                 //StartCoroutine(RaiseDoor(hit.collider.gameObject));
                 Door DoorOpen = hit.collider.GetComponent<Door>();;
-                DoorOpen.ToggleDoor();
+                DoorOpen.ToggleDoor(transform);
             }
             else if (hit.collider.CompareTag("Sliding Door"))
             {
