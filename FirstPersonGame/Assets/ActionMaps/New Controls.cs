@@ -410,7 +410,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ca4eb354-1065-4f1c-97a4-916b839d1c7c"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",

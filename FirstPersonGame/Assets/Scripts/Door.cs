@@ -24,10 +24,25 @@ public class Door : MonoBehaviour
     }*/
     
     public float rotationSpeed = 50f;  // Speed at which the door rotates
+    public float slidingSpeed = 2f; // Speed at which the door slides
     public bool isOpen = false;  // Track whether the door is open
-    public float targetRotation = 90f;  // The desired rotation angle in degrees
+    public float targetRotation = 90f; // The desired rotation angle
+    public float slidingDistance = 100f; // The desired sliding distance
+    public bool isSliding = false; //Is the door a sliding door
+    public bool needsKey = false; //Does the door need a key
+    private Quaternion originalRotation; //Stores original rotation of door
+    private Vector3 originalPosition; //Stores original position of sliding door
+    //private Vector3 slidingDirection = Vector3.right;
+    public Vector3 slidingDirection = new Vector3(0, 0, 1);
 
     private Coroutine doorCoroutine = null;  // Store reference to the coroutine
+    
+    void Start()
+    {
+        // Store the original rotation and position of the door
+        originalRotation = transform.rotation;
+        originalPosition = transform.position;
+    }
 
     // Method to toggle door state
     public void ToggleDoor()
@@ -39,8 +54,17 @@ public class Door : MonoBehaviour
         }
         
         // Start the coroutine to open or close the door
-        doorCoroutine = StartCoroutine(RotateDoor(isOpen ? -targetRotation : targetRotation));
-        isOpen = !isOpen;  // Toggle the door state
+        //doorCoroutine = StartCoroutine(RotateDoor(isOpen ? -targetRotation : targetRotation));
+        //isOpen = !isOpen;  // Toggle the door state
+        
+        if (isSliding)
+        {
+            doorCoroutine = StartCoroutine(SlideDoor(isOpen ? -slidingDistance : slidingDistance));
+        }
+        else
+        {
+            doorCoroutine = StartCoroutine(RotateDoor(isOpen ? -targetRotation : targetRotation));
+        }
     }
 
     // Coroutine to rotate the door over time
@@ -67,6 +91,40 @@ public class Door : MonoBehaviour
             // Wait until the next frame
             yield return null;
         }
+        
+        // After the door has finished rotating, update the isOpen state
+        isOpen = !isOpen;
+    }
+
+    IEnumerator SlideDoor(float slidingAmount)
+    {
+        float movedAmount = 0f;  // Track how much the door has moved
+        float slidingDirectionSign = Mathf.Sign(slidingAmount);  // Determine sliding direction (1 for open, -1 for close)
+
+        while (Mathf.Abs(movedAmount) < Mathf.Abs(slidingAmount))
+        {
+            // Calculate the sliding step for this frame
+            float slidingStep = slidingSpeed * Time.deltaTime * slidingDirectionSign;
+
+            // Ensure that we don't overshoot the target sliding distance
+            if (Mathf.Abs(movedAmount + slidingStep) > Mathf.Abs(slidingAmount))
+            {
+                slidingStep = slidingAmount - movedAmount;
+            }
+
+            // Apply the sliding motion
+            //transform.Translate(Vector3.right * slidingStep);  // Assuming sliding is along the X-axis
+
+            Vector3 movement = slidingDirection.normalized * slidingStep;
+            transform.Translate(movement);
+            movedAmount += slidingStep;
+
+            // Wait until the next frame
+            yield return null;
+        }
+
+        // After the door has finished sliding, update the isOpen state
+        isOpen = !isOpen;
     }
 
     // Update is called once per frame

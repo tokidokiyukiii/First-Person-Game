@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ee58ddc8-76b9-4c00-b5d4-bd37a1809121" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ActionMaps/New Controls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ActionMaps/New Controls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ActionMaps/New Controls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ActionMaps/New Controls.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +119,7 @@
       <workItem from="1727029668981" duration="191000" />
       <workItem from="1727108164895" duration="1137000" />
       <workItem from="1727187977115" duration="8939000" />
+      <workItem from="1727272287447" duration="5051000" />
     </task>
     <servers />
   </component>
