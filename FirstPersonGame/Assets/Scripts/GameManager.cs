@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         if (!hasOpened && AreAllBlocksSnapped())
         {
-            canOpen.openClose(); // Call a method to open the door or trigger another event
+            //canOpen.openClose(); // Call a method to open the door or trigger another event
             hasOpened = true;
         }
     }

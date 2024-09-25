@@ -61,6 +61,11 @@ public class FirstPersonControls : MonoBehaviour
     [Space(5)]
     public Material switchMaterial; // Material to apply when switch is activated
     public GameObject[] objectsToChangeColor; // Array of objects to change color
+    public LayerMask interactLayers;
+    //ublic Door DoorOpen;
+    public GameObject doorOpenText;
+    private bool hasShownMessage = false;
+    public float DoorRange = 10f; 
 
 
     private void Awake()
@@ -114,6 +119,28 @@ public class FirstPersonControls : MonoBehaviour
         Move();
         LookAround();
         ApplyGravity();
+        
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, DoorRange))
+        {
+            if (hit.collider.CompareTag("Door"))
+            {
+                if (!hasShownMessage)
+                {
+                    doorOpenText.SetActive(true);
+                    hasShownMessage = true;  // Mark that the message has been shown
+                }
+            }
+            else
+            {
+                doorOpenText.SetActive(false);
+            }
+        }
+        else
+        {
+            doorOpenText.SetActive(false);
+        }
     }
 
     public void Move()
@@ -347,7 +374,7 @@ public class FirstPersonControls : MonoBehaviour
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, pickUpRange))
+        if (Physics.Raycast(ray, out hit, DoorRange)) //, interactLayers))
         {
             if (hit.collider.CompareTag("Switch")) // Assuming the switch has this tag
             {
@@ -365,6 +392,12 @@ public class FirstPersonControls : MonoBehaviour
             else if (hit.collider.CompareTag("Door")) // Check if the object is a door
             {
                 // Start moving the door upwards
+                //StartCoroutine(RaiseDoor(hit.collider.gameObject));
+                Door DoorOpen = hit.collider.GetComponent<Door>();;
+                DoorOpen.ToggleDoor();
+            }
+            else if (hit.collider.CompareTag("SlidingDoor"))
+            {
                 StartCoroutine(RaiseDoor(hit.collider.gameObject));
             }
         }
