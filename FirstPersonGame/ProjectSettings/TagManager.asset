@@ -10,6 +10,7 @@ TagManager:
   - Movable
   - Switch
   - Door
+  - Info
   layers:
   - Default
   - TransparentFX

@@ -1,7 +1,9 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class FirstPersonControls : MonoBehaviour
@@ -62,11 +64,19 @@ public class FirstPersonControls : MonoBehaviour
     public Material switchMaterial; // Material to apply when switch is activated
     public GameObject[] objectsToChangeColor; // Array of objects to change color
     public LayerMask interactLayers;
-    //ublic Door DoorOpen;
-    public GameObject doorOpenText;
+    public ObjectInteraction objectInteraction;
+    public bool isShowing = false;
+    public bool isInputEnabled = true;
+    
+    [Header("UI SETTINGS")]
+    public TextMeshProUGUI objectInfoText;
+    public TextMeshProUGUI pickUpText;
+    public Image healthBar;
+    public float damageAmount = 0.25f; // Reduce the health bar by this amount
+    private float healAmount = 0.5f;// Fill the health bar by this amount
+    public TextMeshProUGUI doorOpenText;
     private bool hasShownMessage = false;
-    public float DoorRange = 10f; 
-
+    public float objectRange = 20f;
 
     private void Awake()
     {
@@ -115,31 +125,13 @@ public class FirstPersonControls : MonoBehaviour
 
     private void Update()
     {
-        // Call Move and LookAround methods every frame to handle player movement and camera rotation
-        Move();
-        LookAround();
-        ApplyGravity();
-        
-        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, DoorRange))
+        if (isInputEnabled == true)
         {
-            if (hit.collider.CompareTag("Door"))
-            {
-                if (!hasShownMessage)
-                {
-                    doorOpenText.SetActive(true);
-                    hasShownMessage = true;  // Mark that the message has been shown
-                }
-            }
-            else
-            {
-                doorOpenText.SetActive(false);
-            }
-        }
-        else
-        {
-            doorOpenText.SetActive(false);
+            // Call Move and LookAround methods every frame to handle player movement and camera rotation
+            Move();
+            LookAround();
+            ApplyGravity();
+            CheckForObject();
         }
     }
 
@@ -374,7 +366,7 @@ public class FirstPersonControls : MonoBehaviour
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, DoorRange)) //, interactLayers))
+        if (Physics.Raycast(ray, out hit, objectRange)) //, interactLayers))
         {
             if (hit.collider.CompareTag("Switch")) // Assuming the switch has this tag
             {
@@ -396,9 +388,23 @@ public class FirstPersonControls : MonoBehaviour
                 Door DoorOpen = hit.collider.GetComponent<Door>();;
                 DoorOpen.ToggleDoor(transform);
             }
-            else if (hit.collider.CompareTag("Sliding Door"))
+            else if (hit.collider.CompareTag("Info"))
             {
-                //StartCoroutine(RaiseDoor(hit.collider.gameObject));
+                string objectName = hit.collider.name;
+                if (isShowing == false)
+                {
+                    isInputEnabled = false;
+                    isShowing = true;
+                    objectInfoText.gameObject.SetActive(false);
+                    objectInteraction.ShowObjectDetails(objectName);
+                }
+                else
+                {
+                    isInputEnabled = true;
+                    isShowing = false;
+                    objectInfoText.gameObject.SetActive(true);
+                    objectInteraction.HideObjectDetails();
+                }
             }
         }
     }
@@ -416,6 +422,49 @@ public class FirstPersonControls : MonoBehaviour
             // Move the door towards the target position at the specified speed
             door.transform.position = Vector3.MoveTowards(door.transform.position, endPosition, raiseSpeed * Time.deltaTime);
             yield return null; // Wait until the next frame before continuing the loop
+        }
+    }
+    
+    private void CheckForObject()
+    {
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        RaycastHit hit; 
+        // Perform raycast to detect objects
+        if (Physics.Raycast(ray, out hit, objectRange))
+        {
+            // Check if the object has the "pickUp" tag
+            if (hit.collider.CompareTag("pickUp"))
+            { 
+                // Display the pick-up text
+                pickUpText.gameObject.SetActive(true);
+                pickUpText.text = hit.collider.gameObject.name;
+            }
+            // Check if the object has the "Info" tag
+            else if (hit.collider.CompareTag("Info"))
+            { 
+                // Display the info text
+                objectInfoText.gameObject.SetActive(true);
+                //objectInfoText.text = hit.collider.gameObject.name;
+            }
+            // Check if the object has the "Door" tag
+            else if (hit.collider.CompareTag("Door"))
+            {
+                doorOpenText.gameObject.SetActive(true);
+            }
+            else
+            { 
+                // Hide the pick-up text if not looking at an object with info
+                pickUpText.gameObject.SetActive(false);
+                doorOpenText.gameObject.SetActive(false);
+                objectInfoText.gameObject.SetActive(false);
+            }
+        }
+        else
+        { 
+            // Hide the text if not looking at any object
+            pickUpText.gameObject.SetActive(false);
+            doorOpenText.gameObject.SetActive(false);
+            objectInfoText.gameObject.SetActive(false);
         }
     }
 
