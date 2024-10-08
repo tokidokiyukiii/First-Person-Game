@@ -6,24 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="ee58ddc8-76b9-4c00-b5d4-bd37a1809121" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Bathroom/BloodBag.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Bathroom/BloodBag.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/House/Bathroom/Blood.001.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/House/Bathroom/Blood.001.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/House/Bathroom/Material 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/House/Bathroom/Material 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Objects.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Objects.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door_close2.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door_close2.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door_open2.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door_open2.anim.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/door parent  1.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/door parent  1.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/door parent .controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/door parent .controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/door_close.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/door_close.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/door_open.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/door_open.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Fonts/Creepy Blood SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Fonts/Creepy Blood SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,6 +131,7 @@
       <workItem from="1727272287447" duration="6830000" />
       <workItem from="1727360676248" duration="1508000" />
       <workItem from="1728230601522" duration="12954000" />
+      <workItem from="1728381658191" duration="14201000" />
     </task>
     <servers />
   </component>

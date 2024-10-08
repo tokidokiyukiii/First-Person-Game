@@ -390,21 +390,28 @@ public class FirstPersonControls : MonoBehaviour
             }
             else if (hit.collider.CompareTag("Info"))
             {
-                string objectName = hit.collider.name;
-                if (isShowing == false)
+                //string objectName = hit.collider.name;
+                Debug.Log("Showing info");
+                ObjectData currentObjectData = hit.collider.GetComponent<ObjectDataHolder>()?.objectData;
+                if (currentObjectData != null)
                 {
-                    isInputEnabled = false;
-                    isShowing = true;
-                    objectInfoText.gameObject.SetActive(false);
-                    objectInteraction.ShowObjectDetails(objectName);
+                    if (isShowing == false)
+                    {
+                        isInputEnabled = false;
+                        isShowing = true;
+                        objectInfoText.gameObject.SetActive(false);
+                        objectInteraction.ShowObjectDetails(currentObjectData);
+                    }
+                    else
+                    {
+                        isInputEnabled = true;
+                        isShowing = false;
+                        objectInfoText.gameObject.SetActive(true);
+                        objectInteraction.HideObjectDetails();
+                    
+                    }
                 }
-                else
-                {
-                    isInputEnabled = true;
-                    isShowing = false;
-                    objectInfoText.gameObject.SetActive(true);
-                    objectInteraction.HideObjectDetails();
-                }
+                
             }
         }
     }
