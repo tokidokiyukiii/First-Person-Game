@@ -75,7 +75,6 @@ public class FirstPersonControls : MonoBehaviour
     public float damageAmount = 0.25f; // Reduce the health bar by this amount
     private float healAmount = 0.5f;// Fill the health bar by this amount
     public TextMeshProUGUI doorOpenText;
-    public TextMeshProUGUI doorCloseText;
     private bool hasShownMessage = false;
     public float objectRange = 20f;
 
@@ -386,7 +385,7 @@ public class FirstPersonControls : MonoBehaviour
             {
                 // Start moving the door upwards
                 //StartCoroutine(RaiseDoor(hit.collider.gameObject));
-                Door DoorOpen = hit.collider.GetComponent<Door>();
+                Door DoorOpen = hit.collider.GetComponent<Door>();;
                 DoorOpen.ToggleDoor(transform);
             }
             else if (hit.collider.CompareTag("Info"))
@@ -457,25 +456,13 @@ public class FirstPersonControls : MonoBehaviour
             // Check if the object has the "Door" tag
             else if (hit.collider.CompareTag("Door"))
             {
-                Door DoorOpen = hit.collider.GetComponent<Door>();
-                if (DoorOpen.isOpen == false)
-                {
-                    doorOpenText.gameObject.SetActive(true);
-                    doorCloseText.gameObject.SetActive(false);
-                }
-                else if (DoorOpen.isOpen == true)
-                {
-                    doorCloseText.gameObject.SetActive(true);
-                    doorOpenText.gameObject.SetActive(false);
-                }
-                
+                doorOpenText.gameObject.SetActive(true);
             }
             else
             { 
                 // Hide the pick-up text if not looking at an object with info
                 pickUpText.gameObject.SetActive(false);
                 doorOpenText.gameObject.SetActive(false);
-                doorCloseText.gameObject.SetActive(false);
                 objectInfoText.gameObject.SetActive(false);
             }
         }
@@ -484,7 +471,6 @@ public class FirstPersonControls : MonoBehaviour
             // Hide the text if not looking at any object
             pickUpText.gameObject.SetActive(false);
             doorOpenText.gameObject.SetActive(false);
-            doorCloseText.gameObject.SetActive(false);
             objectInfoText.gameObject.SetActive(false);
         }
     }
