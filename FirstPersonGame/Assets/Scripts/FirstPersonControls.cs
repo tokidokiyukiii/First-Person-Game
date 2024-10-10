@@ -69,6 +69,7 @@ public class FirstPersonControls : MonoBehaviour
     public bool isInputEnabled = true;
     
     [Header("UI SETTINGS")]
+    [Space(5)]
     public TextMeshProUGUI objectInfoText;
     public TextMeshProUGUI pickUpText;
     public Image healthBar;
@@ -78,6 +79,13 @@ public class FirstPersonControls : MonoBehaviour
     public TextMeshProUGUI doorCloseText;
     private bool hasShownMessage = false;
     public float objectRange = 20f;
+
+    [Header("CHANGE VIEWS")] 
+    [Space(5)]
+    public SecondView secondView;
+    public bool isNormalView = true;
+    public GameObject SecondViewCanvas;     // The UI panel to display item details
+    public GameObject NormalViewCanvas;
 
     private void Awake()
     {
@@ -121,6 +129,9 @@ public class FirstPersonControls : MonoBehaviour
         
         // Subscribe to the interact input event
         playerInput.Player.Interact.performed += ctx => Interact(); // Interact with switch
+        
+        // Subscribe to the change views inout event
+        playerInput.Player.ChangeView.performed += ctx => ChangeView(); // Interact with switch
 
     }
 
@@ -485,6 +496,24 @@ public class FirstPersonControls : MonoBehaviour
             doorOpenText.gameObject.SetActive(false);
             doorCloseText.gameObject.SetActive(false);
             objectInfoText.gameObject.SetActive(false);
+        }
+    }
+
+    private void ChangeView()
+    {
+        if (isNormalView == true)
+        {
+            NormalViewCanvas.SetActive(false);
+            SecondViewCanvas.SetActive(true);
+            isNormalView = false;
+            secondView.StartView();
+        }
+        else
+        {
+            SecondViewCanvas.SetActive(false);
+            NormalViewCanvas.SetActive(true);
+            isNormalView = true;
+            secondView.StopView();
         }
     }
 

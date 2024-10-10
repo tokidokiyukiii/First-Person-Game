@@ -8,7 +8,11 @@ public class ObjectInteraction : MonoBehaviour
 {
     //public ObjectData objectData;    // Reference to the ScriptableObject database
 
+    public FirstPersonControls firstPersonControls;
     public GameObject objectInfoCanvas;     // The UI panel to display item details
+    public GameObject HUDCanvas;
+    public GameObject NormalViewCanvas;
+    public GameObject SecondViewCanvas;
     public TextMeshProUGUI objectNameText;            // UI Text for item name
     public TextMeshProUGUI objectDescriptionText;     // UI Text for item description
     //public Transform objectModelHolder;    // Empty GameObject where the item model will be displayed
@@ -22,6 +26,11 @@ public class ObjectInteraction : MonoBehaviour
         // Search for the item in the database based on the item's name
         //ObjectInfo? newObject = objectData.objects.Find(i => i.objectName == itemName);
 
+        // Deactivate HUD
+        HUDCanvas.SetActive(false);
+        NormalViewCanvas.SetActive(false);
+        SecondViewCanvas.SetActive(false);
+        
         // Activate the UI panel and set the item details
         objectInfoCanvas.SetActive(true);
         objectNameText.text = currentObjectData.objectName;
@@ -32,6 +41,16 @@ public class ObjectInteraction : MonoBehaviour
 
     public void HideObjectDetails()
     {
+        // Activate HUD
+        HUDCanvas.SetActive(true);
+
+        if (firstPersonControls.isNormalView == true)
+        {
+            NormalViewCanvas.SetActive(true);
+        }
+        else
+            SecondViewCanvas.SetActive(true);
+        
         // Deactivate the UI panel and destroy the model when not viewing the info of an object
         objectInfoCanvas.SetActive(false);
         objectViewer.HideObject();

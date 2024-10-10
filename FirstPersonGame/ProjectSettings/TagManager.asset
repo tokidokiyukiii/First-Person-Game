@@ -11,6 +11,7 @@ TagManager:
   - Switch
   - Door
   - Info
+  - Drawer
   layers:
   - Default
   - TransparentFX

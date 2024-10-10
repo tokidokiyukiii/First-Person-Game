@@ -107,6 +107,15 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeView"",
+                    ""type"": ""Button"",
+                    ""id"": ""826e34c1-3b74-4e63-b36c-a829f80e00fa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -428,6 +437,28 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a8d27a4-0c0a-4d61-9332-991980162dc6"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ChangeView"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb1a2fb6-f556-4cc1-883e-c512e744ebbc"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ChangeView"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -468,6 +499,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         m_Player_Pull = m_Player.FindAction("Pull", throwIfNotFound: true);
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_ChangeView = m_Player.FindAction("ChangeView", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -538,6 +570,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Pull;
     private readonly InputAction m_Player_Rotate;
     private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_ChangeView;
     public struct PlayerActions
     {
         private @NewControls m_Wrapper;
@@ -551,6 +584,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         public InputAction @Pull => m_Wrapper.m_Player_Pull;
         public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @ChangeView => m_Wrapper.m_Player_ChangeView;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -587,6 +621,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @ChangeView.started += instance.OnChangeView;
+            @ChangeView.performed += instance.OnChangeView;
+            @ChangeView.canceled += instance.OnChangeView;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -618,6 +655,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @ChangeView.started -= instance.OnChangeView;
+            @ChangeView.performed -= instance.OnChangeView;
+            @ChangeView.canceled -= instance.OnChangeView;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -664,5 +704,6 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         void OnPull(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnChangeView(InputAction.CallbackContext context);
     }
 }
