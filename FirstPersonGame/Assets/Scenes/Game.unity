@@ -18076,11 +18076,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca5899ec8ed9a54a8b8a6d154036298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstPersonControls: {fileID: 0}
+  firstPersonControls: {fileID: 2127066313}
   objectInfoCanvas: {fileID: 1525748252}
   HUDCanvas: {fileID: 320996632}
-  NormalViewCanvas: {fileID: 0}
-  SecondViewCanvas: {fileID: 0}
+  NormalViewCanvas: {fileID: 289420804}
+  SecondViewCanvas: {fileID: 167192529}
   objectNameText: {fileID: 1527864988}
   objectDescriptionText: {fileID: 894844691}
   objectViewer: {fileID: 1338054398}
