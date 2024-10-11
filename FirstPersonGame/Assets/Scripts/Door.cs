@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Door : MonoBehaviour
 {
@@ -23,17 +24,25 @@ public class Door : MonoBehaviour
         }
     }*/
     
+    public SoundManager soundManager;
+    
+    public bool isOpen = false;  // Track whether the door is open
+    
     public float rotationSpeed = 50f;  // Speed at which the door rotates
     public float slidingSpeed = 2f; // Speed at which the door slides
-    public bool isOpen = false;  // Track whether the door is open
     public float targetRotation = 90f; // The desired rotation angle
     public float slidingDistance = 100f; // The desired sliding distance
-    public bool isSliding = false; //Is the door a sliding door
-    public bool needsKey = false; //Does the door need a key
+    
     private Quaternion originalRotation; //Stores original rotation of door
     private Vector3 originalPosition; //Stores original position of sliding door
-    //private Vector3 slidingDirection = Vector3.right;
     public Vector3 slidingDirection = new Vector3(0, 0, 1);
+    
+    public bool isSliding = false; //Is the door a sliding door
+    public bool isDrawer = false;
+    
+    public bool needsKey = false; //Does the door need a key
+    public bool hasKey = false;
+    public bool hasUnlocked = false;
 
     private Coroutine doorCoroutine = null;  // Store reference to the coroutine
     
@@ -57,11 +66,19 @@ public class Door : MonoBehaviour
         //doorCoroutine = StartCoroutine(RotateDoor(isOpen ? -targetRotation : targetRotation));
         //isOpen = !isOpen;  // Toggle the door state
         
-        if (isSliding)
+        if (needsKey && !hasKey)
+            soundManager.PlaySFX("lock 4");
+        else if (needsKey && hasKey && !hasUnlocked)
+        {
+            soundManager.PlaySFX("lock turn 2");
+            hasUnlocked = true;
+        }
+        
+        if ((isSliding || isDrawer) && !needsKey || hasUnlocked)
         {
             doorCoroutine = StartCoroutine(SlideDoor(isOpen ? -slidingDistance : slidingDistance));
         }
-        else
+        else if (!needsKey || hasUnlocked)
         {
             doorCoroutine = StartCoroutine(RotateDoor(isOpen ? -targetRotation : targetRotation));
         }
@@ -72,6 +89,11 @@ public class Door : MonoBehaviour
     {
         float rotatedAmount = 0f;  // Track how much the door has rotated
         float rotationDirection = Mathf.Sign(rotationAmount);  // Determine rotation direction (1 for open, -1 for close)
+        
+        if (isOpen)
+            soundManager.PlaySFX("close door");
+        else
+            soundManager.PlaySFX("open door");
         
         while (Mathf.Abs(rotatedAmount) < Mathf.Abs(rotationAmount))
         {
@@ -101,6 +123,11 @@ public class Door : MonoBehaviour
         float movedAmount = 0f;  // Track how much the door has moved
         float slidingDirectionSign = Mathf.Sign(slidingAmount);  // Determine sliding direction (1 for open, -1 for close)
 
+        if (isOpen)
+            soundManager.PlaySFX("sliding door close");
+        else
+            soundManager.PlaySFX("sliding door open");
+        
         while (Mathf.Abs(movedAmount) < Mathf.Abs(slidingAmount))
         {
             // Calculate the sliding step for this frame
@@ -124,9 +151,31 @@ public class Door : MonoBehaviour
         isOpen = !isOpen;
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator OpenDrawer(float openAmount)
     {
-        
+        float movedAmount = 0f;  // Track how much the door has moved
+        float slidingDirectionSign = Mathf.Sign(openAmount);  // Determine sliding direction (1 for open, -1 for close)
+
+        while (Mathf.Abs(movedAmount) < Mathf.Abs(openAmount))
+        {
+            // Calculate the sliding step for this frame
+            float slidingStep = slidingSpeed * Time.deltaTime * slidingDirectionSign;
+
+            // Ensure we don't overshoot the target sliding distance
+            if (Mathf.Abs(movedAmount + slidingStep) > Mathf.Abs(openAmount))
+            {
+                slidingStep = openAmount - movedAmount;
+            }
+
+            Vector3 movement = slidingDirection.normalized * slidingStep;
+            transform.Translate(movement);
+            movedAmount += slidingStep;
+
+            // Wait until the next frame
+            yield return null;
+        }
+
+        // After the door has finished sliding, update the isOpen state
+        isOpen = !isOpen;
     }
 }

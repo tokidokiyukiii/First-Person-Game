@@ -20,8 +20,8 @@ public class ObjectViewer : MonoBehaviour, IDragHandler
         // Instantiate the item model in the model holder for display
         if (objectModel != null)
         {
-            //currentObjectModel = Instantiate(objectModel, new Vector3(1000, 1000, 1000), Quaternion.identity);
-            currentObjectModel = Instantiate(objectModel, objectModelHolder);
+            currentObjectModel = Instantiate(objectModel, new Vector3(1000, 1000, 1000), Quaternion.identity);
+            //currentObjectModel = Instantiate(objectModel, objectModelHolder);
             currentObjectModel.gameObject.layer = LayerMask.NameToLayer("ObjectView");
             Debug.Log("Model instantiated: " + currentObjectModel.name); // Debug log
         }

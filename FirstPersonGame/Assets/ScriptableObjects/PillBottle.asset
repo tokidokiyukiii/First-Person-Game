@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2210603996f579148bbb64492b8094b4, type: 3}
+  m_Name: PillBottle
+  m_EditorClassIdentifier: 
+  objectName: Pill Bottle
+  objectDescription: '"If they see me touching this, I''ll get in big trouble."'
+  objectModel: {fileID: -2894096938872660180, guid: 1ffb6e2d449ac5d45b8a05c7b3435d42,
+    type: 3}

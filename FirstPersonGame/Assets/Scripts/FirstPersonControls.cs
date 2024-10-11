@@ -393,7 +393,7 @@ public class FirstPersonControls : MonoBehaviour
                 }
             }
 
-            else if (hit.collider.CompareTag("Door")) // Check if the object is a door
+            else if (hit.collider.CompareTag("Door") || hit.collider.CompareTag("Drawer")) // Check if the object is a door
             {
                 // Start moving the door upwards
                 //StartCoroutine(RaiseDoor(hit.collider.gameObject));
@@ -465,11 +465,11 @@ public class FirstPersonControls : MonoBehaviour
                 objectInfoText.gameObject.SetActive(true);
                 //objectInfoText.text = hit.collider.gameObject.name;
             }
-            // Check if the object has the "Door" tag
-            else if (hit.collider.CompareTag("Door"))
+            // Check if the object has the "Door" or "Drawer" tag
+            else if (hit.collider.CompareTag("Door") || hit.collider.CompareTag("Drawer"))
             {
                 Door DoorOpen = hit.collider.GetComponent<Door>();
-                if (DoorOpen.isOpen == false)
+                /*if (DoorOpen.isOpen == false)
                 {
                     doorOpenText.gameObject.SetActive(true);
                     doorCloseText.gameObject.SetActive(false);
@@ -478,6 +478,23 @@ public class FirstPersonControls : MonoBehaviour
                 {
                     doorCloseText.gameObject.SetActive(true);
                     doorOpenText.gameObject.SetActive(false);
+                }*/
+                if (DoorOpen != null)
+                {
+                    if (DoorOpen.isOpen == false)
+                    {
+                        doorOpenText.gameObject.SetActive(true);
+                        doorCloseText.gameObject.SetActive(false);
+                    }
+                    else if (DoorOpen.isOpen == true)
+                    {
+                        doorCloseText.gameObject.SetActive(true);
+                        doorOpenText.gameObject.SetActive(false);
+                    }
+                }
+                else
+                {
+                    Debug.LogError("The object tagged as 'Drawer' or 'Door' is missing the 'Door' component.");
                 }
             }
             else
