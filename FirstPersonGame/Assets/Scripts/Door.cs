@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -25,8 +27,10 @@ public class Door : MonoBehaviour
     }*/
     
     public SoundManager soundManager;
+    public bool playsAudio = true;
     
     public bool isOpen = false;  // Track whether the door is open
+    public bool isOpening = false;
     
     public float rotationSpeed = 50f;  // Speed at which the door rotates
     public float slidingSpeed = 2f; // Speed at which the door slides
@@ -43,8 +47,13 @@ public class Door : MonoBehaviour
     public bool needsKey = false; //Does the door need a key
     public bool hasKey = false;
     public bool hasUnlocked = false;
+    public bool justUnlocked = false;
 
     private Coroutine doorCoroutine = null;  // Store reference to the coroutine
+    
+    public TextMeshProUGUI doorOpenText;
+    public TextMeshProUGUI doorCloseText;
+    public TextMeshProUGUI doorLockedText;
     
     void Start()
     {
@@ -65,13 +74,28 @@ public class Door : MonoBehaviour
         // Start the coroutine to open or close the door
         //doorCoroutine = StartCoroutine(RotateDoor(isOpen ? -targetRotation : targetRotation));
         //isOpen = !isOpen;  // Toggle the door state
-        
-        if (needsKey && !hasKey)
-            soundManager.PlaySFX("lock 4");
-        else if (needsKey && hasKey && !hasUnlocked)
+
+        if (needsKey && !hasKey && playsAudio)
         {
-            soundManager.PlaySFX("lock turn 2");
+            if (isOpen)
+                doorCloseText.gameObject.SetActive(false);
+            else if (!isOpen)
+                doorOpenText.gameObject.SetActive(false);
+            
+            doorLockedText.gameObject.SetActive(true);
+            if (playsAudio)
+                soundManager.PlaySFX("lock 4");
+            
+            doorLockedText.gameObject.SetActive(false);
+            return;
+        }
+            
+        if (needsKey && hasKey && !hasUnlocked)
+        {
             hasUnlocked = true;
+            if (playsAudio)
+                soundManager.PlaySFX("lock turn 2");
+            justUnlocked = true;
         }
         
         if ((isSliding || isDrawer) && !needsKey || hasUnlocked)
@@ -90,13 +114,25 @@ public class Door : MonoBehaviour
         float rotatedAmount = 0f;  // Track how much the door has rotated
         float rotationDirection = Mathf.Sign(rotationAmount);  // Determine rotation direction (1 for open, -1 for close)
         
-        if (isOpen)
+        if (isOpen && playsAudio)
             soundManager.PlaySFX("close door");
-        else
-            soundManager.PlaySFX("open door");
+        else if (!isOpen && playsAudio)
+        {
+            if (needsKey && !justUnlocked)
+            {
+                justUnlocked = false;
+            }
+            else
+                soundManager.PlaySFX("open door");
+        }
         
         while (Mathf.Abs(rotatedAmount) < Mathf.Abs(rotationAmount))
         {
+            if (isOpen)
+                doorCloseText.gameObject.SetActive(false);
+            else if (!isOpen)
+                doorOpenText.gameObject.SetActive(false);
+            
             // Calculate the rotation step for this frame
             float rotationStep = rotationSpeed * Time.deltaTime * rotationDirection;
             
@@ -116,6 +152,11 @@ public class Door : MonoBehaviour
         
         // After the door has finished rotating, update the isOpen state
         isOpen = !isOpen;
+        
+        if (isOpen)
+            doorCloseText.gameObject.SetActive(true);
+        else if (!isOpen)
+            doorOpenText.gameObject.SetActive(true);
     }
 
     IEnumerator SlideDoor(float slidingAmount)
@@ -123,13 +164,25 @@ public class Door : MonoBehaviour
         float movedAmount = 0f;  // Track how much the door has moved
         float slidingDirectionSign = Mathf.Sign(slidingAmount);  // Determine sliding direction (1 for open, -1 for close)
 
-        if (isOpen)
+        if (isOpen && playsAudio)
             soundManager.PlaySFX("sliding door close");
-        else
-            soundManager.PlaySFX("sliding door open");
+        else if (!isOpen && playsAudio)
+        {
+            if (needsKey && !justUnlocked)
+            {
+                justUnlocked = false;
+            }
+            else
+                soundManager.PlaySFX("sliding door open");
+        }
         
         while (Mathf.Abs(movedAmount) < Mathf.Abs(slidingAmount))
         {
+            if (isOpen)
+                doorCloseText.gameObject.SetActive(false);
+            else if (!isOpen)
+                doorOpenText.gameObject.SetActive(false);
+            
             // Calculate the sliding step for this frame
             float slidingStep = slidingSpeed * Time.deltaTime * slidingDirectionSign;
 
@@ -149,6 +202,11 @@ public class Door : MonoBehaviour
 
         // After the door has finished sliding, update the isOpen state
         isOpen = !isOpen;
+        
+        if (isOpen)
+            doorCloseText.gameObject.SetActive(true);
+        else if (!isOpen)
+            doorOpenText.gameObject.SetActive(true);
     }
 
     IEnumerator OpenDrawer(float openAmount)
