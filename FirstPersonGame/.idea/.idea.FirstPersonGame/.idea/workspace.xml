@@ -6,12 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="ee58ddc8-76b9-4c00-b5d4-bd37a1809121" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Bathroom/Blood Bag.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Bathroom/Blood Bag.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Medical Items/Syringe.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Medical Items/Syringe.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/Baked Normal Map.002.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/Baked Normal Map.002.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/SkyBox/SkyTexturedark.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/SkyBox/SkyTexturedark.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ThoughtCount.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ThoughtCount.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Thoughts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Thoughts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Fonts/JMH Typewriter SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Fonts/JMH Typewriter SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +29,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectInteraction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PPInitialisation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -131,6 +137,7 @@
       <workItem from="1728594486373" duration="263000" />
       <workItem from="1728606624726" duration="7180000" />
       <workItem from="1728652074773" duration="3647000" />
+      <workItem from="1728745020117" duration="9151000" />
     </task>
     <servers />
   </component>

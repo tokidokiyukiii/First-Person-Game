@@ -28,6 +28,10 @@ public class UIManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+        
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
     
     // Coroutine to smoothly rotate the camera

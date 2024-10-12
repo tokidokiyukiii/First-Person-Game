@@ -7,19 +7,21 @@ using TMPro;
 public class ThoughtCount : MonoBehaviour
 {
     private int thoughtCount = 0;
+    public int thoughtTotal = 5;
 
-    public GameObject countPanel;
     public TMP_Text thoughtCountText;
+    
+    public TMP_Text messageText;
 
-    public GameObject messagePanel; 
-    public TMP_Text messageText; 
+    public GameObject key;
 
-    public void AddThought(int value)
+    public void AddThought()
     {
-        thoughtCount += value;
+        thoughtCount++;
 
-        if (thoughtCount >= 5)
+        if (thoughtCount >= thoughtTotal)
         {
+            key.SetActive(true);
             ShowMessage("Go find the key on the table!");
         }
 
@@ -28,8 +30,9 @@ public class ThoughtCount : MonoBehaviour
 
     private void ShowMessage(string message)
     {
-        messagePanel.SetActive(true);
-        countPanel.SetActive(false);
+        thoughtCountText.gameObject.SetActive(false);
+        messageText.gameObject.SetActive(true);
+        //countPanel.SetActive(false);
         messageText.text = message; 
 
         // StartCoroutine(HideMessageAfterDelay(2f));
@@ -48,4 +51,5 @@ public class ThoughtCount : MonoBehaviour
         yield return new WaitForSeconds(delay);
         messagePanel.SetActive(false); // Hide the message panel
     }*/
+
 }

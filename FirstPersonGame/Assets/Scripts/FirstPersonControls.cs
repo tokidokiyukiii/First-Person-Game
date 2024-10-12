@@ -37,7 +37,7 @@ public class FirstPersonControls : MonoBehaviour
     private GameObject heldObject; // Reference to the currently held object
     public float pickUpRange = 3f; // Range within which objects can be picked up
     private bool holdingGun = false;
-    
+
     [Header("PULLING SETTINGS")]
     [Space(5)]
     public Transform grabPosition; // Position where the picked-up object will be held
@@ -58,7 +58,7 @@ public class FirstPersonControls : MonoBehaviour
     public float standingHeight = 2f;
     public float crouchSpeed = 0.5f;
     private bool isCrouching = false;
-    
+
     [Header("INTERACT SETTINGS")]
     [Space(5)]
     public Material switchMaterial; // Material to apply when switch is activated
@@ -67,7 +67,9 @@ public class FirstPersonControls : MonoBehaviour
     public ObjectInteraction objectInteraction;
     public bool isShowing = false;
     public bool isInputEnabled = true;
-    
+    public ThoughtCount thoughtCount;
+    public GameObject[] frontDoor;
+        
     [Header("UI SETTINGS")]
     [Space(5)]
     public TextMeshProUGUI objectInfoText;
@@ -77,6 +79,14 @@ public class FirstPersonControls : MonoBehaviour
     private float healAmount = 0.5f;// Fill the health bar by this amount
     public TextMeshProUGUI doorOpenText;
     public TextMeshProUGUI doorCloseText;
+    public TextMeshProUGUI doorLockedText;
+    public TextMeshProUGUI thoughtText;
+    public TextMeshProUGUI keyText;
+    public TextMeshProUGUI writtenThoughtText;
+    public TextMeshProUGUI myThoughtText;
+    public GameObject ThoughtBackground;
+    public GameObject HUDCanvas;
+    public float duration = 10f;
     private bool hasShownMessage = false;
     public float objectRange = 20f;
 
@@ -86,6 +96,8 @@ public class FirstPersonControls : MonoBehaviour
     public bool isNormalView = true;
     public GameObject SecondViewCanvas;     // The UI panel to display item details
     public GameObject NormalViewCanvas;
+    public GameObject NormalViewVolume;
+    public GameObject SecondViewVolume;
 
     private void Awake()
     {
@@ -371,7 +383,7 @@ public class FirstPersonControls : MonoBehaviour
             isCrouching = true;
         }
     }
-    
+
     public void Interact()
     {
         // Perform a raycast to detect the lightswitch
@@ -397,9 +409,15 @@ public class FirstPersonControls : MonoBehaviour
             {
                 // Start moving the door upwards
                 //StartCoroutine(RaiseDoor(hit.collider.gameObject));
+                
                 Door DoorOpen = hit.collider.GetComponent<Door>();
+
+                if (DoorOpen.needsKey && !DoorOpen.hasKey)
+                    StartCoroutine(ActivateLock());
+                    //doorLockedText.gameObject.SetActive(true);
                 
                 DoorOpen.ToggleDoor(transform);
+                //doorLockedText.gameObject.SetActive(false);
             }
             else if (hit.collider.CompareTag("Info"))
             {
@@ -424,9 +442,67 @@ public class FirstPersonControls : MonoBehaviour
                     
                     }
                 }
+            }
+            else if (hit.collider.CompareTag("Thought"))
+            {
+                thoughtCount.AddThought();
+                Destroy(hit.collider.gameObject);
+                
+                Thoughts thoughts = hit.collider.gameObject.GetComponent<Thoughts>();
+                writtenThoughtText.text = thoughts.writtenThought;
+                myThoughtText.text = thoughts.myThought;
+                
+                //ThoughtBackground.SetActive(true);
+                
+                StartCoroutine(ActivateForDuration());
+                
+                //ThoughtBackground.SetActive(false);
+            }
+            else if (hit.collider.CompareTag("Key"))
+            {
+                foreach (var door in frontDoor)
+                {
+                    Door openDoor = door.GetComponent<Door>();
+                    openDoor.hasKey = true;
+                    Destroy(hit.collider.gameObject);
+                }
                 
             }
         }
+    }
+
+    private IEnumerator ActivateForDuration()
+    {
+        // Set the object to active
+        //display.gameObject.SetActive(true);
+        
+        HUDCanvas.SetActive(false);
+        ThoughtBackground.SetActive(true);
+        writtenThoughtText.gameObject.SetActive(true);
+
+        // Wait for the specified duration
+        yield return new WaitForSeconds(duration);
+        writtenThoughtText.gameObject.SetActive(false);
+        
+        myThoughtText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        
+        myThoughtText.gameObject.SetActive(false);
+        ThoughtBackground.SetActive(false);
+        HUDCanvas.SetActive(true);
+    }
+
+    private IEnumerator ActivateLock()
+    {
+        HUDCanvas.SetActive(false);
+        ThoughtBackground.SetActive(true);
+        doorLockedText.gameObject.SetActive(true);
+        
+        yield return new WaitForSeconds(duration);
+
+        doorLockedText.gameObject.SetActive(false);
+        ThoughtBackground.SetActive(false);
+        HUDCanvas.SetActive(true);
     }
 
     private IEnumerator RaiseDoor(GameObject door)
@@ -444,7 +520,7 @@ public class FirstPersonControls : MonoBehaviour
             yield return null; // Wait until the next frame before continuing the loop
         }
     }
-    
+
     private void CheckForObject()
     {
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
@@ -498,6 +574,12 @@ public class FirstPersonControls : MonoBehaviour
                     Debug.LogError("The object tagged as 'Drawer' or 'Door' is missing the 'Door' component.");
                 }
             }
+            else if (hit.collider.CompareTag("Thought"))
+            {
+                thoughtText.gameObject.SetActive(true);
+            }
+            else if (hit.collider.CompareTag("Key"))
+                keyText.gameObject.SetActive(true);
             else
             { 
                 // Hide the pick-up text if not looking at an object with info
@@ -505,6 +587,8 @@ public class FirstPersonControls : MonoBehaviour
                 doorOpenText.gameObject.SetActive(false);
                 doorCloseText.gameObject.SetActive(false);
                 objectInfoText.gameObject.SetActive(false);
+                thoughtText.gameObject.SetActive(false);
+                keyText.gameObject.SetActive(false);
             }
         }
         else
@@ -519,20 +603,25 @@ public class FirstPersonControls : MonoBehaviour
 
     private void ChangeView()
     {
-        if (isNormalView == true)
+        if (isNormalView)
         {
-            NormalViewCanvas.SetActive(false);
-            SecondViewCanvas.SetActive(true);
+            //NormalViewCanvas.SetActive(false);
+            //SecondViewCanvas.SetActive(true);
             isNormalView = false;
+            NormalViewVolume.SetActive(false);
+            SecondViewVolume.SetActive(true);
             secondView.StartView();
         }
         else
         {
-            SecondViewCanvas.SetActive(false);
-            NormalViewCanvas.SetActive(true);
+            //SecondViewCanvas.SetActive(false);
+            //NormalViewCanvas.SetActive(true);
             isNormalView = true;
+            SecondViewVolume.SetActive(false);
+            NormalViewVolume.SetActive(true);
             secondView.StopView();
         }
     }
+
 
 }
