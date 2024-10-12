@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: teapot
   m_EditorClassIdentifier: 
   objectName: Teapot
-  objectDescription: '"The Doctor siad I was ready to mama and papa..."'
+  objectDescription: '"The Doctor siad I''m old enough now..."'
   objectModel: {fileID: 5445548825922953960, guid: 68f05698cf221414bae6d7a6981197fd,
     type: 3}

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: RedSyrup
   m_EditorClassIdentifier: 
   objectName: Red Syrup
-  objectDescription: '"I hate to take this whenever I''m sick, it tastes horrible!
-    Although I feel better right after..."'
+  objectDescription: '"If they see me touching this, I''ll get in big trouble."'
   objectModel: {fileID: -1918893057888281778, guid: 68f05698cf221414bae6d7a6981197fd,
     type: 3}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PillBottle
   m_EditorClassIdentifier: 
   objectName: Pill Bottle
-  objectDescription: '"If they see me touching this, I''ll get in big trouble."'
+  objectDescription: '"These supplements are supposed to makse me feel better after
+    they take my blood. My sister also takes it..."'
   objectModel: {fileID: -2894096938872660180, guid: 1ffb6e2d449ac5d45b8a05c7b3435d42,
     type: 3}

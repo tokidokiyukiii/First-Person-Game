@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2210603996f579148bbb64492b8094b4, type: 3}
   m_Name: Syringe
   m_EditorClassIdentifier: 
-  objectName: Syringe
+  objectName: Needle
   objectDescription: '"I hate it when my parents bring this out... But at least I
     get to eat mom''s food afterwards."'
   objectModel: {fileID: -8679921383154817045, guid: 566492389b2f54045bb7f563d77c428e,
