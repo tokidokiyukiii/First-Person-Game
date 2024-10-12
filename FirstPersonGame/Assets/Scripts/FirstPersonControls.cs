@@ -67,9 +67,7 @@ public class FirstPersonControls : MonoBehaviour
     public ObjectInteraction objectInteraction;
     public bool isShowing = false;
     public bool isInputEnabled = true;
-    public ThoughtCount thoughtCount;
-    public GameObject[] frontDoor;
-        
+    
     [Header("UI SETTINGS")]
     [Space(5)]
     public TextMeshProUGUI objectInfoText;
@@ -79,13 +77,6 @@ public class FirstPersonControls : MonoBehaviour
     private float healAmount = 0.5f;// Fill the health bar by this amount
     public TextMeshProUGUI doorOpenText;
     public TextMeshProUGUI doorCloseText;
-    public TextMeshProUGUI doorLockedText;
-    public TextMeshProUGUI thoughtText;
-    public TextMeshProUGUI keyText;
-    public TextMeshProUGUI writtenThoughtText;
-    public TextMeshProUGUI myThoughtText;
-    public GameObject ThoughtBackground;
-    public float duration = 10f;
     private bool hasShownMessage = false;
     public float objectRange = 20f;
 
@@ -95,8 +86,6 @@ public class FirstPersonControls : MonoBehaviour
     public bool isNormalView = true;
     public GameObject SecondViewCanvas;     // The UI panel to display item details
     public GameObject NormalViewCanvas;
-    public GameObject NormalViewVolume;
-    public GameObject SecondViewVolume;
 
     private void Awake()
     {
@@ -408,14 +397,9 @@ public class FirstPersonControls : MonoBehaviour
             {
                 // Start moving the door upwards
                 //StartCoroutine(RaiseDoor(hit.collider.gameObject));
-                
                 Door DoorOpen = hit.collider.GetComponent<Door>();
                 
-                if (DoorOpen.needsKey && !DoorOpen.hasUnlocked)
-                    doorLockedText.gameObject.SetActive(true);
-                
                 DoorOpen.ToggleDoor(transform);
-                doorLockedText.gameObject.SetActive(false);
             }
             else if (hit.collider.CompareTag("Info"))
             {
@@ -440,46 +424,9 @@ public class FirstPersonControls : MonoBehaviour
                     
                     }
                 }
-            }
-            else if (hit.collider.CompareTag("Thought"))
-            {
-                thoughtCount.AddThought();
-                Destroy(hit.collider.gameObject);
-                
-                Thoughts thoughts = hit.collider.gameObject.GetComponent<Thoughts>();
-                writtenThoughtText.text = thoughts.writtenThought;
-                myThoughtText.text = thoughts.myThought;
-                
-                StartCoroutine(ActivateForDuration());
-                
-            }
-            else if (hit.collider.CompareTag("Key"))
-            {
-                foreach (var door in frontDoor)
-                {
-                    Door openDoor = door.GetComponent<Door>();
-                    openDoor.hasKey = true;
-                    Destroy(hit.collider.gameObject);
-                }
                 
             }
         }
-    }
-    
-    private IEnumerator ActivateForDuration()
-    {
-        // Set the object to active
-        //writtenThoughtText.gameObject.SetActive(true);
-        //myThoughtText.gameObject.SetActive(true);
-        ThoughtBackground.SetActive(true);
-
-        // Wait for the specified duration
-        yield return new WaitForSeconds(duration);
-
-        // Set the object to inactive
-        //writtenThoughtText.gameObject.SetActive(false);
-        //myThoughtText.gameObject.SetActive(false);
-        ThoughtBackground.SetActive(false);
     }
 
     private IEnumerator RaiseDoor(GameObject door)
@@ -551,12 +498,6 @@ public class FirstPersonControls : MonoBehaviour
                     Debug.LogError("The object tagged as 'Drawer' or 'Door' is missing the 'Door' component.");
                 }
             }
-            else if (hit.collider.CompareTag("Thought"))
-            {
-                thoughtText.gameObject.SetActive(true);
-            }
-            else if (hit.collider.CompareTag("Key"))
-                keyText.gameObject.SetActive(true);
             else
             { 
                 // Hide the pick-up text if not looking at an object with info
@@ -564,8 +505,6 @@ public class FirstPersonControls : MonoBehaviour
                 doorOpenText.gameObject.SetActive(false);
                 doorCloseText.gameObject.SetActive(false);
                 objectInfoText.gameObject.SetActive(false);
-                thoughtText.gameObject.SetActive(false);
-                keyText.gameObject.SetActive(false);
             }
         }
         else
@@ -580,22 +519,18 @@ public class FirstPersonControls : MonoBehaviour
 
     private void ChangeView()
     {
-        if (isNormalView)
+        if (isNormalView == true)
         {
-            //NormalViewCanvas.SetActive(false);
-            //SecondViewCanvas.SetActive(true);
+            NormalViewCanvas.SetActive(false);
+            SecondViewCanvas.SetActive(true);
             isNormalView = false;
-            NormalViewVolume.SetActive(false);
-            SecondViewVolume.SetActive(true);
             secondView.StartView();
         }
         else
         {
-            //SecondViewCanvas.SetActive(false);
-            //NormalViewCanvas.SetActive(true);
+            SecondViewCanvas.SetActive(false);
+            NormalViewCanvas.SetActive(true);
             isNormalView = true;
-            SecondViewVolume.SetActive(false);
-            NormalViewVolume.SetActive(true);
             secondView.StopView();
         }
     }
