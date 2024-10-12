@@ -12,14 +12,17 @@ public class ThoughtCount : MonoBehaviour
     public TMP_Text thoughtCountText;
 
     public GameObject messagePanel; 
-    public TMP_Text messageText; 
+    public TMP_Text messageText;
 
-    public void AddThought(int value)
+    public GameObject key;
+
+    public void AddThought()
     {
-        thoughtCount += value;
+        thoughtCount++;
 
         if (thoughtCount >= 5)
         {
+            key.SetActive(true);
             ShowMessage("Go find the key on the table!");
         }
 
