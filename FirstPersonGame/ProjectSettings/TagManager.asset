@@ -11,10 +11,6 @@ TagManager:
   - Door
   - Info
   - Drawer
-  - bullet
-  - Thought
-  - Key
-  - Lantern
   layers:
   - Default
   - TransparentFX
