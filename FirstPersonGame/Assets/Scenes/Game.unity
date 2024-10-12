@@ -19777,7 +19777,7 @@ PrefabInstance:
     - target: {fileID: -7146521406498821007, guid: f5d1e457234dba24f874b27faf575ac2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5568371526223589888, guid: f5d1e457234dba24f874b27faf575ac2,
         type: 3}
@@ -19797,7 +19797,7 @@ PrefabInstance:
     - target: {fileID: -3271252902574693466, guid: f5d1e457234dba24f874b27faf575ac2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2045257923548263128, guid: f5d1e457234dba24f874b27faf575ac2,
         type: 3}
@@ -19844,6 +19844,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FRAMED_PAINTINGS
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f5d1e457234dba24f874b27faf575ac2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1038094573202692843, guid: f5d1e457234dba24f874b27faf575ac2,
         type: 3}
       propertyPath: m_IsActive
@@ -19877,7 +19882,7 @@ PrefabInstance:
     - target: {fileID: 6013847974148049622, guid: f5d1e457234dba24f874b27faf575ac2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 343.57
+      value: 354.1
       objectReference: {fileID: 0}
     - target: {fileID: 6013847974148049622, guid: f5d1e457234dba24f874b27faf575ac2,
         type: 3}
@@ -19887,7 +19892,7 @@ PrefabInstance:
     - target: {fileID: 6013847974148049622, guid: f5d1e457234dba24f874b27faf575ac2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -194.6
+      value: -193.2
       objectReference: {fileID: 0}
     - target: {fileID: 6013847974148049622, guid: f5d1e457234dba24f874b27faf575ac2,
         type: 3}
@@ -19937,7 +19942,7 @@ PrefabInstance:
     - target: {fileID: 8416272007918961125, guid: f5d1e457234dba24f874b27faf575ac2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8513859187771203891, guid: f5d1e457234dba24f874b27faf575ac2,
         type: 3}
@@ -40472,7 +40477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &163619378826971185
 GameObject:
   m_ObjectHideFlags: 0
@@ -41812,7 +41817,7 @@ Transform:
   m_GameObject: {fileID: 145992655543705732}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: -4.778151, y: -5.28, z: -0.08293533}
+  m_LocalPosition: {x: -0.12, y: -5.28, z: -0.08}
   m_LocalScale: {x: 0.080156505, y: 1, z: 0.91549903}
   m_ConstrainProportionsScale: 0
   m_Children: []
