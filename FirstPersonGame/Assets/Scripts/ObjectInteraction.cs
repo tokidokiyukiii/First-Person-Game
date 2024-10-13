@@ -11,8 +11,6 @@ public class ObjectInteraction : MonoBehaviour
     public FirstPersonControls firstPersonControls;
     public GameObject objectInfoCanvas;     // The UI panel to display item details
     public GameObject HUDCanvas;
-    public GameObject NormalViewCanvas;
-    public GameObject SecondViewCanvas;
     public TextMeshProUGUI objectNameText;            // UI Text for item name
     public TextMeshProUGUI objectDescriptionText;     // UI Text for item description
     //public Transform objectModelHolder;    // Empty GameObject where the item model will be displayed
@@ -28,8 +26,6 @@ public class ObjectInteraction : MonoBehaviour
 
         // Deactivate HUD
         HUDCanvas.SetActive(false);
-        NormalViewCanvas.SetActive(false);
-        SecondViewCanvas.SetActive(false);
         
         // Activate the UI panel and set the item details
         objectInfoCanvas.SetActive(true);
@@ -43,13 +39,6 @@ public class ObjectInteraction : MonoBehaviour
     {
         // Activate HUD
         HUDCanvas.SetActive(true);
-
-        if (firstPersonControls.isNormalView == true)
-        {
-            NormalViewCanvas.SetActive(true);
-        }
-        else
-            SecondViewCanvas.SetActive(true);
         
         // Deactivate the UI panel and destroy the model when not viewing the info of an object
         objectInfoCanvas.SetActive(false);

@@ -9,11 +9,12 @@ public class ThoughtCount : MonoBehaviour
     private int thoughtCount = 0;
     public int thoughtTotal = 5;
 
-    public TMP_Text thoughtCountText;
+    public TextMeshProUGUI thoughtCountText;
     
-    public TMP_Text messageText;
+    public TextMeshProUGUI keyText;
 
     public GameObject key;
+    public GameObject glowingKey;
 
     public void AddThought()
     {
@@ -22,18 +23,19 @@ public class ThoughtCount : MonoBehaviour
         if (thoughtCount >= thoughtTotal)
         {
             key.SetActive(true);
-            ShowMessage("Go find the key on the table!");
+            glowingKey.SetActive(true);
+            ShowMessage("Go find the key!");
         }
 
         UpdateUI(); 
     }
 
-    private void ShowMessage(string message)
+    public void ShowMessage(string message)
     {
         thoughtCountText.gameObject.SetActive(false);
-        messageText.gameObject.SetActive(true);
+        keyText.gameObject.SetActive(true);
         //countPanel.SetActive(false);
-        messageText.text = message; 
+        keyText.text = message; 
 
         // StartCoroutine(HideMessageAfterDelay(2f));
     }

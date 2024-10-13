@@ -6,11 +6,39 @@
   <component name="ChangeListManager">
     <list default="true" id="ee58ddc8-76b9-4c00-b5d4-bd37a1809121" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/Baked Normal Map.002.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/Baked Normal Map.002.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/Close Door.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/Close Door.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/Close Door.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/Close Door.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/Open Door.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/Open Door.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/Scurry.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/Scurry.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/Scurry.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/Scurry.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/Sliding Door Close.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/Sliding Door Close.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/Sliding Door Close.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/Sliding Door Close.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/Sliding Door Open.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/Sliding Door Open.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/Sliding Door Open.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/Sliding Door Open.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/close door.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/close door.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/keys drop.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/keys drop.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/open door.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/open door.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/sliding door close.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/sliding door close.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/sliding door open .wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Sounds/sliding door open .wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Medical Items/Materials/Syringe Metal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Medical Items/Materials/Syringe Metal.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PPInitialisation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PPInitialisation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Normal Volume PP Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Normal Volume PP Profile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Second Volume PP Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Second Volume PP Profile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/BrokenRadio.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/BrokenRadio.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EndGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EndGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ThoughtCount.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ThoughtCount.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Thoughts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Thoughts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Fonts/JMH Typewriter SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Fonts/JMH Typewriter SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +52,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectInteraction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PPInitialisation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -133,6 +162,7 @@
       <workItem from="1728652074773" duration="3647000" />
       <workItem from="1728745020117" duration="9151000" />
       <workItem from="1728769461919" duration="175000" />
+      <workItem from="1728831271759" duration="10659000" />
     </task>
     <servers />
   </component>

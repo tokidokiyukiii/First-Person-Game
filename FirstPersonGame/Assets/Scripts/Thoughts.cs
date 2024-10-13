@@ -6,4 +6,5 @@ public class Thoughts : MonoBehaviour
 {
     public string writtenThought;
     public string myThought;
+    public GameObject GlowingObject;
 }

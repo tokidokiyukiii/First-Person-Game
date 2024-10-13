@@ -6,8 +6,11 @@ public class EndGame : MonoBehaviour
 {
     public GameObject endCanvas;
     public GameObject HUDCanvas;
-    public GameObject SecondViewCanvas;
-    public GameObject NormalViewCanvas;
+    
+    public GameObject getOutSound;
+    public GameObject endSound;
+    public GameObject endMusic;
+    public GameObject sfxSound;
 
     public FirstPersonControls firstPersonControls;
     private void OnTriggerEnter(Collider other)
@@ -17,8 +20,11 @@ public class EndGame : MonoBehaviour
     
         // Disable Other Canvases
         HUDCanvas.SetActive(false);
-        SecondViewCanvas.SetActive(false);
-        NormalViewCanvas.SetActive(false);
+        
+        getOutSound.SetActive(false);
+        sfxSound.SetActive(false);
+        endSound.SetActive(true);
+        endMusic.SetActive(true);
     
         // Enable EndGame Canvas
         endCanvas.SetActive(true);

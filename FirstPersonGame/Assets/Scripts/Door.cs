@@ -27,7 +27,7 @@ public class Door : MonoBehaviour
     }*/
     
     public SoundManager soundManager;
-    public bool playsAudio = true;
+    public bool playsCreak = false;
 
     public bool isOpen = false;  // Track whether the door is open
     public bool isOpening = false;
@@ -72,26 +72,31 @@ public class Door : MonoBehaviour
         //doorCoroutine = StartCoroutine(RotateDoor(isOpen ? -targetRotation : targetRotation));
         //isOpen = !isOpen;  // Toggle the door state
 
-        if (needsKey && !hasKey && playsAudio)
+        /*if (needsKey && !hasKey && playsAudio)
         {
-            /*if (isOpen)
+            if (isOpen)
                 doorCloseText.gameObject.SetActive(false);
             else if (!isOpen)
                 doorOpenText.gameObject.SetActive(false);
             
-            doorLockedText.gameObject.SetActive(true);*/
+            doorLockedText.gameObject.SetActive(true);*
             if (playsAudio)
                 soundManager.PlaySFX("Door Locked");
             
             //doorLockedText.gameObject.SetActive(false);
             return;
+        }*/
+
+        if (needsKey && !hasKey)
+        {
+            soundManager.PlaySFX("Door Is Locked");
+            return;
         }
-            
+
         if (needsKey && hasKey && !hasUnlocked)
         {
             hasUnlocked = true;
-            if (playsAudio)
-                soundManager.PlaySFX("Open Lock");
+            soundManager.PlaySFX("Door Unlocking");
             justUnlocked = true;
         }
         
@@ -111,16 +116,18 @@ public class Door : MonoBehaviour
         float rotatedAmount = 0f;  // Track how much the door has rotated
         float rotationDirection = Mathf.Sign(rotationAmount);  // Determine rotation direction (1 for open, -1 for close)
         
-        if (isOpen && !isCabinet && playsAudio)
+        if (isOpen && !isCabinet)
             soundManager.PlaySFX("Close Door");
-        else if (!isOpen && playsAudio)
+        else if (!isOpen)
         {
             if (needsKey && !justUnlocked)
             {
                 justUnlocked = false;
             }
-            else if (!isCabinet)
-                soundManager.PlaySFX("Open Door");
+            else if (!isCabinet && !playsCreak)
+                soundManager.PlaySFX("Open Door Normal");
+            else if (!isCabinet && playsCreak)
+                soundManager.PlaySFX("Open Door Creak");
         }
         
         while (Mathf.Abs(rotatedAmount) < Mathf.Abs(rotationAmount))
@@ -161,9 +168,9 @@ public class Door : MonoBehaviour
         float movedAmount = 0f;  // Track how much the door has moved
         float slidingDirectionSign = Mathf.Sign(slidingAmount);  // Determine sliding direction (1 for open, -1 for close)
 
-        if (isOpen && playsAudio)
+        if (isOpen)
             soundManager.PlaySFX("Sliding Door Close");
-        else if (!isOpen && playsAudio)
+        else if (!isOpen)
         {
             if (needsKey && !justUnlocked)
             {

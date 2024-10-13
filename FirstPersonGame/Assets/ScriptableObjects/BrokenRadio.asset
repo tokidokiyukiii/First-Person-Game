@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BrokenRadio
   m_EditorClassIdentifier: 
   objectName: Broken Radio
-  objectDescription: '"So sad I cant hear fun stories from the kind big sister anymore"'
+  objectDescription: '"I miss listening to stories on this..."'
   objectModel: {fileID: -8300725705463323907, guid: 68f05698cf221414bae6d7a6981197fd,
     type: 3}

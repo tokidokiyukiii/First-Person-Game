@@ -68,7 +68,9 @@ public class FirstPersonControls : MonoBehaviour
     public bool isShowing = false;
     public bool isInputEnabled = true;
     public ThoughtCount thoughtCount;
-    public GameObject[] frontDoor;
+    public GameObject getOutSound;
+    public SoundManager soundManager;
+    private bool isShowingMessage;
         
     [Header("UI SETTINGS")]
     [Space(5)]
@@ -86,6 +88,7 @@ public class FirstPersonControls : MonoBehaviour
     public TextMeshProUGUI myThoughtText;
     public GameObject ThoughtBackground;
     public GameObject HUDCanvas;
+    public GameObject messagesObject;
     public float duration = 10f;
     private bool hasShownMessage = false;
     public float objectRange = 20f;
@@ -94,10 +97,14 @@ public class FirstPersonControls : MonoBehaviour
     [Space(5)]
     public SecondView secondView;
     public bool isNormalView = true;
-    public GameObject SecondViewCanvas;     // The UI panel to display item details
-    public GameObject NormalViewCanvas;
+    public GameObject NormalViewEye;
+    public GameObject SecondViewEye;
     public GameObject NormalViewVolume;
     public GameObject SecondViewVolume;
+    public GameObject UIViewVolume;
+    public GameObject ThoughtCanvas;
+    public GameObject GlowingObjects;
+    public GameObject NormalObjects;
 
     private void Awake()
     {
@@ -414,7 +421,6 @@ public class FirstPersonControls : MonoBehaviour
 
                 if (DoorOpen.needsKey && !DoorOpen.hasKey)
                     StartCoroutine(ActivateLock());
-                    //doorLockedText.gameObject.SetActive(true);
                 
                 DoorOpen.ToggleDoor(transform);
                 //doorLockedText.gameObject.SetActive(false);
@@ -424,49 +430,75 @@ public class FirstPersonControls : MonoBehaviour
                 //string objectName = hit.collider.name;
                 Debug.Log("Showing info");
                 ObjectData currentObjectData = hit.collider.GetComponent<ObjectDataHolder>()?.objectData;
-                if (currentObjectData != null)
+                if (currentObjectData != null && !isShowingMessage)
                 {
                     if (isShowing == false)
                     {
+                        HUDCanvas.SetActive(false);
+                        ThoughtCanvas.SetActive(false);
+                        
+                        NormalViewVolume.SetActive(false);
+                        SecondViewVolume.SetActive(false);
+                        UIViewVolume.SetActive(true);
+                        
                         isInputEnabled = false;
                         isShowing = true;
+                        
                         objectInfoText.gameObject.SetActive(false);
                         objectInteraction.ShowObjectDetails(currentObjectData);
                     }
                     else
                     {
+                        HUDCanvas.SetActive(true);
+                        ThoughtCanvas.SetActive(true);
+
+                        if (isNormalView)
+                        {
+                            UIViewVolume.SetActive(false);
+                            NormalViewVolume.SetActive(true);
+                        }
+                        else
+                        {
+                            UIViewVolume.SetActive(false);
+                            SecondViewVolume.SetActive(true);
+                        }
+                        
                         isInputEnabled = true;
                         isShowing = false;
                         objectInfoText.gameObject.SetActive(true);
                         objectInteraction.HideObjectDetails();
-                    
                     }
                 }
             }
             else if (hit.collider.CompareTag("Thought"))
             {
-                thoughtCount.AddThought();
-                Destroy(hit.collider.gameObject);
-                
-                Thoughts thoughts = hit.collider.gameObject.GetComponent<Thoughts>();
-                writtenThoughtText.text = thoughts.writtenThought;
-                myThoughtText.text = thoughts.myThought;
-                
-                //ThoughtBackground.SetActive(true);
-                
-                StartCoroutine(ActivateForDuration());
-                
-                //ThoughtBackground.SetActive(false);
+                if (!isShowingMessage)
+                {
+                    Thoughts thoughts = hit.collider.gameObject.GetComponent<Thoughts>();
+                    thoughtCount.AddThought();
+                    
+                    soundManager.PlaySFX("Thought Pickup");
+
+                    Destroy(thoughts.GlowingObject);
+                    Destroy(hit.collider.gameObject);
+
+                    writtenThoughtText.text = thoughts.writtenThought;
+                    myThoughtText.text = thoughts.myThought;
+
+                    //ThoughtBackground.SetActive(true);
+
+                    StartCoroutine(ActivateForDuration());
+
+                    //ThoughtBackground.SetActive(false);
+                }
             }
             else if (hit.collider.CompareTag("Key"))
             {
-                foreach (var door in frontDoor)
-                {
-                    Door openDoor = door.GetComponent<Door>();
-                    openDoor.hasKey = true;
-                    Destroy(hit.collider.gameObject);
-                }
-                
+                Keys keys = hit.collider.gameObject.GetComponent<Keys>();
+                soundManager.PlaySFX("Key Pickup");
+                keys.UnlockDoor();
+                thoughtCount.ShowMessage("GET OUT!");
+                getOutSound.SetActive(true);
             }
         }
     }
@@ -475,8 +507,10 @@ public class FirstPersonControls : MonoBehaviour
     {
         // Set the object to active
         //display.gameObject.SetActive(true);
+
+        isShowingMessage = true;
         
-        HUDCanvas.SetActive(false);
+        messagesObject.SetActive(false);
         ThoughtBackground.SetActive(true);
         writtenThoughtText.gameObject.SetActive(true);
 
@@ -489,12 +523,14 @@ public class FirstPersonControls : MonoBehaviour
         
         myThoughtText.gameObject.SetActive(false);
         ThoughtBackground.SetActive(false);
-        HUDCanvas.SetActive(true);
+        messagesObject.SetActive(true);
+
+        isShowingMessage = false;
     }
 
     private IEnumerator ActivateLock()
     {
-        HUDCanvas.SetActive(false);
+        messagesObject.SetActive(false);
         ThoughtBackground.SetActive(true);
         doorLockedText.gameObject.SetActive(true);
         
@@ -502,7 +538,7 @@ public class FirstPersonControls : MonoBehaviour
 
         doorLockedText.gameObject.SetActive(false);
         ThoughtBackground.SetActive(false);
-        HUDCanvas.SetActive(true);
+        messagesObject.SetActive(true);
     }
 
     private IEnumerator RaiseDoor(GameObject door)
@@ -603,25 +639,39 @@ public class FirstPersonControls : MonoBehaviour
 
     private void ChangeView()
     {
-        if (isNormalView)
+        if (!isShowing)
         {
-            //NormalViewCanvas.SetActive(false);
-            //SecondViewCanvas.SetActive(true);
-            isNormalView = false;
-            NormalViewVolume.SetActive(false);
-            SecondViewVolume.SetActive(true);
-            secondView.StartView();
-        }
-        else
-        {
-            //SecondViewCanvas.SetActive(false);
-            //NormalViewCanvas.SetActive(true);
-            isNormalView = true;
-            SecondViewVolume.SetActive(false);
-            NormalViewVolume.SetActive(true);
-            secondView.StopView();
+            if (isNormalView)
+            {
+                isNormalView = false;
+                
+                NormalViewVolume.SetActive(false);
+                SecondViewVolume.SetActive(true);
+                
+                NormalObjects.SetActive(false);
+                GlowingObjects.SetActive(true);
+                
+                NormalViewEye.SetActive(false);
+                SecondViewEye.SetActive(true);
+                
+                secondView.StartView();
+            }
+            else
+            {
+                isNormalView = true;
+                
+                SecondViewVolume.SetActive(false);
+                NormalViewVolume.SetActive(true);
+                
+                GlowingObjects.SetActive(false);
+                NormalObjects.SetActive(true);
+                
+                SecondViewEye.SetActive(false);
+                NormalViewEye.SetActive(true);
+                
+                secondView.StopView();
+            }
         }
     }
-
-
+    
 }
