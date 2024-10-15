@@ -11,6 +11,14 @@ public class UIManager : MonoBehaviour
     public GameObject[] UIElements;
     public GameObject initialButton;
     
+    public bool isGame = false;
+
+    void Start()
+    {
+        if (isGame)
+            Cursor.visible = false;
+    }
+    
     // Method to rotate the camera left by 90 degrees
     public void RotateCameraLeftBy90Degrees()
     {

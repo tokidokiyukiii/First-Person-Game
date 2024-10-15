@@ -44,7 +44,7 @@ public class ThoughtCount : MonoBehaviour
     {
         if (thoughtCountText != null)
         {
-            thoughtCountText.text = "Thoughts: " + thoughtCount + "/ 5";
+            thoughtCountText.text = "Thoughts: " + thoughtCount + " / 5";
         }
     }
 

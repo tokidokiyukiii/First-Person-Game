@@ -24,6 +24,8 @@ public class ObjectInteraction : MonoBehaviour
         // Search for the item in the database based on the item's name
         //ObjectInfo? newObject = objectData.objects.Find(i => i.objectName == itemName);
 
+        Cursor.visible = true;
+        
         // Deactivate HUD
         HUDCanvas.SetActive(false);
         
@@ -37,6 +39,8 @@ public class ObjectInteraction : MonoBehaviour
 
     public void HideObjectDetails()
     {
+        Cursor.visible = false;
+        
         // Activate HUD
         HUDCanvas.SetActive(true);
         
