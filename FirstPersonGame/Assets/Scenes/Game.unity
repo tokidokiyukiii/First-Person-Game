@@ -47492,7 +47492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2127066312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47513,7 +47513,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127066311}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e70be92834f43b844a783dea82c975e6, type: 3}
   m_Name: 
@@ -47589,7 +47589,7 @@ CharacterController:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
@@ -47660,8 +47660,7 @@ Transform:
   m_LocalPosition: {x: 82.27, y: -6.41, z: 73.16}
   m_LocalScale: {x: 6, y: 8, z: 6}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6371167902281398560}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2127066318
@@ -57306,14 +57305,14 @@ Transform:
   m_GameObject: {fileID: 5990139206816113562}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05166626, y: -1.0512497, z: -0.08166631}
-  m_LocalScale: {x: 0.017, y: 0.012750001, z: 0.017}
+  m_LocalPosition: {x: 82.579994, y: -14.819998, z: 72.670006}
+  m_LocalScale: {x: 0.102000006, y: 0.102000006, z: 0.102000006}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 28213326}
   - {fileID: 5133769384176896416}
   - {fileID: 7398139981702704256}
-  - {fileID: 28213326}
-  m_Father: {fileID: 2127066317}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6371167902281398561
 Animator:
@@ -57373,7 +57372,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5990139206816113562}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e70be92834f43b844a783dea82c975e6, type: 3}
   m_Name: 
@@ -57449,12 +57448,12 @@ CharacterController:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 1
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -62959,6 +62958,7 @@ MeshCollider:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 6371167902281398560}
   - {fileID: 2127066317}
   - {fileID: 239502382}
   - {fileID: 1126475104}
