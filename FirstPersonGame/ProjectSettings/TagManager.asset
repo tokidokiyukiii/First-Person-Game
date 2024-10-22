@@ -15,6 +15,7 @@ TagManager:
   - Thought
   - Key
   - Ladder
+  - Enemy
   layers:
   - Default
   - TransparentFX

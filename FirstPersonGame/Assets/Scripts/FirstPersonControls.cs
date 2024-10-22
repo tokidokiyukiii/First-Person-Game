@@ -92,6 +92,7 @@ public class FirstPersonControls : MonoBehaviour
     public float duration = 10f;
     private bool hasShownMessage = false;
     public float objectRange = 20f;
+    public EnemyAI enemyAI;
 
     [Header("CHANGE VIEWS")] 
     [Space(5)]
@@ -610,6 +611,10 @@ public class FirstPersonControls : MonoBehaviour
                     Debug.LogError("The object tagged as 'Drawer' or 'Door' is missing the 'Door' component.");
                 }
             }
+            else if (hit.collider.CompareTag("Enemy"))
+            {
+                enemyAI.isSeen = true;
+            }
             else if (hit.collider.CompareTag("Thought"))
             {
                 thoughtText.gameObject.SetActive(true);
@@ -625,6 +630,7 @@ public class FirstPersonControls : MonoBehaviour
                 objectInfoText.gameObject.SetActive(false);
                 thoughtText.gameObject.SetActive(false);
                 keyText.gameObject.SetActive(false);
+                enemyAI.isSeen = false;
             }
         }
         else
@@ -634,6 +640,9 @@ public class FirstPersonControls : MonoBehaviour
             doorOpenText.gameObject.SetActive(false);
             doorCloseText.gameObject.SetActive(false);
             objectInfoText.gameObject.SetActive(false);
+            thoughtText.gameObject.SetActive(false);
+            keyText.gameObject.SetActive(false);
+            enemyAI.isSeen = false;
         }
     }
 
