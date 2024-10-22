@@ -17,6 +17,7 @@ public class EndGame : MonoBehaviour
     {
         // Disable player movement
         firstPersonControls.isInputEnabled = false;
+        Cursor.visible = true;
     
         // Disable Other Canvases
         HUDCanvas.SetActive(false);

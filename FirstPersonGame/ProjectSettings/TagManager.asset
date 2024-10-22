@@ -26,9 +26,9 @@ TagManager:
   - Ground
   - ObjectView
   - PP
-  - 
-  - 
-  - 
+  - Wall
+  - Door
+  - Player
   - 
   - 
   - 

@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -92,7 +93,6 @@ public class FirstPersonControls : MonoBehaviour
     public float duration = 10f;
     private bool hasShownMessage = false;
     public float objectRange = 20f;
-    public EnemyAI enemyAI;
 
     [Header("CHANGE VIEWS")] 
     [Space(5)]
@@ -106,6 +106,12 @@ public class FirstPersonControls : MonoBehaviour
     public GameObject ThoughtCanvas;
     public GameObject GlowingObjects;
     public GameObject NormalObjects;
+    
+    [Header("ENEMY CHECK")] 
+    [Space(5)]
+    public EnemyAI enemyAI;
+    public float enemyRange = 10000f;
+    public Camera playerCheckCamera;
 
     private void Awake()
     {
@@ -157,12 +163,13 @@ public class FirstPersonControls : MonoBehaviour
 
     private void Update()
     {
-        if (isInputEnabled == true)
+        if (isInputEnabled)
         {
             // Call Move and LookAround methods every frame to handle player movement and camera rotation
             Move();
             LookAround();
             ApplyGravity();
+            CheckForEnemy();
             CheckForObject();
         }
     }
@@ -611,10 +618,6 @@ public class FirstPersonControls : MonoBehaviour
                     Debug.LogError("The object tagged as 'Drawer' or 'Door' is missing the 'Door' component.");
                 }
             }
-            else if (hit.collider.CompareTag("Enemy"))
-            {
-                enemyAI.isSeen = true;
-            }
             else if (hit.collider.CompareTag("Thought"))
             {
                 thoughtText.gameObject.SetActive(true);
@@ -630,7 +633,6 @@ public class FirstPersonControls : MonoBehaviour
                 objectInfoText.gameObject.SetActive(false);
                 thoughtText.gameObject.SetActive(false);
                 keyText.gameObject.SetActive(false);
-                enemyAI.isSeen = false;
             }
         }
         else
@@ -642,8 +644,130 @@ public class FirstPersonControls : MonoBehaviour
             objectInfoText.gameObject.SetActive(false);
             thoughtText.gameObject.SetActive(false);
             keyText.gameObject.SetActive(false);
-            enemyAI.isSeen = false;
         }
+    }
+
+    private void CheckForEnemy()
+    {
+        /*Ray enemyRay = new Ray(playerCamera.position, playerCamera.forward);
+        RaycastHit enemyHit;
+
+        if (Physics.Raycast(enemyRay, out enemyHit, enemyRange))
+        {
+            if (enemyHit.collider.CompareTag("Enemy"))
+            {
+                //EnemyAI enemyAI = enemyHit.collider.GetComponent<EnemyAI>();
+
+                if (enemyAI != null)
+                {
+                    Vector3 enemyViewportPos = playerCheckCamera.WorldToViewportPoint(enemyHit.collider.transform.position);
+
+                    // If the enemy is within the screen boundaries (not behind the player)
+                    if (enemyViewportPos.z > 0 && enemyViewportPos.x > 0 && enemyViewportPos.x < 1 &&
+                        enemyViewportPos.y > 0 && enemyViewportPos.y < 1)
+                    {
+                        enemyAI.isSeen = true; // Player is looking at the enemy
+                        Debug.Log("Enemy is seen");
+                    }
+                    else
+                    {
+                        enemyAI.isSeen = false; // Enemy is not visible
+                        Debug.Log("Enemy is not in viewport");
+                    }
+                }
+                else
+                {
+                    Debug.Log("No EnemyAI component found");
+                }
+            }
+            else
+            {
+                Debug.Log("Hit something else: " + enemyHit.collider.name);
+                enemyAI.isSeen = false;
+            }
+        }
+        else
+        {
+            // If the ray did not hit anything
+            if (enemyAI != null)
+            {
+                enemyAI.isSeen = false; // Reset isSeen if no enemy hit
+                Debug.Log("No enemy hit");
+            }
+        }*/
+        
+        Collider[] enemiesInRange = Physics.OverlapSphere(playerCamera.transform.position, enemyRange);
+
+        foreach (Collider enemyCollider in enemiesInRange)
+        {
+            if (enemyCollider.CompareTag("Enemy"))
+            {
+                // Get the EnemyAI script from the enemy object
+                EnemyAI enemyAI = enemyCollider.GetComponent<EnemyAI>();
+
+                if (enemyAI != null)
+                {
+                    // Check if the enemy is within the camera's field of view (anywhere on the screen)
+                    Vector3 enemyViewportPos = playerCheckCamera.WorldToViewportPoint(enemyCollider.transform.position);
+
+                    // If the enemy is within the screen boundaries (not behind the player or out of view)
+                    if (enemyViewportPos.z > 0 && enemyViewportPos.x > 0 && enemyViewportPos.x < 1 &&
+                        enemyViewportPos.y > 0 && enemyViewportPos.y < 1)
+                    {
+                        Debug.Log("Looking at enemy");
+                        enemyAI.isSeen = true;
+                    }
+                    else
+                        enemyAI.isSeen = false;
+                }
+            }
+        }
+        
+        /*Collider[] enemiesInRange = Physics.OverlapSphere(playerCamera.position, enemyRange);
+
+        foreach (Collider enemyCollider in enemiesInRange)
+        {
+            if (enemyCollider.CompareTag("Enemy"))
+            {
+                // Get the EnemyAI script from the enemy object
+                EnemyAI enemyAI = enemyCollider.GetComponent<EnemyAI>();
+
+                if (enemyAI != null)
+                {
+                    // Step 1: Check if enemy is within the camera's field of view (anywhere on the screen)
+                    Vector3 enemyViewportPos = playerCheckCamera.WorldToViewportPoint(enemyCollider.transform.position);
+
+                    // If enemy is in front of the camera and within the screen boundaries (not behind the player or out of view)
+                    if (enemyViewportPos.z > 0 && enemyViewportPos.x > 0 && enemyViewportPos.x < 1 && enemyViewportPos.y > 0 && enemyViewportPos.y < 1)
+                    {
+                        // Step 2: Perform a raycast to check for obstacles between player and enemy
+                        Vector3 directionToEnemy = enemyCollider.transform.position - playerCamera.position;
+
+                        // Raycast to check if anything is blocking the view between the player and the enemy
+                        if (Physics.Raycast(playerCamera.position, directionToEnemy, out RaycastHit hit, enemyRange))
+                        {
+                            if (hit.collider.CompareTag("Enemy"))
+                            {
+                                // Enemy is visible with no obstacles in between
+                                enemyAI.isSeen = true;
+                                Debug.Log("Enemy is seen: " + enemyCollider.name);
+                            }
+                            else
+                            {
+                                // There is an obstacle between the player and the enemy
+                                enemyAI.isSeen = false;
+                                Debug.Log("Enemy is obscured by: " + hit.collider.name);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // Enemy is not in the camera's field of view
+                        enemyAI.isSeen = false;
+                    }
+                }
+            }
+        }*/
     }
 
     private void ChangeView()
