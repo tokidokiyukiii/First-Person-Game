@@ -63,6 +63,7 @@ public class EnemyAI : MonoBehaviour
                     //Change to Patrol Speed and Acceleration
                     agent.speed = 10f;
                     agent.acceleration = 5f;
+                    agent.stoppingDistance = 0f;
                 
                     Patrol();
                 }
@@ -71,10 +72,16 @@ public class EnemyAI : MonoBehaviour
                     //Change to Chase Speed and Acceleration
                     agent.speed = 30f;
                     agent.acceleration = 20f;
+                    agent.stoppingDistance = 10f;
             
                     ChasePlayer();
                 }
             }
+        }
+        else if (!firstPersonControls.isInputEnabled)
+        {
+            agent.isStopped = true; 
+            agent.velocity = Vector3.zero;
         }
         
     }

@@ -112,6 +112,7 @@ public class FirstPersonControls : MonoBehaviour
     public EnemyAI enemyAI;
     public float enemyRange = 10000f;
     public Camera playerCheckCamera;
+    [SerializeField] private LayerMask raycastIgnoreLayers;
 
     private void Awake()
     {
@@ -696,7 +697,7 @@ public class FirstPersonControls : MonoBehaviour
             }
         }*/
         
-        Collider[] enemiesInRange = Physics.OverlapSphere(playerCamera.transform.position, enemyRange);
+        /*Collider[] enemiesInRange = Physics.OverlapSphere(playerCamera.transform.position, enemyRange);
 
         foreach (Collider enemyCollider in enemiesInRange)
         {
@@ -721,53 +722,45 @@ public class FirstPersonControls : MonoBehaviour
                         enemyAI.isSeen = false;
                 }
             }
-        }
+        }*/
         
-        /*Collider[] enemiesInRange = Physics.OverlapSphere(playerCamera.position, enemyRange);
+        Collider[] enemiesInRange = Physics.OverlapSphere(playerCamera.position, enemyRange);
 
         foreach (Collider enemyCollider in enemiesInRange)
         {
             if (enemyCollider.CompareTag("Enemy"))
             {
-                // Get the EnemyAI script from the enemy object
                 EnemyAI enemyAI = enemyCollider.GetComponent<EnemyAI>();
 
                 if (enemyAI != null)
                 {
-                    // Step 1: Check if enemy is within the camera's field of view (anywhere on the screen)
                     Vector3 enemyViewportPos = playerCheckCamera.WorldToViewportPoint(enemyCollider.transform.position);
 
-                    // If enemy is in front of the camera and within the screen boundaries (not behind the player or out of view)
+                    // If enemy is in the camera's view
                     if (enemyViewportPos.z > 0 && enemyViewportPos.x > 0 && enemyViewportPos.x < 1 && enemyViewportPos.y > 0 && enemyViewportPos.y < 1)
                     {
-                        // Step 2: Perform a raycast to check for obstacles between player and enemy
                         Vector3 directionToEnemy = enemyCollider.transform.position - playerCamera.position;
 
-                        // Raycast to check if anything is blocking the view between the player and the enemy
-                        if (Physics.Raycast(playerCamera.position, directionToEnemy, out RaycastHit hit, enemyRange))
+                        // Perform a raycast to check for obstacles, ignoring specific layers
+                        if (Physics.Raycast(playerCamera.position, directionToEnemy, out RaycastHit hit, enemyRange, ~raycastIgnoreLayers))
                         {
                             if (hit.collider.CompareTag("Enemy"))
                             {
-                                // Enemy is visible with no obstacles in between
-                                enemyAI.isSeen = true;
-                                Debug.Log("Enemy is seen: " + enemyCollider.name);
+                                enemyAI.isSeen = true;  // Enemy is directly visible
                             }
                             else
                             {
-                                // There is an obstacle between the player and the enemy
-                                enemyAI.isSeen = false;
-                                Debug.Log("Enemy is obscured by: " + hit.collider.name);
+                                enemyAI.isSeen = false;  // Something is blocking the view
                             }
                         }
                     }
                     else
                     {
-                        // Enemy is not in the camera's field of view
-                        enemyAI.isSeen = false;
+                        enemyAI.isSeen = false;  // Enemy is out of the camera's view
                     }
                 }
             }
-        }*/
+        }
     }
 
     private void ChangeView()
