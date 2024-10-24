@@ -52,6 +52,8 @@ public class Door : MonoBehaviour
 
     private Coroutine doorCoroutine = null;  // Store reference to the coroutine
 
+    public float triggerDoorRotation;
+
     void Start()
     {
         // Store the original rotation and position of the door
@@ -60,7 +62,7 @@ public class Door : MonoBehaviour
     }
 
     // Method to toggle door state
-    public void ToggleDoor(Transform playerTransform)
+    public void ToggleDoor()
     {
         // If the door is currently animating, stop the coroutine
         if (doorCoroutine != null)

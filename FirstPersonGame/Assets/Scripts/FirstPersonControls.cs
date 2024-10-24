@@ -431,7 +431,7 @@ public class FirstPersonControls : MonoBehaviour
                 if (DoorOpen.needsKey && !DoorOpen.hasKey)
                     StartCoroutine(ActivateLock());
                 
-                DoorOpen.ToggleDoor(transform);
+                DoorOpen.ToggleDoor();
                 //doorLockedText.gameObject.SetActive(false);
             }
             else if (hit.collider.CompareTag("Info"))
