@@ -7,4 +7,7 @@ public class Thoughts : MonoBehaviour
     public string writtenThought;
     public string myThought;
     public GameObject GlowingObject;
+    public bool enemyMove = false;
+    public bool openDoor;
+    public Door door;
 }

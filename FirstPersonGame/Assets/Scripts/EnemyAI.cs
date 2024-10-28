@@ -19,7 +19,16 @@ public class EnemyAI : MonoBehaviour
     public float walkPointRange;
     
     [SerializeField] private Transform[] waypoints;
+    
+    [SerializeField] private Transform[] ffWaypoints;
+    [SerializeField] private Transform[] sfWaypoints;
     public Transform currentWaypoint;
+
+    public bool isOnFirst = false;
+    public Transform FFWaypoint;
+
+    public bool isOnSecond = true;
+    public Transform SFWaypoint;
     
     //States
     public float sightRange;
@@ -29,61 +38,61 @@ public class EnemyAI : MonoBehaviour
 
     public FirstPersonControls firstPersonControls;
 
+    public bool canEnemyMove = false;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.enabled = false;
         ChooseRandomWaypoint();
     }
 
     void Update()
     {
-        /*if (!isSeen)
-            agent.SetDestination(player.position);
-        else
+        if (canEnemyMove)
         {
-            agent.ResetPath();
-        }*/
-
-        if (firstPersonControls.isInputEnabled)
-        {
-            //Check for sight and attack range
-            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-
-            if (isSeen)
+            agent.enabled = true;
+            
+            if (firstPersonControls.isInputEnabled)
             {
-                agent.isStopped = true; 
-                agent.velocity = Vector3.zero;
-                //agent.ResetPath();
-            }
-            else
-            {
-                agent.isStopped = false;
-                if (!playerInSightRange)
+                //Check for sight and attack range
+                playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+
+                if (isSeen)
                 {
-                    //Change to Patrol Speed and Acceleration
-                    agent.speed = 10f;
-                    agent.acceleration = 5f;
-                    agent.stoppingDistance = 0f;
-                
-                    Patrol();
+                    agent.isStopped = true; 
+                    agent.velocity = Vector3.zero;
+                    //agent.ResetPath();
                 }
                 else
                 {
-                    //Change to Chase Speed and Acceleration
-                    agent.speed = 30f;
-                    agent.acceleration = 20f;
-                    agent.stoppingDistance = 10f;
+                    agent.isStopped = false;
+                    if (!playerInSightRange)
+                    {
+                        //Change to Patrol Speed and Acceleration
+                        agent.speed = 10f;
+                        agent.acceleration = 5f;
+                        agent.stoppingDistance = 0f;
+                
+                        Patrol();
+                    }
+                    else
+                    {
+                        //Change to Chase Speed and Acceleration
+                        agent.speed = 30f;
+                        agent.acceleration = 20f;
+                        agent.stoppingDistance = 10f;
             
-                    ChasePlayer();
+                        ChasePlayer();
+                    }
                 }
             }
+            else if (!firstPersonControls.isInputEnabled)
+            {
+                agent.isStopped = true; 
+                agent.velocity = Vector3.zero;
+            }
         }
-        else if (!firstPersonControls.isInputEnabled)
-        {
-            agent.isStopped = true; 
-            agent.velocity = Vector3.zero;
-        }
-        
     }
 
     private void Patrol()
@@ -110,38 +119,46 @@ public class EnemyAI : MonoBehaviour
         
         //Debug.Log("Total waypoints: " + waypoints.Length);
 
-        int randomIndex = UnityEngine.Random.Range(0, waypoints.Length);
-        currentWaypoint = waypoints[randomIndex];
-    }
-    
-    private void Patrolling()
-    {
-        if (!walkPointSet) 
-            SearchWalkPoint();
-
-        if (walkPointSet)
-            agent.SetDestination(walkPoint);
-
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        if (distanceToWalkPoint.magnitude < 1f)
-            walkPointSet = false;
-    }
-
-    private void SearchWalkPoint()
-    {
-        //Calculate random point in range
-        //float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomZ = UnityEngine.Random.Range(-walkPointRange, walkPointRange);
-        float randomX = UnityEngine.Random.Range(-walkPointRange, walkPointRange);
-
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-            walkPointSet = true;
+        if (isOnFirst)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, ffWaypoints.Length);
+            currentWaypoint = ffWaypoints[randomIndex];
+        }
+        else if (isOnSecond)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, sfWaypoints.Length);
+            currentWaypoint = sfWaypoints[randomIndex];
+        }
+        
+        //int randomIndex = UnityEngine.Random.Range(0, waypoints.Length);
+        //currentWaypoint = waypoints[randomIndex];
     }
     
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+    }
+
+    public void MoveFloors(int floor)
+    {
+        if (canEnemyMove)
+        {
+            agent.enabled = false;
+            
+            if (floor == 1 && !isOnFirst)
+            {
+                isOnFirst = true;
+                transform.position = FFWaypoint.position;
+                isOnSecond = false;
+            }
+            else if (floor == 2 && !isOnSecond)
+            {
+                isOnSecond = true;
+                transform.position = SFWaypoint.position;
+                isOnFirst = false;
+            }
+            
+            agent.enabled = true;
+        }
     }
 }

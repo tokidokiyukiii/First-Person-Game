@@ -106,13 +106,15 @@ public class FirstPersonControls : MonoBehaviour
     public GameObject ThoughtCanvas;
     public GameObject GlowingObjects;
     public GameObject NormalObjects;
-    
-    [Header("ENEMY CHECK")] 
-    [Space(5)]
+
+    [Header("ENEMY CHECK")] [Space(5)] 
+    public Transform enemy;
     public EnemyAI enemyAI;
     public float enemyRange = 10000f;
     public Camera playerCheckCamera;
     [SerializeField] private LayerMask raycastIgnoreLayers;
+    public bool isFirst = true;
+    public bool isSecond = false;
 
     private void Awake()
     {
@@ -146,7 +148,7 @@ public class FirstPersonControls : MonoBehaviour
         playerInput.Player.PickUp.performed += ctx => PickUpObject(); // Call the PickUpObject method when pick-up input is performed
         
         // Subscribe to the pick-up input event
-        playerInput.Player.Pull.performed += ctx => PullObject(); // Call the PullObject method when grab input is performed
+        //playerInput.Player.Pull.performed += ctx => PullObject(); // Call the PullObject method when grab input is performed
         
         // Subscribe to the pick-up input event
         playerInput.Player.Rotate.performed += ctx => RotateObject(); // Call the RotateObject method when rotate input is performed
@@ -334,11 +336,6 @@ public class FirstPersonControls : MonoBehaviour
         }
     }*/
 
-    public void PullObject()
-    {
-        
-    }
-
     public void RotateObject()
     {
         // Perform a raycast from the camera's position forward
@@ -497,6 +494,17 @@ public class FirstPersonControls : MonoBehaviour
                     //ThoughtBackground.SetActive(true);
 
                     StartCoroutine(ActivateForDuration());
+
+                    if (thoughts.enemyMove)
+                    {
+                        enemy.gameObject.SetActive(true);
+                        enemyAI.canEnemyMove = true;
+                    }
+
+                    if (thoughts.openDoor)
+                    {
+                        thoughts.door.needsKey = false;
+                    }
 
                     //ThoughtBackground.SetActive(false);
                 }

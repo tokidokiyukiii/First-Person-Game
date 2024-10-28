@@ -111,6 +111,38 @@ public class Door : MonoBehaviour
             doorCoroutine = StartCoroutine(RotateDoor(isOpen ? -targetRotation : targetRotation));
         }
     }
+    
+    public void ToggleDoor(float? customTargetRotation = null)
+    {
+        if (doorCoroutine != null)
+        {
+            StopCoroutine(doorCoroutine);
+        }
+        
+        if (needsKey && !hasKey)
+        {
+            soundManager.PlaySFX("Door Is Locked");
+            return;
+        }
+
+        if (needsKey && hasKey && !hasUnlocked)
+        {
+            hasUnlocked = true;
+            soundManager.PlaySFX("Door Unlocking");
+            justUnlocked = true;
+        }
+    
+        float targetRotationToUse = customTargetRotation ?? (isOpen ? -targetRotation : targetRotation);
+    
+        if ((isSliding || isDrawer) && (!needsKey || hasUnlocked))
+        {
+            doorCoroutine = StartCoroutine(SlideDoor(isOpen ? -slidingDistance : slidingDistance));
+        }
+        else if (!needsKey || hasUnlocked)
+        {
+            doorCoroutine = StartCoroutine(RotateDoor(targetRotationToUse));
+        }
+    }
 
     // Coroutine to rotate the door over time
     IEnumerator RotateDoor(float rotationAmount)
@@ -138,6 +170,8 @@ public class Door : MonoBehaviour
                 doorCloseText.gameObject.SetActive(false);
             else if (!isOpen)
                 doorOpenText.gameObject.SetActive(false);*/
+            
+            //isOpen = !isOpen;
             
             // Calculate the rotation step for this frame
             float rotationStep = rotationSpeed * Time.deltaTime * rotationDirection;
