@@ -10,4 +10,16 @@ public class Thoughts : MonoBehaviour
     public bool enemyMove = false;
     public bool openDoor;
     public Door door;
+    //public string roomName;
+    public GameObject[] roomTriggers;
+
+    public void MinusThought()
+    {
+        foreach (var room in roomTriggers)
+        {
+            EnterRooms roomThoughts = room.gameObject.GetComponent<EnterRooms>();
+            --roomThoughts.numThoughts;
+            roomThoughts.ShowThoughts();
+        }
+    }
 }

@@ -54,6 +54,9 @@ public class Door : MonoBehaviour
 
     public float triggerDoorRotation;
 
+    public float customRotation;
+    public bool shouldMinus = false;
+
     void Start()
     {
         // Store the original rotation and position of the door
@@ -108,39 +111,13 @@ public class Door : MonoBehaviour
         }
         else if (!needsKey || hasUnlocked)
         {
-            doorCoroutine = StartCoroutine(RotateDoor(isOpen ? -targetRotation : targetRotation));
-        }
-    }
-    
-    public void ToggleDoor(float? customTargetRotation = null)
-    {
-        if (doorCoroutine != null)
-        {
-            StopCoroutine(doorCoroutine);
-        }
-        
-        if (needsKey && !hasKey)
-        {
-            soundManager.PlaySFX("Door Is Locked");
-            return;
-        }
-
-        if (needsKey && hasKey && !hasUnlocked)
-        {
-            hasUnlocked = true;
-            soundManager.PlaySFX("Door Unlocking");
-            justUnlocked = true;
-        }
-    
-        float targetRotationToUse = customTargetRotation ?? (isOpen ? -targetRotation : targetRotation);
-    
-        if ((isSliding || isDrawer) && (!needsKey || hasUnlocked))
-        {
-            doorCoroutine = StartCoroutine(SlideDoor(isOpen ? -slidingDistance : slidingDistance));
-        }
-        else if (!needsKey || hasUnlocked)
-        {
-            doorCoroutine = StartCoroutine(RotateDoor(targetRotationToUse));
+            if (shouldMinus)
+            {
+                doorCoroutine = StartCoroutine(RotateDoor(isOpen ? -customRotation : customRotation));
+                shouldMinus = false;
+            }
+            else
+                doorCoroutine = StartCoroutine(RotateDoor(isOpen ? -targetRotation : targetRotation));
         }
     }
 

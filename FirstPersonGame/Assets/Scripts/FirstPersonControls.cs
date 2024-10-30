@@ -485,6 +485,7 @@ public class FirstPersonControls : MonoBehaviour
                     
                     soundManager.PlaySFX("Thought Pickup");
 
+                    thoughts.MinusThought();
                     Destroy(thoughts.GlowingObject);
                     Destroy(hit.collider.gameObject);
 

@@ -17,6 +17,8 @@ public class DoorOpen : MonoBehaviour
     public bool unlockDoor = false;
     private bool hasMoved = false;
 
+    public bool isOpening;
+
     private void OnTriggerEnter(Collider other)
     {
         if (!hasMoved)
@@ -28,9 +30,16 @@ public class DoorOpen : MonoBehaviour
             
             originalRotation = doorToOpen.targetRotation;
             doorToOpen.targetRotation = triggerRotationAmount;
+            
+            doorToOpen.customRotation = triggerRotationAmount;
         
             doorToOpen.ToggleDoor();
             doorToOpen.targetRotation = originalRotation;
+
+            if (isOpening)
+            {
+                doorToOpen.shouldMinus = true;
+            }
 
             hasMoved = true;
 
