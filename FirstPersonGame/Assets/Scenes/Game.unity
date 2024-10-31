@@ -3940,7 +3940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &125008108
 Transform:
   m_ObjectHideFlags: 0
@@ -4799,6 +4799,8 @@ MonoBehaviour:
   roomName: Tower Stairway
   numThoughts: 0
   hasThoughts: 0
+  Lights: {fileID: 0}
+  lightsOff: 0
 --- !u!65 &162276525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6237,7 +6239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &206046726
 Transform:
   m_ObjectHideFlags: 0
@@ -7207,7 +7209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &238607625
 Transform:
   m_ObjectHideFlags: 0
@@ -10977,6 +10979,8 @@ MonoBehaviour:
   roomName: Second Floor Hallway
   numThoughts: 0
   hasThoughts: 0
+  Lights: {fileID: 0}
+  lightsOff: 0
 --- !u!65 &323748239
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11761,7 +11765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &355621279
 Transform:
   m_ObjectHideFlags: 0
@@ -12201,6 +12205,8 @@ MonoBehaviour:
   roomName: My Bedroom
   numThoughts: 0
   hasThoughts: 0
+  Lights: {fileID: 1832918645}
+  lightsOff: 1
 --- !u!65 &375669978
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14020,6 +14026,8 @@ MonoBehaviour:
   roomName: Bathroom
   numThoughts: 0
   hasThoughts: 0
+  Lights: {fileID: 1120437996}
+  lightsOff: 1
 --- !u!65 &421367881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15991,6 +15999,8 @@ MonoBehaviour:
   roomName: First Floor Hallway
   numThoughts: 0
   hasThoughts: 0
+  Lights: {fileID: 0}
+  lightsOff: 0
 --- !u!65 &478200557
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17845,6 +17855,8 @@ MonoBehaviour:
   roomName: Storage
   numThoughts: 0
   hasThoughts: 0
+  Lights: {fileID: 238607624}
+  lightsOff: 1
 --- !u!65 &524996681
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21803,6 +21815,8 @@ MonoBehaviour:
   roomName: Bathroom
   numThoughts: 0
   hasThoughts: 0
+  Lights: {fileID: 1120437996}
+  lightsOff: 1
 --- !u!65 &659196595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26243,6 +26257,8 @@ MonoBehaviour:
   roomName: Lounge
   numThoughts: 1
   hasThoughts: 1
+  Lights: {fileID: 355621278}
+  lightsOff: 1
 --- !u!65 &852885040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31675,7 +31691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1061242173
 Transform:
   m_ObjectHideFlags: 0
@@ -37641,7 +37657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1252009834
 Transform:
   m_ObjectHideFlags: 0
@@ -37898,7 +37914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1258403016
 Transform:
   m_ObjectHideFlags: 0
@@ -42422,6 +42438,8 @@ MonoBehaviour:
   roomName: Parent's Bedroom
   numThoughts: 1
   hasThoughts: 1
+  Lights: {fileID: 1258403015}
+  lightsOff: 1
 --- !u!65 &1391803048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45741,10 +45759,10 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 500
-  m_Range: 300
-  m_SpotAngle: 100
-  m_InnerSpotAngle: 80
+  m_Intensity: 750
+  m_Range: 150
+  m_SpotAngle: 120
+  m_InnerSpotAngle: 100
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -48770,6 +48788,8 @@ MonoBehaviour:
   roomName: Tower Stairway
   numThoughts: 0
   hasThoughts: 0
+  Lights: {fileID: 0}
+  lightsOff: 0
 --- !u!65 &1557905286
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54555,7 +54575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1741240787
 Transform:
   m_ObjectHideFlags: 0
@@ -57311,6 +57331,8 @@ MonoBehaviour:
   roomName: First Floor Hallway
   numThoughts: 0
   hasThoughts: 0
+  Lights: {fileID: 0}
+  lightsOff: 0
 --- !u!65 &1836142431
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57540,6 +57562,8 @@ MonoBehaviour:
   roomName: Main Bathroom
   numThoughts: 0
   hasThoughts: 0
+  Lights: {fileID: 1252009833}
+  lightsOff: 0
 --- !u!65 &1845104957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58280,6 +58304,8 @@ MonoBehaviour:
   roomName: Office
   numThoughts: 0
   hasThoughts: 0
+  Lights: {fileID: 1903415088}
+  lightsOff: 1
 --- !u!65 &1861585355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59622,7 +59648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1903415089
 Transform:
   m_ObjectHideFlags: 0
@@ -60801,6 +60827,8 @@ MonoBehaviour:
   roomName: Kitchen
   numThoughts: 1
   hasThoughts: 1
+  Lights: {fileID: 1061242172}
+  lightsOff: 1
 --- !u!65 &1943320691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61825,6 +61853,8 @@ MonoBehaviour:
   roomName: Second Floor Hallway
   numThoughts: 0
   hasThoughts: 0
+  Lights: {fileID: 0}
+  lightsOff: 0
 --- !u!65 &1970842129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62083,6 +62113,8 @@ MonoBehaviour:
   roomName: Dining Room
   numThoughts: 0
   hasThoughts: 0
+  Lights: {fileID: 1741240786}
+  lightsOff: 1
 --- !u!65 &1976736836
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65777,6 +65809,8 @@ MonoBehaviour:
   roomName: Main Bedroom
   numThoughts: 1
   hasThoughts: 1
+  Lights: {fileID: 206046725}
+  lightsOff: 1
 --- !u!65 &2083984771
 BoxCollider:
   m_ObjectHideFlags: 0

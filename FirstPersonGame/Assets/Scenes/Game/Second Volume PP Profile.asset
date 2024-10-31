@@ -117,7 +117,7 @@ MonoBehaviour:
     m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 50
+    m_Value: 100
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
@@ -197,9 +197,9 @@ MonoBehaviour:
     m_Value: 7
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   response:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.8
   texture:
     m_OverrideState: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
     m_Value: 0
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.51999307, g: 0.4433962, b: 1, a: 1}
+    m_Value: {r: 1.0399861, g: 0.8867924, b: 2, a: 1}
   hueShift:
     m_OverrideState: 0
     m_Value: 0

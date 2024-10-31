@@ -15,11 +15,18 @@ public class EnterRooms : MonoBehaviour
 
     public bool hasThoughts = true;
 
+    public GameObject Lights;
+    public bool lightsOff = true;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             roomNameText.text = roomName;
+            
+            //LightsOn();
+            if (lightsOff)
+                Lights.SetActive(true);
 
             if (hasThoughts)
             {
@@ -32,6 +39,13 @@ public class EnterRooms : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (lightsOff)
+            Lights.SetActive(false);
+            //LightsOff();
+    }
+
     public void ShowThoughts()
     {
         numThoughtsRoomText.gameObject.SetActive(true);
@@ -41,5 +55,21 @@ public class EnterRooms : MonoBehaviour
             numThoughtsRoomText.text = numThoughts + " Thought";
         else if (numThoughts == 0)
             numThoughtsRoomText.gameObject.SetActive(false);
+    }
+
+    public void LightsOn()
+    {
+        //foreach (var light in Lights)
+        {
+            //light.SetActive(true);
+        }
+    }
+
+    public void LightsOff()
+    {
+        //foreach (var light in Lights)
+        {
+            //light.SetActive(false);
+        }
     }
 }
