@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: RedSyrup
   m_EditorClassIdentifier: 
   objectName: Red Syrup
-  objectDescription: '"If they see me touching this, I''ll get in big trouble."'
+  objectDescription: '"They will take my dinner away again if i touch this."'
   objectModel: {fileID: -1918893057888281778, guid: 68f05698cf221414bae6d7a6981197fd,
     type: 3}

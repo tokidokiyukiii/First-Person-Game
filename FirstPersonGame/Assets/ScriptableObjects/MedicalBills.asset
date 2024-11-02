@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2210603996f579148bbb64492b8094b4, type: 3}
-  m_Name: PillBottle
+  m_Name: MedicalBills
   m_EditorClassIdentifier: 
-  objectName: Pill Bottle
-  objectDescription: '"These supplements are supposed to make me feel better after
-    they take my blood. My sister also takes it..."'
-  objectModel: {fileID: -2894096938872660180, guid: 1ffb6e2d449ac5d45b8a05c7b3435d42,
+  objectName: Medical Bills
+  objectDescription: "\u201CDaddy drinks more when he sees those papers\u201D"
+  objectModel: {fileID: -8679921383154817045, guid: 13fd48b05432fa146b19d75167befa27,
     type: 3}

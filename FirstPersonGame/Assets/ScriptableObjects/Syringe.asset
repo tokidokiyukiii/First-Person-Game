@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Syringe
   m_EditorClassIdentifier: 
   objectName: Needle
-  objectDescription: '"I hate it when my parents bring this out... But at least I
-    get to eat mom''s food afterwards."'
+  objectDescription: '" I hate it when mommy bring this out, but at least i get a
+    biscuit after this.."'
   objectModel: {fileID: -8679921383154817045, guid: 566492389b2f54045bb7f563d77c428e,
     type: 3}
