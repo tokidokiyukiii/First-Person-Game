@@ -16,6 +16,7 @@ TagManager:
   - Key
   - Ladder
   - Enemy
+  - Curtain
   layers:
   - Default
   - TransparentFX

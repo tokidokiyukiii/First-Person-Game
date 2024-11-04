@@ -147,15 +147,17 @@ public class EnemyAI : MonoBehaviour
             
             if (floor == 1 && !isOnFirst)
             {
+                isOnSecond = false;
                 isOnFirst = true;
                 transform.position = FFWaypoint.position;
-                isOnSecond = false;
+                ChooseRandomWaypoint();
             }
             else if (floor == 2 && !isOnSecond)
             {
+                isOnFirst = false;
                 isOnSecond = true;
                 transform.position = SFWaypoint.position;
-                isOnFirst = false;
+                ChooseRandomWaypoint();
             }
             
             agent.enabled = true;

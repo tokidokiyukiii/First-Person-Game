@@ -11,13 +11,13 @@ public class TrackFloor : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (isFirst)
+        if (isFirst) //&& enemyAI.isOnSecond)
         {
             //enemyAI.isOnFirst = true;
             //enemyAI.isOnSecond = false;
             enemyAI.MoveFloors(1);
         }
-        else if (isSecond)
+        else if (isSecond) //&& enemyAI.isOnFirst)
         {
             //enemyAI.isOnSecond = true;
             //enemyAI.isOnFirst = false;

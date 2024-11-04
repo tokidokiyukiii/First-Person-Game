@@ -518,6 +518,10 @@ public class FirstPersonControls : MonoBehaviour
                 thoughtCount.ShowMessage("GET OUT!");
                 getOutSound.SetActive(true);
             }
+            else if (hit.collider.CompareTag("Curtain"))
+            {
+                hit.collider.GetComponent<Animator>().Play("CurtainOpen");
+            }
         }
     }
 
@@ -627,6 +631,10 @@ public class FirstPersonControls : MonoBehaviour
                 {
                     Debug.LogError("The object tagged as 'Drawer' or 'Door' is missing the 'Door' component.");
                 }
+            }
+            else if (hit.collider.CompareTag("Curtain"))
+            {
+                doorOpenText.gameObject.SetActive(true);
             }
             else if (hit.collider.CompareTag("Thought"))
             {
