@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d7661431e572e6045b4950f49df85242
+guid: d1ac0dbb7b4e8e244be89b8e8f9e7fa9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,28 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Caramel
-    second: {fileID: 2100000, guid: 3e58f97bceff4764b87053bee5a28045, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 34c51f5c680d8534c929e65191d24b23, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: c1ffa1db962e0ba428be8b511d74e7ea, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: blue
-    second: {fileID: 2100000, guid: 2fccff946833ad74792ef3387f29f941, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: pink
-    second: {fileID: 2100000, guid: 90a321f830f720b4094d488a7f825ce4, type: 2}
+      name: PaintedWhale
+    second: {fileID: 2100000, guid: 97bb3a32a1d2bdc42adf4d40f07ddaf6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

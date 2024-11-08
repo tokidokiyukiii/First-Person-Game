@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d7661431e572e6045b4950f49df85242
+guid: cbf1206f330374e469587a8dbfee5be7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,28 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Caramel
-    second: {fileID: 2100000, guid: 3e58f97bceff4764b87053bee5a28045, type: 2}
+      name: Material.003
+    second: {fileID: 2100000, guid: e562e788968f3c84982d6bbdfe5f0feb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 34c51f5c680d8534c929e65191d24b23, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: c1ffa1db962e0ba428be8b511d74e7ea, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: blue
-    second: {fileID: 2100000, guid: 2fccff946833ad74792ef3387f29f941, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: pink
-    second: {fileID: 2100000, guid: 90a321f830f720b4094d488a7f825ce4, type: 2}
+      name: Material.004
+    second: {fileID: 2100000, guid: 75682154d9672d64eb726e15c4458b9b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
