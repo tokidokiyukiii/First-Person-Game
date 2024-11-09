@@ -9,7 +9,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadSceneByName() 
     {
-        SceneManager.LoadScene("Scene/Cutscene1");
+        SceneManager.LoadScene("Scenes/Cutscene1");
     }
 
     public void LoadNextInBuild() 
