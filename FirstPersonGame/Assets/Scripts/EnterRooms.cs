@@ -18,6 +18,9 @@ public class EnterRooms : MonoBehaviour
     public GameObject Lights;
     public bool lightsOff = true;
 
+    public bool isBedroom;
+    public EnemyAI enemyAI;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -36,6 +39,9 @@ public class EnterRooms : MonoBehaviour
             {
                 numThoughtsRoomText.gameObject.SetActive(false);
             }
+
+            if (isBedroom)
+                enemyAI.isInBedroom = true;
         }
     }
 
@@ -43,7 +49,9 @@ public class EnterRooms : MonoBehaviour
     {
         if (lightsOff)
             Lights.SetActive(false);
-            //LightsOff();
+        
+        if (isBedroom)
+            enemyAI.isInBedroom = false;
     }
 
     public void ShowThoughts()

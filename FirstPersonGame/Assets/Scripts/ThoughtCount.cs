@@ -46,6 +46,10 @@ public class ThoughtCount : MonoBehaviour
     public bool collectedThought1;
     public bool collectedThought2;
 
+    public TextMeshProUGUI sprintText;
+
+    public GameObject SoundFour;
+
     public void AddThought()
     {
         thoughtCount++;
@@ -55,6 +59,11 @@ public class ThoughtCount : MonoBehaviour
             key.SetActive(true);
             glowingKey.SetActive(true);
             ShowMessage("The key is in the attic. Be quick...");
+            
+            enemyAI.isKeyActive = true;
+            firstPersonControlls.canSprint = true;
+            
+            StartCoroutine(ActivateSprintText());
         }
 
         switch (thoughtCount)
@@ -77,23 +86,13 @@ public class ThoughtCount : MonoBehaviour
                 Thoughts2.SetActive(true);
                 GlowingThoughts2.SetActive(true);
 
+                SoundFour.SetActive(true);
+                
                 if (!collectedThought1 && !collectedThought2)
                 {
                     towerDoor.needsKey = false;
                     towerDoor.ToggleDoor();
                 }
-
-                if (firstPersonControlls.isNormalView)
-                {
-                    normalViewVolume.SetActive(false);
-                    finalNormalViewVolume.SetActive(true);
-                }
-                else
-                {
-                    secondViewVolume.SetActive(false);
-                    FinalSecondViewVolume.SetActive(true);
-                }
-                firstPersonControlls.finalPhase = true;
                 break;
             case 4:
                 if (!collectedThought1 || !collectedThought2)
@@ -111,6 +110,9 @@ public class ThoughtCount : MonoBehaviour
                 
                 enemyAI.gameObject.SetActive(true);
                 enemyAI.canEnemyMove = true;
+                
+                enemyAI.audioSource.PlayOneShot(enemyAI.laughingSpawn);
+                enemyAI.PlayHumming();
                 break;
             case 6:
                 Thoughts3.SetActive(true);
@@ -123,6 +125,17 @@ public class ThoughtCount : MonoBehaviour
             case 10:
                 phaseText.text = "FINAL PHASE";
                 phaseCount = 3;
+                
+                if (firstPersonControlls.isNormalView)
+                {
+                    normalViewVolume.SetActive(false);
+                    finalNormalViewVolume.SetActive(true);
+                }
+                else
+                {
+                    secondViewVolume.SetActive(false);
+                    FinalSecondViewVolume.SetActive(true);
+                }
                 firstPersonControlls.finalPhase = true;
                 break;
             case 12:
@@ -133,6 +146,7 @@ public class ThoughtCount : MonoBehaviour
 
         UpdateUI(); 
     }
+
 
     public void ShowMessage(string message)
     {
@@ -161,6 +175,16 @@ public class ThoughtCount : MonoBehaviour
                 thoughtCountText.text = "Thoughts: " + finalPhaseThoughtCount + " / 5";
             }
         }
+    }
+
+    private IEnumerator ActivateSprintText()
+    {
+        firstPersonControlls.isShowingMessage = true;
+        
+        sprintText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(5f);
+
+        firstPersonControlls.isShowingMessage = false;
     }
 
     /*private IEnumerator HideMessageAfterDelay(float delay)

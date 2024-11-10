@@ -116,6 +116,15 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""1fe18db9-093a-4e5f-80fc-d7e625bee1f7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -459,6 +468,28 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""action"": ""ChangeView"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf44430f-c2dd-4bcd-b934-e76c779e2aad"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6facc46c-5b2a-405c-802b-ad4a444b117e"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -500,6 +531,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_ChangeView = m_Player.FindAction("ChangeView", throwIfNotFound: true);
+        m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -571,6 +603,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Rotate;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_ChangeView;
+    private readonly InputAction m_Player_Sprint;
     public struct PlayerActions
     {
         private @NewControls m_Wrapper;
@@ -585,6 +618,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @ChangeView => m_Wrapper.m_Player_ChangeView;
+        public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -624,6 +658,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @ChangeView.started += instance.OnChangeView;
             @ChangeView.performed += instance.OnChangeView;
             @ChangeView.canceled += instance.OnChangeView;
+            @Sprint.started += instance.OnSprint;
+            @Sprint.performed += instance.OnSprint;
+            @Sprint.canceled += instance.OnSprint;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -658,6 +695,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @ChangeView.started -= instance.OnChangeView;
             @ChangeView.performed -= instance.OnChangeView;
             @ChangeView.canceled -= instance.OnChangeView;
+            @Sprint.started -= instance.OnSprint;
+            @Sprint.performed -= instance.OnSprint;
+            @Sprint.canceled -= instance.OnSprint;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -705,5 +745,6 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         void OnRotate(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnChangeView(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
     }
 }

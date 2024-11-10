@@ -28,6 +28,7 @@ public class Door : MonoBehaviour
     
     public SoundManager soundManager;
     public bool playsCreak = false;
+    public bool playsSounds = true;
 
     public bool isOpen = false;  // Track whether the door is open
     public bool isOpening = false;
@@ -127,7 +128,7 @@ public class Door : MonoBehaviour
         float rotatedAmount = 0f;  // Track how much the door has rotated
         float rotationDirection = Mathf.Sign(rotationAmount);  // Determine rotation direction (1 for open, -1 for close)
         
-        if (isOpen && !isCabinet)
+        if (playsSounds && isOpen && !isCabinet)
             soundManager.PlaySFX("Close Door");
         else if (!isOpen)
         {
@@ -135,9 +136,9 @@ public class Door : MonoBehaviour
             {
                 justUnlocked = false;
             }
-            else if (!isCabinet && !playsCreak)
+            else if (playsSounds && !isCabinet && !playsCreak)
                 soundManager.PlaySFX("Open Door Normal");
-            else if (!isCabinet && playsCreak)
+            else if (playsSounds && !isCabinet && playsCreak)
                 soundManager.PlaySFX("Open Door Creak");
         }
         
@@ -169,7 +170,8 @@ public class Door : MonoBehaviour
         
         // After the door has finished rotating, update the isOpen state
         isOpen = !isOpen;
-        
+        playsSounds = true;
+
         /*if (isOpen)
             doorCloseText.gameObject.SetActive(true);
         else if (!isOpen)
@@ -181,7 +183,7 @@ public class Door : MonoBehaviour
         float movedAmount = 0f;  // Track how much the door has moved
         float slidingDirectionSign = Mathf.Sign(slidingAmount);  // Determine sliding direction (1 for open, -1 for close)
 
-        if (isOpen)
+        if (playsSounds && isOpen)
             soundManager.PlaySFX("Sliding Door Close");
         else if (!isOpen)
         {
@@ -189,7 +191,7 @@ public class Door : MonoBehaviour
             {
                 justUnlocked = false;
             }
-            else
+            else if (playsSounds)
                 soundManager.PlaySFX("Sliding Door Open");
         }
         
@@ -219,7 +221,8 @@ public class Door : MonoBehaviour
 
         // After the door has finished sliding, update the isOpen state
         isOpen = !isOpen;
-        
+        playsSounds = true;
+
         /*if (isOpen)
             doorCloseText.gameObject.SetActive(true);
         else if (!isOpen)

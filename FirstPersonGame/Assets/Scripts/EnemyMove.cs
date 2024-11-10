@@ -19,7 +19,6 @@ public class EnemyMove : MonoBehaviour
 
     public bool isLastScare;
     public Transform newPos;
-    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,8 +27,8 @@ public class EnemyMove : MonoBehaviour
             if (!hasEnemyMoved && !enemyAI.canEnemyMove)
             {
                 targetPosition = enemy.position + targetDirection.normalized * targetDistance;
-
                 StartCoroutine(MoveEnemy());
+                
                 hasEnemyMoved = true;
             }
         }

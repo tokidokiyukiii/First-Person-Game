@@ -45,6 +45,18 @@ public class EnemyAI : MonoBehaviour
     public ThoughtCount thoughtCount;
 
     public bool canEnemyMove = false;
+    public bool isKeyActive = false;
+
+    public AudioSource audioSource;
+
+    public AudioClip hummingOne;
+    public AudioClip hummingTwo;
+    public AudioClip laughingSpawn;
+
+    public GameObject chasingSound;
+
+    public bool isOnSameFloor = true;
+    public bool isInBedroom;
 
     private void Awake()
     {
@@ -69,26 +81,19 @@ public class EnemyAI : MonoBehaviour
                     agent.isStopped = true; 
                     agent.velocity = Vector3.zero;
                     //agent.ResetPath();
+                    chasingSound.SetActive(false);
                 }
                 else
                 {
                     agent.isStopped = false;
-                    if (!playerInSightRange)
-                    {
-                        //Change to Patrol Speed and Acceleration
-                        agent.speed = 10f;
-                        agent.acceleration = 5f;
-                        agent.stoppingDistance = 0f;
-                
-                        Patrol();
-                    }
-                    else
+                    if ((playerInSightRange && !firstPersonControls.isInAttic && isOnSameFloor && !isInBedroom) || isKeyActive)
                     {
                         //Change to Chase Speed and Acceleration
                         agent.speed = 30f;
                         agent.acceleration = 20f;
                         agent.stoppingDistance = 10f;
-            
+                        
+                        chasingSound.SetActive(true);
                         ChasePlayer();
 
                         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
@@ -98,10 +103,21 @@ public class EnemyAI : MonoBehaviour
                             MoveFloors(1);
                         }
                     }
+                    else if (!playerInSightRange)
+                    {
+                        //Change to Patrol Speed and Acceleration
+                        agent.speed = 10f;
+                        agent.acceleration = 5f;
+                        agent.stoppingDistance = 0f;
+                        
+                        chasingSound.SetActive(false);
+                        Patrol();
+                    }
                 }
             }
             else if (!firstPersonControls.isInputEnabled)
             {
+                chasingSound.SetActive(false);
                 agent.isStopped = true; 
                 agent.velocity = Vector3.zero;
             }
@@ -174,6 +190,32 @@ public class EnemyAI : MonoBehaviour
             }
             
             agent.enabled = true;
+        }
+    }
+
+    public void PlayHumming()
+    {
+        StartCoroutine(PlayRandomSound());
+    }
+    
+    private IEnumerator PlayRandomSound()
+    {
+        while (true) // Loop indefinitely
+        {
+            if (!isSeen && !playerInSightRange)
+            {
+                // Wait for a random interval between minInterval and maxInterval
+                float waitTime = UnityEngine.Random.Range(20f, 120f);
+                yield return new WaitForSeconds(waitTime);
+
+                int audioNum = UnityEngine.Random.Range(0, 2);
+
+                // Play the sound
+                if (audioNum == 0)
+                    audioSource.PlayOneShot(hummingOne);
+                else
+                    audioSource.PlayOneShot(hummingTwo);
+            }
         }
     }
 }

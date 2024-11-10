@@ -18,6 +18,9 @@ public class DoorOpen : MonoBehaviour
     private bool hasMoved = false;
 
     public bool isOpening;
+    
+    public AudioSource sfxSource;
+    public AudioClip sfxSound;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,6 +38,9 @@ public class DoorOpen : MonoBehaviour
 
                 doorToOpen.customRotation = triggerRotationAmount;
 
+                doorToOpen.playsSounds = false;
+                sfxSource.PlayOneShot(sfxSound);
+                
                 doorToOpen.ToggleDoor();
                 doorToOpen.targetRotation = originalRotation;
 

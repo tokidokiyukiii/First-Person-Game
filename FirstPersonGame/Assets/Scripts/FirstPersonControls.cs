@@ -71,8 +71,11 @@ public class FirstPersonControls : MonoBehaviour
     public ThoughtCount thoughtCount;
     public GameObject getOutSound;
     public SoundManager soundManager;
-    private bool isShowingMessage;
+    public bool isShowingMessage;
     public TextMeshProUGUI infoMessageText;
+    public Transform downLadderWaypoint;
+    public Transform upLadderWaypoint;
+    public bool isInAttic = false;
         
     [Header("UI SETTINGS")]
     [Space(5)]
@@ -84,6 +87,8 @@ public class FirstPersonControls : MonoBehaviour
     public TextMeshProUGUI doorOpenText;
     public TextMeshProUGUI doorCloseText;
     public TextMeshProUGUI doorLockedText;
+    public TextMeshProUGUI pullLadderText;
+    public TextMeshProUGUI climbLadderText;
     public TextMeshProUGUI thoughtText;
     public TextMeshProUGUI keyText;
     public TextMeshProUGUI writtenThoughtText;
@@ -120,6 +125,11 @@ public class FirstPersonControls : MonoBehaviour
     [SerializeField] private LayerMask raycastIgnoreLayers;
     public bool isFirst = true;
     public bool isSecond = false;
+
+    [Header("SPRINT")] [Space(5)] 
+    public bool canSprint = false;
+    public bool isSprint = false;
+    public float sprintSpeed = 20f;
 
     private void Awake()
     {
@@ -164,8 +174,11 @@ public class FirstPersonControls : MonoBehaviour
         // Subscribe to the interact input event
         playerInput.Player.Interact.performed += ctx => Interact(); // Interact with switch
         
-        // Subscribe to the change views inout event
+        // Subscribe to the change views input event
         playerInput.Player.ChangeView.performed += ctx => ChangeView(); // Interact with switch
+        
+        // Subscribe to the sprint input event
+        playerInput.Player.Sprint.performed += ctx => ToggleSprint(); // Change speed
 
     }
 
@@ -200,13 +213,17 @@ public class FirstPersonControls : MonoBehaviour
         {
             currentSpeed = crouchSpeed;
         }
+        else if (canSprint && isSprint)
+        {
+            currentSpeed = sprintSpeed;
+        }
         else
         {
             currentSpeed = moveSpeed;
         }
 
         // Move the character controller based on the movement vector and speed
-        characterController.Move(move * moveSpeed * Time.deltaTime);
+        characterController.Move(move * currentSpeed * Time.deltaTime);
     }
 
     public void LookAround()
@@ -406,6 +423,21 @@ public class FirstPersonControls : MonoBehaviour
             isCrouching = true;
         }
     }
+    
+    public void ToggleSprint()
+    {
+        if (canSprint)
+        {
+            if (isSprint)
+            {
+                isSprint = false;
+            }
+            else
+            {
+                isSprint = true;
+            }
+        }
+    }
 
     public void Interact()
     {
@@ -440,6 +472,60 @@ public class FirstPersonControls : MonoBehaviour
                 
                 DoorOpen.ToggleDoor();
                 //doorLockedText.gameObject.SetActive(false);
+            }
+            else if (hit.collider.CompareTag("Ladder"))
+            {
+                PullLadder pullLadder = hit.collider.GetComponent<PullLadder>();
+
+                if (!pullLadder.hasMoved)
+                {
+                    Debug.Log("Moving ladder");
+                    pullLadder.ToggleLadder();
+                }
+                else
+                {
+                    if (pullLadder.hasFinishedMoving)
+                    {
+                        CharacterController controller = GetComponent<CharacterController>();
+                        if (!isInAttic)
+                        {
+                            Debug.Log("Moving player to attic");
+                            
+                            if (controller != null)
+                            {
+                                controller.enabled = false;
+                                transform.position = upLadderWaypoint.position;
+                                controller.enabled = true;
+                            }
+                            
+                            transform.position = upLadderWaypoint.position;
+                            isInAttic = true;
+                        }
+                        else
+                        {
+                            
+                        }
+                    }
+                }
+            }
+            else if (hit.collider.CompareTag("LadderDown"))
+            {
+                if (isInAttic)
+                {
+                    CharacterController controller = GetComponent<CharacterController>();
+                    
+                    Debug.Log("Moving player to second floor");
+                            
+                    if (controller != null)
+                    {
+                        controller.enabled = false;
+                        transform.position = downLadderWaypoint.position;
+                        controller.enabled = true;
+                    }
+                            
+                    transform.position = downLadderWaypoint.position;
+                    isInAttic = false;
+                }
             }
             else if (hit.collider.CompareTag("Info"))
             {
@@ -522,6 +608,8 @@ public class FirstPersonControls : MonoBehaviour
             {
                 InfoOrb infoOrb = hit.collider.gameObject.GetComponent<InfoOrb>();
                 infoMessageText.text = infoOrb.infoMessgae;
+                
+                soundManager.PlaySFX("Info Orb Sound");
 
                 StartCoroutine(ActivateInfo());
                 
@@ -669,6 +757,19 @@ public class FirstPersonControls : MonoBehaviour
                     Debug.LogError("The object tagged as 'Drawer' or 'Door' is missing the 'Door' component.");
                 }
             }
+            else if (hit.collider.CompareTag("Ladder"))
+            {
+                PullLadder pullLadder = hit.collider.GetComponent<PullLadder>();
+                
+                if (!pullLadder.hasMoved)
+                    pullLadderText.gameObject.SetActive(true);
+                else if (pullLadder.hasMoved && pullLadder.hasFinishedMoving)
+                    climbLadderText.gameObject.SetActive(true);
+            }
+            else if (hit.collider.CompareTag("LadderDown"))
+            {
+                climbLadderText.gameObject.SetActive(true);
+            }
             else if (hit.collider.CompareTag("Curtain"))
             {
                 doorOpenText.gameObject.SetActive(true);
@@ -691,6 +792,8 @@ public class FirstPersonControls : MonoBehaviour
                 thoughtText.gameObject.SetActive(false);
                 keyText.gameObject.SetActive(false);
                 infoOrbText.gameObject.SetActive(false);
+                pullLadderText.gameObject.SetActive(false);
+                climbLadderText.gameObject.SetActive(false);
             }
         }
         else
@@ -703,6 +806,8 @@ public class FirstPersonControls : MonoBehaviour
             thoughtText.gameObject.SetActive(false);
             keyText.gameObject.SetActive(false);
             infoOrbText.gameObject.SetActive(false);
+            pullLadderText.gameObject.SetActive(false);
+            climbLadderText.gameObject.SetActive(false);
         }
     }
 
