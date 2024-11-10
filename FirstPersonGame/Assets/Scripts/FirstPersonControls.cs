@@ -72,6 +72,7 @@ public class FirstPersonControls : MonoBehaviour
     public GameObject getOutSound;
     public SoundManager soundManager;
     private bool isShowingMessage;
+    public TextMeshProUGUI infoMessageText;
         
     [Header("UI SETTINGS")]
     [Space(5)]
@@ -87,6 +88,7 @@ public class FirstPersonControls : MonoBehaviour
     public TextMeshProUGUI keyText;
     public TextMeshProUGUI writtenThoughtText;
     public TextMeshProUGUI myThoughtText;
+    public TextMeshProUGUI infoOrbText;
     public GameObject ThoughtBackground;
     public GameObject HUDCanvas;
     public GameObject messagesObject;
@@ -172,7 +174,12 @@ public class FirstPersonControls : MonoBehaviour
             Move();
             LookAround();
             ApplyGravity();
-            CheckForEnemy();
+            if (isNormalView)
+                CheckForEnemy();
+            else
+            {
+                enemyAI.isSeen = false;
+            }
             CheckForObject();
         }
     }
@@ -496,12 +503,6 @@ public class FirstPersonControls : MonoBehaviour
 
                     StartCoroutine(ActivateForDuration());
 
-                    if (thoughts.enemyMove)
-                    {
-                        enemy.gameObject.SetActive(true);
-                        enemyAI.canEnemyMove = true;
-                    }
-
                     if (thoughts.openDoor)
                     {
                         thoughts.door.needsKey = false;
@@ -509,6 +510,22 @@ public class FirstPersonControls : MonoBehaviour
 
                     //ThoughtBackground.SetActive(false);
                 }
+            }
+            else if (hit.collider.CompareTag("InfoOrb"))
+            {
+                InfoOrb infoOrb = hit.collider.gameObject.GetComponent<InfoOrb>();
+                infoMessageText.text = infoOrb.infoMessgae;
+
+                StartCoroutine(ActivateInfo());
+                
+                if (infoOrb.enemyMove)
+                {
+                    enemy.gameObject.SetActive(true);
+                    enemyAI.canEnemyMove = true;
+                }
+
+                if (infoOrb.openDoor)
+                    infoOrb.door.needsKey = false;
             }
             else if (hit.collider.CompareTag("Key"))
             {
@@ -545,6 +562,19 @@ public class FirstPersonControls : MonoBehaviour
         
         myThoughtText.gameObject.SetActive(false);
         ThoughtBackground.SetActive(false);
+        messagesObject.SetActive(true);
+
+        isShowingMessage = false;
+    }
+    
+    private IEnumerator ActivateInfo()
+    {
+        messagesObject.SetActive(false);
+        
+        infoMessageText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        
+        infoMessageText.gameObject.SetActive(false);
         messagesObject.SetActive(true);
 
         isShowingMessage = false;
@@ -640,6 +670,8 @@ public class FirstPersonControls : MonoBehaviour
             {
                 thoughtText.gameObject.SetActive(true);
             }
+            else if (hit.collider.CompareTag("InfoOrb"))
+                infoOrbText.gameObject.SetActive(true);
             else if (hit.collider.CompareTag("Key"))
                 keyText.gameObject.SetActive(true);
             else
@@ -651,6 +683,7 @@ public class FirstPersonControls : MonoBehaviour
                 objectInfoText.gameObject.SetActive(false);
                 thoughtText.gameObject.SetActive(false);
                 keyText.gameObject.SetActive(false);
+                infoOrbText.gameObject.SetActive(false);
             }
         }
         else
@@ -662,6 +695,7 @@ public class FirstPersonControls : MonoBehaviour
             objectInfoText.gameObject.SetActive(false);
             thoughtText.gameObject.SetActive(false);
             keyText.gameObject.SetActive(false);
+            infoOrbText.gameObject.SetActive(false);
         }
     }
 

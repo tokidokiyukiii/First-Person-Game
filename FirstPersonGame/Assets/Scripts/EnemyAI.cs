@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 using Random = System.Random;
 
 public class EnemyAI : MonoBehaviour
@@ -10,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent agent;
 
     [SerializeField] private Transform player;
+    [SerializeField] private Transform playerWaypoint;
 
     public LayerMask whatIsGround, whatIsPlayer;
     
@@ -34,9 +36,13 @@ public class EnemyAI : MonoBehaviour
     public float sightRange;
     public bool playerInSightRange;
 
+    public float attackRange;
+    public bool playerInAttackRange;
+
     public bool isSeen = false;
 
     public FirstPersonControls firstPersonControls;
+    public ThoughtCount thoughtCount;
 
     public bool canEnemyMove = false;
 
@@ -84,6 +90,13 @@ public class EnemyAI : MonoBehaviour
                         agent.stoppingDistance = 10f;
             
                         ChasePlayer();
+
+                        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+                        if (playerInAttackRange)
+                        {
+                            player.position = playerWaypoint.position;
+                            MoveFloors(1);
+                        }
                     }
                 }
             }
@@ -141,7 +154,7 @@ public class EnemyAI : MonoBehaviour
 
     public void MoveFloors(int floor)
     {
-        if (canEnemyMove)
+        if (canEnemyMove && thoughtCount.thoughtCount >= 10)
         {
             agent.enabled = false;
             

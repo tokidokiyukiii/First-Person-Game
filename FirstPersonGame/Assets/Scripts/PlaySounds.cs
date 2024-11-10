@@ -15,10 +15,13 @@ public class PlaySounds : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!sfxSource.isPlaying && !hasPlayed)
+        if (other.CompareTag("Player"))
         {
-            sfxSource.PlayOneShot(sfxSound);
-            hasPlayed = true;
+            if (!sfxSource.isPlaying && !hasPlayed)
+            {
+                sfxSource.PlayOneShot(sfxSound);
+                hasPlayed = true;
+            }
         }
     }
 }

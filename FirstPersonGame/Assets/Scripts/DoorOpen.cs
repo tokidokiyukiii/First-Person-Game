@@ -21,40 +21,44 @@ public class DoorOpen : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!hasMoved)
+        if (other.CompareTag("Player"))
         {
-            if (unlockDoor)
+            if (!hasMoved)
             {
-                doorToUnlock.needsKey = false;
-            }
-            
-            originalRotation = doorToOpen.targetRotation;
-            doorToOpen.targetRotation = triggerRotationAmount;
-            
-            doorToOpen.customRotation = triggerRotationAmount;
-        
-            doorToOpen.ToggleDoor();
-            doorToOpen.targetRotation = originalRotation;
-
-            if (isOpening)
-            {
-                doorToOpen.shouldMinus = true;
-            }
-
-            hasMoved = true;
-
-            if (lockDoor)
-            {
-                if (doorToLock.isOpen)
+                if (unlockDoor)
                 {
-                    doorToLock.ToggleDoor();
+                    doorToUnlock.needsKey = false;
                 }
-                doorToLock.needsKey = true;
-            }
 
-            if (lockCurrentDoor)
-                doorToOpen.needsKey = true;
+                originalRotation = doorToOpen.targetRotation;
+                doorToOpen.targetRotation = triggerRotationAmount;
+
+                doorToOpen.customRotation = triggerRotationAmount;
+
+                doorToOpen.ToggleDoor();
+                doorToOpen.targetRotation = originalRotation;
+
+                if (isOpening)
+                {
+                    doorToOpen.shouldMinus = true;
+                }
+
+                hasMoved = true;
+
+                if (lockDoor)
+                {
+                    if (doorToLock.isOpen)
+                    {
+                        doorToLock.ToggleDoor();
+                    }
+
+                    doorToLock.needsKey = true;
+                }
+
+                if (lockCurrentDoor)
+                    doorToOpen.needsKey = true;
+            }
         }
-        
+
     }
 }

@@ -23,12 +23,15 @@ public class EnemyMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!hasEnemyMoved && !enemyAI.canEnemyMove)
+        if (other.CompareTag("Player"))
         {
-            targetPosition = enemy.position + targetDirection.normalized * targetDistance;
-            
-            StartCoroutine(MoveEnemy());
-            hasEnemyMoved = true;
+            if (!hasEnemyMoved && !enemyAI.canEnemyMove)
+            {
+                targetPosition = enemy.position + targetDirection.normalized * targetDistance;
+
+                StartCoroutine(MoveEnemy());
+                hasEnemyMoved = true;
+            }
         }
     }
     
