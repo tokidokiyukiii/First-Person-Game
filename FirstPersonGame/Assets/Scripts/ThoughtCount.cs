@@ -36,8 +36,15 @@ public class ThoughtCount : MonoBehaviour
     public EnemyAI enemyAI;
     public Door towerDoor;
 
-    public GameObject normalVolume;
-    public GameObject finalVolume;
+    public FirstPersonControls firstPersonControlls;
+
+    public GameObject normalViewVolume;
+    public GameObject secondViewVolume;
+    public GameObject finalNormalViewVolume;
+    public GameObject FinalSecondViewVolume;
+
+    public bool collectedThought1;
+    public bool collectedThought2;
 
     public void AddThought()
     {
@@ -52,11 +59,48 @@ public class ThoughtCount : MonoBehaviour
 
         switch (thoughtCount)
         {
+            case 1:
+                if (!collectedThought1 && !collectedThought2)
+                {
+                    Thoughts2.SetActive(true);
+                    GlowingThoughts2.SetActive(true);
+                }
+                break;
+            case 2:
+                if (!collectedThought1 || !collectedThought2)
+                {
+                    Thoughts2.SetActive(true);
+                    GlowingThoughts2.SetActive(true);
+                }
+                break;
             case 3:
                 Thoughts2.SetActive(true);
                 GlowingThoughts2.SetActive(true);
-                normalVolume.SetActive(false);
-                finalVolume.SetActive(true);
+
+                if (!collectedThought1 && !collectedThought2)
+                {
+                    towerDoor.needsKey = false;
+                    towerDoor.ToggleDoor();
+                }
+
+                if (firstPersonControlls.isNormalView)
+                {
+                    normalViewVolume.SetActive(false);
+                    finalNormalViewVolume.SetActive(true);
+                }
+                else
+                {
+                    secondViewVolume.SetActive(false);
+                    FinalSecondViewVolume.SetActive(true);
+                }
+                firstPersonControlls.finalPhase = true;
+                break;
+            case 4:
+                if (!collectedThought1 || !collectedThought2)
+                {
+                    towerDoor.needsKey = false;
+                    towerDoor.ToggleDoor();
+                }
                 break;
             case 5:
                 phaseText.text = "PHASE 2";
@@ -79,8 +123,7 @@ public class ThoughtCount : MonoBehaviour
             case 10:
                 phaseText.text = "FINAL PHASE";
                 phaseCount = 3;
-                normalVolume.SetActive(false);
-                finalVolume.SetActive(true);
+                firstPersonControlls.finalPhase = true;
                 break;
             case 12:
                 Thoughts5.SetActive(true);

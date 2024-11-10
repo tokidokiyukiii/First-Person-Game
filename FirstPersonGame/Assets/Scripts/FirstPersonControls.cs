@@ -108,6 +108,9 @@ public class FirstPersonControls : MonoBehaviour
     public GameObject ThoughtCanvas;
     public GameObject GlowingObjects;
     public GameObject NormalObjects;
+    public bool finalPhase = false;
+    public GameObject finalNormalVolume;
+    public GameObject finalSecondVolume;
 
     [Header("ENEMY CHECK")] [Space(5)] 
     public Transform enemy;
@@ -492,6 +495,10 @@ public class FirstPersonControls : MonoBehaviour
                     
                     soundManager.PlaySFX("Thought Pickup");
 
+                    if (thoughts.isThought1)
+                        thoughtCount.collectedThought1 = true;
+                    else if (thoughts.isThought2)
+                        thoughtCount.collectedThought2 = true;
                     thoughts.MinusThought();
                     Destroy(thoughts.GlowingObject);
                     Destroy(hit.collider.gameObject);
@@ -821,9 +828,18 @@ public class FirstPersonControls : MonoBehaviour
             if (isNormalView)
             {
                 isNormalView = false;
-                
-                NormalViewVolume.SetActive(false);
-                SecondViewVolume.SetActive(true);
+
+                if (finalPhase)
+                {
+                    SecondViewVolume.SetActive(false);
+                    finalNormalVolume.SetActive(false);
+                    finalSecondVolume.SetActive(true);
+                }
+                else
+                {
+                    NormalViewVolume.SetActive(false);
+                    SecondViewVolume.SetActive(true);
+                }
                 
                 NormalObjects.SetActive(false);
                 GlowingObjects.SetActive(true);
@@ -831,22 +847,31 @@ public class FirstPersonControls : MonoBehaviour
                 NormalViewEye.SetActive(false);
                 SecondViewEye.SetActive(true);
                 
-                secondView.StartView();
+                //secondView.StartView();
             }
             else
             {
                 isNormalView = true;
                 
-                SecondViewVolume.SetActive(false);
-                NormalViewVolume.SetActive(true);
-                
+                if (finalPhase)
+                {
+                    NormalViewVolume.SetActive(false);
+                    finalNormalVolume.SetActive(true);
+                    finalSecondVolume.SetActive(false);
+                }
+                else
+                {
+                    SecondViewVolume.SetActive(false);
+                    NormalViewVolume.SetActive(true);
+                }
+
                 GlowingObjects.SetActive(false);
                 NormalObjects.SetActive(true);
                 
                 SecondViewEye.SetActive(false);
                 NormalViewEye.SetActive(true);
                 
-                secondView.StopView();
+                //secondView.StopView();
             }
         }
     }

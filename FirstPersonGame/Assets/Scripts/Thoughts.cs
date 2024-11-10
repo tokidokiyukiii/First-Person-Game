@@ -13,6 +13,8 @@ public class Thoughts : MonoBehaviour
     public Door door;
     //public string roomName;
     public GameObject[] roomTriggers;
+    public bool isThought1;
+    public bool isThought2;
 
 
     private void Start()
