@@ -16,6 +16,9 @@ public class Thoughts : MonoBehaviour
     public bool isThought1;
     public bool isThought2;
 
+    public GameObject candleLight;
+    public Light lightIntensity;
+
 
     private void Start()
     {

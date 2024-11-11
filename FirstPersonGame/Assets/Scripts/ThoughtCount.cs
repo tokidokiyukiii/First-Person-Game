@@ -48,6 +48,7 @@ public class ThoughtCount : MonoBehaviour
 
     public TextMeshProUGUI sprintText;
 
+    public GameObject SoundThree;
     public GameObject SoundFour;
 
     public void AddThought()
@@ -86,6 +87,7 @@ public class ThoughtCount : MonoBehaviour
                 Thoughts2.SetActive(true);
                 GlowingThoughts2.SetActive(true);
 
+                SoundThree.SetActive(true);
                 SoundFour.SetActive(true);
                 
                 if (!collectedThought1 && !collectedThought2)

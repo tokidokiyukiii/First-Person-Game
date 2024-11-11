@@ -18,6 +18,7 @@ TagManager:
   - Enemy
   - Curtain
   - InfoOrb
+  - LadderDown
   layers:
   - Default
   - TransparentFX

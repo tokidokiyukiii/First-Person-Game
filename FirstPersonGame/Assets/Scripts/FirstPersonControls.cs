@@ -578,6 +578,8 @@ public class FirstPersonControls : MonoBehaviour
                 {
                     Thoughts thoughts = hit.collider.gameObject.GetComponent<Thoughts>();
                     thoughtCount.AddThought();
+                    thoughts.candleLight.SetActive(true);
+                    thoughts.lightIntensity.intensity += 5;
                     
                     soundManager.PlaySFX("Thought Pickup");
 
@@ -585,6 +587,7 @@ public class FirstPersonControls : MonoBehaviour
                         thoughtCount.collectedThought1 = true;
                     else if (thoughts.isThought2)
                         thoughtCount.collectedThought2 = true;
+                    
                     thoughts.MinusThought();
                     Destroy(thoughts.GlowingObject);
                     Destroy(hit.collider.gameObject);

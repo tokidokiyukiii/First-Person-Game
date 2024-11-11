@@ -24,6 +24,8 @@ public class TrackFloor : MonoBehaviour
         {
             if (isFirst)
                 enemyAI.isOnSameFloor = false;
+            else
+                enemyAI.isOnSameFloor = true;
         }
         else
         {
