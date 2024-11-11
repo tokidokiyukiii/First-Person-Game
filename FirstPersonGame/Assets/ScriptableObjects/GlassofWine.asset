@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GlassofWine
   m_EditorClassIdentifier: 
   objectName: Glass of Wine
-  objectDescription: '"Daddy becomes so scary when he drinks this!"'
+  objectDescription: '"Dad drinks this every night"'
   objectModel: {fileID: 9078949020938347583, guid: b94f350e6f9f46145aff1086379dd956,
     type: 3}

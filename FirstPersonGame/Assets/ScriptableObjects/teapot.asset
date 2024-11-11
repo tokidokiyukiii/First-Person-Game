@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: teapot
   m_EditorClassIdentifier: 
   objectName: Teapot
-  objectDescription: '"I also want to get taught"'
+  objectDescription: '"When the man comes to teach sister, my mom brings this out."'
   objectModel: {fileID: 5445548825922953960, guid: 68f05698cf221414bae6d7a6981197fd,
     type: 3}

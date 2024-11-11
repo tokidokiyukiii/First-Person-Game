@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SmokingPipe
   m_EditorClassIdentifier: 
   objectName: Smoking Pipe
-  objectDescription: "\u201CI don\u2019t like the smell of smoke that comes out here\u201D"
+  objectDescription: "\u201CI don\u2019t like how this smells but mom uses it when
+    she's working\u201D"
   objectModel: {fileID: -6360398266376417320, guid: a2de749a214765647b635710a8c7ff1c,
     type: 3}

@@ -10,8 +10,8 @@ using UnityEngine.Rendering.Universal;
 public class ThoughtCount : MonoBehaviour
 {
     public int thoughtCount = 0;
-    public int secondPhaseThoughtCount;
-    public int finalPhaseThoughtCount;
+    public int secondPhaseThoughtCount = 0;
+    public int finalPhaseThoughtCount = 0;
     public int thoughtTotal = 5;
 
     public TextMeshProUGUI phaseText;
@@ -53,6 +53,10 @@ public class ThoughtCount : MonoBehaviour
 
     public void AddThought()
     {
+        if (phaseCount == 2)
+            ++secondPhaseThoughtCount;
+        if (phaseCount == 3)
+            ++finalPhaseThoughtCount;
         thoughtCount++;
 
         if (thoughtCount >= thoughtTotal)
@@ -64,7 +68,7 @@ public class ThoughtCount : MonoBehaviour
             enemyAI.isKeyActive = true;
             firstPersonControlls.canSprint = true;
             
-            StartCoroutine(ActivateSprintText());
+            //StartCoroutine(ActivateSprintText());
         }
 
         switch (thoughtCount)
@@ -153,6 +157,7 @@ public class ThoughtCount : MonoBehaviour
     public void ShowMessage(string message)
     {
         thoughtCountText.gameObject.SetActive(false);
+        phaseText.gameObject.SetActive(false);
         keyText.gameObject.SetActive(true);
         //countPanel.SetActive(false);
         keyText.text = message; 
@@ -172,7 +177,7 @@ public class ThoughtCount : MonoBehaviour
             {
                 thoughtCountText.text = "Thoughts: " + secondPhaseThoughtCount + " / 5";
             }
-            else if (phaseCount == 2)
+            else if (phaseCount == 3)
             {
                 thoughtCountText.text = "Thoughts: " + finalPhaseThoughtCount + " / 5";
             }

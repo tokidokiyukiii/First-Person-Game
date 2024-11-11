@@ -4,8 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using WaitForSeconds = UnityEngine.WaitForSeconds;
 
 public class FirstPersonControls : MonoBehaviour
 {
@@ -76,6 +78,16 @@ public class FirstPersonControls : MonoBehaviour
     public Transform downLadderWaypoint;
     public Transform upLadderWaypoint;
     public bool isInAttic = false;
+    public TextMeshProUGUI sprintText;
+    public TextMeshProUGUI sisterMessageText;
+    public TextMeshProUGUI myResponseText;
+    public TextMeshProUGUI quitText;
+    public bool choiceMade = false;
+    public Transform finalWaypoint;
+    public Door lockTowerDoor;
+    public GameObject enemyLight;
+    public Transform finalEnemyWaypoint;
+    public GameObject endVolume;
         
     [Header("UI SETTINGS")]
     [Space(5)]
@@ -94,6 +106,7 @@ public class FirstPersonControls : MonoBehaviour
     public TextMeshProUGUI writtenThoughtText;
     public TextMeshProUGUI myThoughtText;
     public TextMeshProUGUI infoOrbText;
+    public TextMeshProUGUI enemyInteractText;
     public GameObject ThoughtBackground;
     public GameObject HUDCanvas;
     public GameObject messagesObject;
@@ -125,6 +138,7 @@ public class FirstPersonControls : MonoBehaviour
     [SerializeField] private LayerMask raycastIgnoreLayers;
     public bool isFirst = true;
     public bool isSecond = false;
+    public bool isGameplay = true;
 
     [Header("SPRINT")] [Space(5)] 
     public bool canSprint = false;
@@ -179,7 +193,9 @@ public class FirstPersonControls : MonoBehaviour
         
         // Subscribe to the sprint input event
         playerInput.Player.Sprint.performed += ctx => ToggleSprint(); // Change speed
-
+        
+        // Subscribe to the quit input event
+        playerInput.Player.Quit.performed += ctx => QuitInteract(); // Change speed
     }
 
     private void Update()
@@ -510,7 +526,7 @@ public class FirstPersonControls : MonoBehaviour
             }
             else if (hit.collider.CompareTag("LadderDown"))
             {
-                if (isInAttic)
+                //if (isInAttic)
                 {
                     CharacterController controller = GetComponent<CharacterController>();
                     
@@ -522,8 +538,7 @@ public class FirstPersonControls : MonoBehaviour
                         transform.position = downLadderWaypoint.position;
                         controller.enabled = true;
                     }
-                            
-                    transform.position = downLadderWaypoint.position;
+                    
                     isInAttic = false;
                 }
             }
@@ -630,13 +645,69 @@ public class FirstPersonControls : MonoBehaviour
                 Keys keys = hit.collider.gameObject.GetComponent<Keys>();
                 soundManager.PlaySFX("Key Pickup");
                 keys.UnlockDoor();
-                thoughtCount.ShowMessage("GET OUT!");
-                getOutSound.SetActive(true);
+
+                isGameplay = false;
+                enemy.gameObject.SetActive(false);
+                //enemyAI.LastEnemyPos();
+                enemyAI.enabled = false;
+                NavMeshAgent agent = enemy.gameObject.GetComponent<NavMeshAgent>();
+                agent.enabled = false;
+                
+                enemy.tag = "EnemyInteract";
+                enemy.position = finalEnemyWaypoint.position;
+                enemy.gameObject.SetActive(true);
+                enemyLight.SetActive(true);
+                
+                //thoughtCount.ShowMessage("GET OUT!");
+                //getOutSound.SetActive(true);
+                if (lockTowerDoor.isOpen)
+                    lockTowerDoor.ToggleDoor();
+                lockTowerDoor.needsKey = true;
+                
+                NormalViewVolume.SetActive(false);
+                SecondViewVolume.SetActive(false);
+                finalNormalVolume.SetActive(false);
+                finalSecondVolume.SetActive(false);
+                endVolume.SetActive(true);
             }
             else if (hit.collider.CompareTag("Curtain"))
             {
                 hit.collider.GetComponent<Animator>().Play("CurtainOpen");
             }
+            else if (hit.collider.CompareTag("EnemyInteract"))
+            {
+                isInputEnabled = false;
+                StartCoroutine(FinalMessage());
+            }
+        }
+    }
+
+    private IEnumerator FinalMessage()
+    {
+        messagesObject.SetActive(false);
+        
+        sisterMessageText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(10f);
+        sisterMessageText.gameObject.SetActive(false);
+        
+        myResponseText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(10f);
+        myResponseText.gameObject.SetActive(false);
+        
+        //enemy.gameObject.SetActive(false);
+        Destroy(enemy.gameObject);
+        messagesObject.SetActive(true);
+        
+        yield return new WaitForSeconds(5f);
+        
+        CharacterController controller = GetComponent<CharacterController>();
+                            
+        if (controller != null)
+        {
+            controller.enabled = false;
+            transform.position = finalWaypoint.position;
+            isInputEnabled = true;
+            controller.enabled = true;
         }
     }
 
@@ -660,6 +731,16 @@ public class FirstPersonControls : MonoBehaviour
         
         myThoughtText.gameObject.SetActive(false);
         ThoughtBackground.SetActive(false);
+
+        if (thoughtCount.thoughtCount == 15)
+        {
+            sprintText.gameObject.SetActive(true);
+
+            yield return new WaitForSeconds(10f);
+            
+            sprintText.gameObject.SetActive(false);
+        }
+
         messagesObject.SetActive(true);
 
         isShowingMessage = false;
@@ -691,19 +772,33 @@ public class FirstPersonControls : MonoBehaviour
         messagesObject.SetActive(true);
     }
 
-    private IEnumerator RaiseDoor(GameObject door)
+    private void QuitInteract()
     {
-        float raiseAmount =7f; // The total distance the door will be raised
-        float raiseSpeed = 2f; // The speed at which the door will be raised
-        Vector3 startPosition = door.transform.position; // Store the initial position of the door
-        Vector3 endPosition = startPosition + Vector3.up * raiseAmount; // Calculate the final position of the door after raising
+        isInputEnabled = false;
+        StartCoroutine(QuitActivate());
+    }
 
-        // Continue raising the door until it reaches the target height
-        while (door.transform.position.y < endPosition.y)
+    public IEnumerator QuitActivate()
+    {
+        messagesObject.SetActive(false);
+        quitText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(5f);
+        
+        quitText.gameObject.SetActive(false);
+        enemy.gameObject.SetActive(false);
+        messagesObject.SetActive(true);
+        
+        yield return new WaitForSeconds(5f);
+        
+        CharacterController controller = GetComponent<CharacterController>();
+                            
+        if (controller != null)
         {
-            // Move the door towards the target position at the specified speed
-            door.transform.position = Vector3.MoveTowards(door.transform.position, endPosition, raiseSpeed * Time.deltaTime);
-            yield return null; // Wait until the next frame before continuing the loop
+            controller.enabled = false;
+            transform.position = finalWaypoint.position;
+            isInputEnabled = true;
+            controller.enabled = true;
         }
     }
 
@@ -785,6 +880,8 @@ public class FirstPersonControls : MonoBehaviour
                 infoOrbText.gameObject.SetActive(true);
             else if (hit.collider.CompareTag("Key"))
                 keyText.gameObject.SetActive(true);
+            else if (hit.collider.CompareTag("EnemyInteract"))
+                enemyInteractText.gameObject.SetActive(true);
             else
             { 
                 // Hide the pick-up text if not looking at an object with info
@@ -797,6 +894,7 @@ public class FirstPersonControls : MonoBehaviour
                 infoOrbText.gameObject.SetActive(false);
                 pullLadderText.gameObject.SetActive(false);
                 climbLadderText.gameObject.SetActive(false);
+                enemyInteractText.gameObject.SetActive(false);
             }
         }
         else
@@ -811,85 +909,12 @@ public class FirstPersonControls : MonoBehaviour
             infoOrbText.gameObject.SetActive(false);
             pullLadderText.gameObject.SetActive(false);
             climbLadderText.gameObject.SetActive(false);
+            enemyInteractText.gameObject.SetActive(false);
         }
     }
 
     private void CheckForEnemy()
     {
-        /*Ray enemyRay = new Ray(playerCamera.position, playerCamera.forward);
-        RaycastHit enemyHit;
-
-        if (Physics.Raycast(enemyRay, out enemyHit, enemyRange))
-        {
-            if (enemyHit.collider.CompareTag("Enemy"))
-            {
-                //EnemyAI enemyAI = enemyHit.collider.GetComponent<EnemyAI>();
-
-                if (enemyAI != null)
-                {
-                    Vector3 enemyViewportPos = playerCheckCamera.WorldToViewportPoint(enemyHit.collider.transform.position);
-
-                    // If the enemy is within the screen boundaries (not behind the player)
-                    if (enemyViewportPos.z > 0 && enemyViewportPos.x > 0 && enemyViewportPos.x < 1 &&
-                        enemyViewportPos.y > 0 && enemyViewportPos.y < 1)
-                    {
-                        enemyAI.isSeen = true; // Player is looking at the enemy
-                        Debug.Log("Enemy is seen");
-                    }
-                    else
-                    {
-                        enemyAI.isSeen = false; // Enemy is not visible
-                        Debug.Log("Enemy is not in viewport");
-                    }
-                }
-                else
-                {
-                    Debug.Log("No EnemyAI component found");
-                }
-            }
-            else
-            {
-                Debug.Log("Hit something else: " + enemyHit.collider.name);
-                enemyAI.isSeen = false;
-            }
-        }
-        else
-        {
-            // If the ray did not hit anything
-            if (enemyAI != null)
-            {
-                enemyAI.isSeen = false; // Reset isSeen if no enemy hit
-                Debug.Log("No enemy hit");
-            }
-        }*/
-        
-        /*Collider[] enemiesInRange = Physics.OverlapSphere(playerCamera.transform.position, enemyRange);
-
-        foreach (Collider enemyCollider in enemiesInRange)
-        {
-            if (enemyCollider.CompareTag("Enemy"))
-            {
-                // Get the EnemyAI script from the enemy object
-                EnemyAI enemyAI = enemyCollider.GetComponent<EnemyAI>();
-
-                if (enemyAI != null)
-                {
-                    // Check if the enemy is within the camera's field of view (anywhere on the screen)
-                    Vector3 enemyViewportPos = playerCheckCamera.WorldToViewportPoint(enemyCollider.transform.position);
-
-                    // If the enemy is within the screen boundaries (not behind the player or out of view)
-                    if (enemyViewportPos.z > 0 && enemyViewportPos.x > 0 && enemyViewportPos.x < 1 &&
-                        enemyViewportPos.y > 0 && enemyViewportPos.y < 1)
-                    {
-                        Debug.Log("Looking at enemy");
-                        enemyAI.isSeen = true;
-                    }
-                    else
-                        enemyAI.isSeen = false;
-                }
-            }
-        }*/
-        
         Collider[] enemiesInRange = Physics.OverlapSphere(playerCamera.position, enemyRange);
 
         foreach (Collider enemyCollider in enemiesInRange)

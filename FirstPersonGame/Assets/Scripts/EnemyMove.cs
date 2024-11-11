@@ -19,6 +19,9 @@ public class EnemyMove : MonoBehaviour
 
     public bool isLastScare;
     public Transform newPos;
+    
+    public AudioSource sfxSource;
+    public AudioClip sfxSound;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -50,6 +53,8 @@ public class EnemyMove : MonoBehaviour
 
         // Ensure the object reaches the exact target position at the end
         enemy.position = targetPosition;
+        
+        sfxSource.PlayOneShot(sfxSound);
         
         Debug.Log("Moving Enemy to new position");
         enemy.position = newPos.position;

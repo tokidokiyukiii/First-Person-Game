@@ -20,11 +20,10 @@ public class EnemyAI : MonoBehaviour
     private bool walkPointSet;
     public float walkPointRange;
     
-    [SerializeField] private Transform[] waypoints;
-    
     [SerializeField] private Transform[] ffWaypoints;
     [SerializeField] private Transform[] sfWaypoints;
     public Transform currentWaypoint;
+    public Transform finalWaypoint;
 
     public bool isOnFirst = false;
     public Transform FFWaypoint;
@@ -48,6 +47,7 @@ public class EnemyAI : MonoBehaviour
     public bool isKeyActive = false;
 
     public AudioSource audioSource;
+    private Coroutine soundCoroutine = null;
 
     public AudioClip hummingOne;
     public AudioClip hummingTwo;
@@ -57,6 +57,7 @@ public class EnemyAI : MonoBehaviour
 
     public bool isOnSameFloor = true;
     public bool isInBedroom;
+    public bool isPlaying;
 
     private void Awake()
     {
@@ -78,6 +79,8 @@ public class EnemyAI : MonoBehaviour
 
                 if (isSeen)
                 {
+                    //if (isPlaying)
+                      //  StopCoroutine(PlayRandomSound());
                     agent.isStopped = true; 
                     agent.velocity = Vector3.zero;
                     //agent.ResetPath();
@@ -88,6 +91,9 @@ public class EnemyAI : MonoBehaviour
                     agent.isStopped = false;
                     if ((playerInSightRange && !firstPersonControls.isInAttic && isOnSameFloor && !isInBedroom) || isKeyActive)
                     {
+                        //if (isPlaying)
+                          //  StopCoroutine(PlayRandomSound());
+                        
                         //Change to Chase Speed and Acceleration
                         agent.speed = 30f;
                         agent.acceleration = 20f;
@@ -100,6 +106,11 @@ public class EnemyAI : MonoBehaviour
                         if (playerInAttackRange)
                         {
                             player.position = playerWaypoint.position;
+                            //firstPersonControls.isFirst = true;
+                            if (thoughtCount.thoughtCount <= 10)
+                            {
+                                isOnSameFloor = false;
+                            }
                             MoveFloors(1);
                         }
                     }
@@ -121,6 +132,15 @@ public class EnemyAI : MonoBehaviour
                 agent.isStopped = true; 
                 agent.velocity = Vector3.zero;
             }
+            
+            if (!isPlaying && !isSeen && !playerInSightRange && soundCoroutine == null)
+            {
+                PlayHumming();
+            }
+            else if (isSeen || !firstPersonControls.isGameplay || playerInSightRange)
+            {
+                StopHumming();
+            }
         }
     }
 
@@ -140,12 +160,6 @@ public class EnemyAI : MonoBehaviour
 
     private void ChooseRandomWaypoint()
     {
-        if (waypoints.Length == 0) 
-        {
-            Debug.LogWarning("There are no waypoints!");
-            return; // Exit if there are no waypoints
-        }
-        
         //Debug.Log("Total waypoints: " + waypoints.Length);
 
         if (isOnFirst)
@@ -195,27 +209,47 @@ public class EnemyAI : MonoBehaviour
 
     public void PlayHumming()
     {
-        StartCoroutine(PlayRandomSound());
+        if (soundCoroutine == null)
+            StartCoroutine(PlayRandomSound());
+    }
+
+    public void StopHumming()
+    {
+        if (soundCoroutine != null)
+        {
+            StopCoroutine(soundCoroutine);
+            soundCoroutine = null;
+            isPlaying = false;
+        }
     }
     
     private IEnumerator PlayRandomSound()
     {
-        while (true) // Loop indefinitely
+        while (firstPersonControls.isGameplay && !isSeen && !playerInSightRange)// || isOnSameFloor)
         {
-            if (!isSeen && !playerInSightRange)
-            {
-                // Wait for a random interval between minInterval and maxInterval
-                float waitTime = UnityEngine.Random.Range(20f, 120f);
-                yield return new WaitForSeconds(waitTime);
+            // Wait for a random interval between minInterval and maxInterval
+            isPlaying = true;
+            
+            float waitTime = UnityEngine.Random.Range(20f, 120f);
+            yield return new WaitForSeconds(waitTime);
 
-                int audioNum = UnityEngine.Random.Range(0, 2);
-
-                // Play the sound
-                if (audioNum == 0)
-                    audioSource.PlayOneShot(hummingOne);
-                else
-                    audioSource.PlayOneShot(hummingTwo);
-            }
+            int audioNum = UnityEngine.Random.Range(0, 2);
+            AudioClip selectedClip = (audioNum == 0) ? hummingOne : hummingTwo;
+            audioSource.PlayOneShot(selectedClip);
+            
+            yield return new WaitForSeconds(selectedClip.length);
         }
+        
+        soundCoroutine = null;
+        isPlaying = false;
+    }
+    
+    public void LastEnemyPos()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        agent.enabled = false;
+        transform.tag = "EnemyInteract";
+        transform.position = finalWaypoint.position;
+        Debug.Log("Moving enemy to position " + finalWaypoint);
     }
 }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: whale
   m_EditorClassIdentifier: 
   objectName: My Only Whale
-  objectDescription: '"This is my treasure that mommy only gave me!"'
+  objectDescription: '"Mommy gave this to me when I was sad. It made me feels so
+    happy!"'
   objectModel: {fileID: -8679921383154817045, guid: d1ac0dbb7b4e8e244be89b8e8f9e7fa9,
     type: 3}
