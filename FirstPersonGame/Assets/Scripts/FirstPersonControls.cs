@@ -774,8 +774,11 @@ public class FirstPersonControls : MonoBehaviour
 
     private void QuitInteract()
     {
-        isInputEnabled = false;
-        StartCoroutine(QuitActivate());
+        if (!isGameplay)
+        {
+            isInputEnabled = false;
+            StartCoroutine(QuitActivate());
+        }
     }
 
     public IEnumerator QuitActivate()
@@ -956,7 +959,7 @@ public class FirstPersonControls : MonoBehaviour
 
     private void ChangeView()
     {
-        if (!isShowing)
+        if (!isShowing && isGameplay)
         {
             if (isNormalView)
             {

@@ -105,13 +105,18 @@ public class EnemyAI : MonoBehaviour
                         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
                         if (playerInAttackRange)
                         {
+                            CharacterController controller = player.GetComponent<CharacterController>();
+                            controller.enabled = false;
                             player.position = playerWaypoint.position;
+                            controller.enabled = true;
                             //firstPersonControls.isFirst = true;
-                            if (thoughtCount.thoughtCount <= 10)
+                            
+                            MoveFloors(1);
+                            //StartCoroutine(MoveFloors(1));
+                            if (thoughtCount.thoughtCount <= 10 && player.position == playerWaypoint.position)
                             {
                                 isOnSameFloor = false;
                             }
-                            MoveFloors(1);
                         }
                     }
                     else if (!playerInSightRange)
@@ -184,6 +189,13 @@ public class EnemyAI : MonoBehaviour
 
     public void MoveFloors(int floor)
     {
+        StartCoroutine(RespawnDelay(floor));
+    }
+
+    private IEnumerator RespawnDelay(int floor)
+    {
+        yield return new WaitForSeconds(10f);
+        
         if (canEnemyMove && thoughtCount.thoughtCount >= 10)
         {
             agent.enabled = false;

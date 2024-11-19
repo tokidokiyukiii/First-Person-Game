@@ -6,24 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ee58ddc8-76b9-4c00-b5d4-bd37a1809121" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ActionMaps/New Controls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ActionMaps/New Controls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ActionMaps/New Controls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ActionMaps/New Controls.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Surfaces/p glass/Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Surfaces/p glass/Glass.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Cutscene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Cutscene1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Final Phase Volume PP Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Final Phase Volume PP Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Normal Volume PP Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Normal Volume PP Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Second Volume Final Phase PP Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Second Volume Final Phase PP Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/GlassofWine.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/GlassofWine.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/SmokingPipe.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/SmokingPipe.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/teapot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/teapot.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/whale.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/whale.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyMove.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ThoughtCount.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ThoughtCount.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Fonts/JMH Typewriter SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Fonts/JMH Typewriter SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +152,9 @@
       <workItem from="1730727359666" duration="4812000" />
       <workItem from="1731193431258" duration="33369000" />
       <workItem from="1731275263977" duration="3961000" />
-      <workItem from="1731286163960" duration="19613000" />
+      <workItem from="1731286163960" duration="20807000" />
+      <workItem from="1732034371807" duration="76000" />
+      <workItem from="1732034467443" duration="3364000" />
     </task>
     <servers />
   </component>
