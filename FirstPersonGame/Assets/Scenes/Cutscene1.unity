@@ -1437,6 +1437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1798713346}
   sceneName: Game
+  uiManager: {fileID: 974360737}
 --- !u!1 &2139146323
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class CutsceneChangeScene : MonoBehaviour
 {
     public VideoPlayer videoPlayer; // Reference to the VideoPlayer component
     public string sceneName; // Name of the scene to load when video finishes
+    public UIManager uiManager;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class CutsceneChangeScene : MonoBehaviour
     void OnVideoEnd(VideoPlayer vp)
     {
         // Load the specified scene when the video ends
-        SceneManager.LoadScene(sceneName);
+        uiManager.LoadScene(sceneName);
     }
 
     void OnDestroy()
