@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour
     
     public bool isGame = false;
 
+    public LevelLoader levelLoader;
+    public int levelToLoad = 1;
+
     void Start()
     {
         if (isGame)
@@ -30,7 +33,8 @@ public class UIManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        levelLoader.LoadNextLevel(levelToLoad);
+        //SceneManager.LoadScene(sceneName);
     }
 
     public void QuitGame()

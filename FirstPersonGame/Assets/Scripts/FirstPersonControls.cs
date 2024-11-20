@@ -73,6 +73,7 @@ public class FirstPersonControls : MonoBehaviour
     public ThoughtCount thoughtCount;
     public GameObject getOutSound;
     public SoundManager soundManager;
+    public LevelLoader levelLoader;
     public bool isShowingMessage;
     public TextMeshProUGUI infoMessageText;
     public Transform downLadderWaypoint;
@@ -502,16 +503,17 @@ public class FirstPersonControls : MonoBehaviour
                 {
                     if (pullLadder.hasFinishedMoving)
                     {
-                        CharacterController controller = GetComponent<CharacterController>();
+                        //CharacterController controller = GetComponent<CharacterController>();
                         if (!isInAttic)
                         {
                             Debug.Log("Moving player to attic");
                             
-                            if (controller != null)
+                            //if (controller != null)
                             {
-                                controller.enabled = false;
-                                transform.position = upLadderWaypoint.position;
-                                controller.enabled = true;
+                                //controller.enabled = false;
+                                //transform.position = upLadderWaypoint.position;
+                                levelLoader.InGameTransition(upLadderWaypoint);
+                                //controller.enabled = true;
                             }
                             
                             transform.position = upLadderWaypoint.position;
@@ -528,15 +530,16 @@ public class FirstPersonControls : MonoBehaviour
             {
                 //if (isInAttic)
                 {
-                    CharacterController controller = GetComponent<CharacterController>();
+                    //CharacterController controller = GetComponent<CharacterController>();
                     
                     Debug.Log("Moving player to second floor");
                             
-                    if (controller != null)
+                    //if (controller != null)
                     {
-                        controller.enabled = false;
-                        transform.position = downLadderWaypoint.position;
-                        controller.enabled = true;
+                        //controller.enabled = false;
+                        //transform.position = downLadderWaypoint.position;
+                        levelLoader.InGameTransition(downLadderWaypoint);
+                        //controller.enabled = true;
                     }
                     
                     isInAttic = false;
