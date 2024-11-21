@@ -76,6 +76,7 @@ public class FirstPersonControls : MonoBehaviour
     public LevelLoader levelLoader;
     public bool isShowingMessage;
     public TextMeshProUGUI infoMessageText;
+    public InfoOrb infoOrb;
     public Transform downLadderWaypoint;
     public Transform upLadderWaypoint;
     public bool isInAttic = false;
@@ -512,17 +513,14 @@ public class FirstPersonControls : MonoBehaviour
                             if (controller != null)
                             {
                                 controller.enabled = false;
-                                transform.position = upLadderWaypoint.position;
-                                //levelLoader.InGameTransition(upLadderWaypoint);
+                                //transform.position = upLadderWaypoint.position;
+                                levelLoader.playsVideo = false;
+                                levelLoader.InGameTransition(upLadderWaypoint);
                                 controller.enabled = true;
                             }
                             
-                            transform.position = upLadderWaypoint.position;
+                            //transform.position = upLadderWaypoint.position;
                             isInAttic = true;
-                        }
-                        else
-                        {
-                            
                         }
                     }
                 }
@@ -538,8 +536,9 @@ public class FirstPersonControls : MonoBehaviour
                     if (controller != null)
                     {
                         controller.enabled = false;
-                        transform.position = downLadderWaypoint.position;
-                        //levelLoader.InGameTransition(downLadderWaypoint);
+                        //transform.position = downLadderWaypoint.position;
+                        levelLoader.playsVideo = false;
+                        levelLoader.InGameTransition(downLadderWaypoint);
                         controller.enabled = true;
                     }
                     
@@ -629,7 +628,7 @@ public class FirstPersonControls : MonoBehaviour
             else if (hit.collider.CompareTag("InfoOrb"))
             {
                 InfoOrb infoOrb = hit.collider.gameObject.GetComponent<InfoOrb>();
-                infoMessageText.text = infoOrb.infoMessgae;
+                infoMessageText.text = infoOrb.infoMessage;
                 
                 soundManager.PlaySFX("Info Orb Sound");
 
@@ -740,8 +739,9 @@ public class FirstPersonControls : MonoBehaviour
         myThoughtText.gameObject.SetActive(false);
         ThoughtBackground.SetActive(false);
 
-        if (thoughtCount.thoughtCount == 15)
+        if (thoughtCount.thoughtCount == thoughtCount.thoughtTotal)
         {
+            infoOrb.infoMessage = "This should be a safe space...";
             sprintText.gameObject.SetActive(true);
 
             yield return new WaitForSeconds(10f);

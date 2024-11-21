@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InfoOrb : MonoBehaviour
 {
-    public string infoMessgae;
+    public string infoMessage;
     public bool enemyMove = false;
     public bool openDoor = false;
     public Door door;

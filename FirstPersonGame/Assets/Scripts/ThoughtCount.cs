@@ -37,7 +37,7 @@ public class ThoughtCount : MonoBehaviour
     public EnemyAI enemyAI;
     public Door towerDoor;
 
-    public FirstPersonControls firstPersonControlls;
+    public FirstPersonControls firstPersonControls;
 
     public GameObject normalViewVolume;
     public GameObject secondViewVolume;
@@ -55,6 +55,9 @@ public class ThoughtCount : MonoBehaviour
     public GameObject cutscene;
     public VideoPlayer videoPlayer;
     public GameObject canvas;
+    public LevelLoader levelLoader;
+    public GameObject levelLoaderObject;
+    public Transform player;
 
     private void Start()
     {
@@ -75,8 +78,12 @@ public class ThoughtCount : MonoBehaviour
     void OnVideoEnd(VideoPlayer vp)
     {
         Debug.Log("Video finished!");
-        firstPersonControlls.enabled = true;
+        //firstPersonControlls.enabled = true;
+        firstPersonControls.isInputEnabled = true;
         enemyAI.canEnemyMove = true;
+        
+        //levelLoaderObject.SetActive(true);
+        levelLoader.StopTransition(player);
         
         cutscene.SetActive(false);
         canvas.SetActive(true);
@@ -100,22 +107,19 @@ public class ThoughtCount : MonoBehaviour
         if (thoughtCount >= thoughtTotal)
         {
             //firstPersonControlls.enabled = false;
-            enemyAI.canEnemyMove = false;
+            levelLoader.playsVideo = true;
             
-            cutscene.SetActive(true);
-            canvas.SetActive(false);
             
-            Debug.Log("Video is about to play!");
-            videoPlayer.time = 0;
-            videoPlayer.Play();
-            Debug.Log("Video state: " + videoPlayer.isPlaying);
+            levelLoader.InGameTransition(player);
+            //levelLoaderObject.SetActive(false);
+            
             
             key.SetActive(true);
             glowingKey.SetActive(true);
             ShowMessage("The key is in the attic. Be quick...");
             
             enemyAI.isKeyActive = true;
-            firstPersonControlls.canSprint = true;
+            firstPersonControls.canSprint = true;
             
             //StartCoroutine(ActivateSprintText());
         }
@@ -182,7 +186,7 @@ public class ThoughtCount : MonoBehaviour
                 phaseText.text = "FINAL PHASE";
                 phaseCount = 3;
                 
-                if (firstPersonControlls.isNormalView)
+                if (firstPersonControls.isNormalView)
                 {
                     normalViewVolume.SetActive(false);
                     finalNormalViewVolume.SetActive(true);
@@ -192,7 +196,7 @@ public class ThoughtCount : MonoBehaviour
                     secondViewVolume.SetActive(false);
                     FinalSecondViewVolume.SetActive(true);
                 }
-                firstPersonControlls.finalPhase = true;
+                firstPersonControls.finalPhase = true;
                 break;
             case 12:
                 Thoughts5.SetActive(true);
@@ -236,12 +240,12 @@ public class ThoughtCount : MonoBehaviour
 
     private IEnumerator ActivateSprintText()
     {
-        firstPersonControlls.isShowingMessage = true;
+        firstPersonControls.isShowingMessage = true;
         
         sprintText.gameObject.SetActive(true);
         yield return new WaitForSeconds(5f);
 
-        firstPersonControlls.isShowingMessage = false;
+        firstPersonControls.isShowingMessage = false;
     }
 
     /*private IEnumerator HideMessageAfterDelay(float delay)

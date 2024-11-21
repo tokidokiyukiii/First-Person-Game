@@ -60,6 +60,7 @@ public class EnemyAI : MonoBehaviour
     public bool isPlaying;
 
     public Animator animator;
+    public LevelLoader levelLoader;
 
     private void Awake()
     {
@@ -111,7 +112,9 @@ public class EnemyAI : MonoBehaviour
                         {
                             CharacterController controller = player.GetComponent<CharacterController>();
                             controller.enabled = false;
-                            player.position = playerWaypoint.position;
+                            levelLoader.playsVideo = false;
+                            levelLoader.InGameTransition(playerWaypoint);
+                            //player.position = playerWaypoint.position;
                             controller.enabled = true;
                             //firstPersonControls.isFirst = true;
                             
