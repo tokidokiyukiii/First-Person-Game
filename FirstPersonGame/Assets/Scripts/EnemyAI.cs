@@ -59,6 +59,8 @@ public class EnemyAI : MonoBehaviour
     public bool isInBedroom;
     public bool isPlaying;
 
+    public Animator animator;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -85,6 +87,7 @@ public class EnemyAI : MonoBehaviour
                     agent.velocity = Vector3.zero;
                     //agent.ResetPath();
                     chasingSound.SetActive(false);
+                    animator.enabled = false;
                 }
                 else
                 {
@@ -100,6 +103,7 @@ public class EnemyAI : MonoBehaviour
                         agent.stoppingDistance = 10f;
                         
                         chasingSound.SetActive(true);
+                        animator.enabled = true;
                         ChasePlayer();
 
                         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
@@ -127,6 +131,7 @@ public class EnemyAI : MonoBehaviour
                         agent.stoppingDistance = 0f;
                         
                         chasingSound.SetActive(false);
+                        animator.enabled = true;
                         Patrol();
                     }
                 }

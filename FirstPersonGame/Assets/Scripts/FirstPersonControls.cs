@@ -89,6 +89,7 @@ public class FirstPersonControls : MonoBehaviour
     public GameObject enemyLight;
     public Transform finalEnemyWaypoint;
     public GameObject endVolume;
+    public UIManager uiManager;
         
     [Header("UI SETTINGS")]
     [Space(5)]
@@ -196,7 +197,7 @@ public class FirstPersonControls : MonoBehaviour
         playerInput.Player.Sprint.performed += ctx => ToggleSprint(); // Change speed
         
         // Subscribe to the quit input event
-        playerInput.Player.Quit.performed += ctx => QuitInteract(); // Change speed
+        //playerInput.Player.Quit.performed += ctx => QuitInteract(); // Change speed
     }
 
     private void Update()
@@ -636,8 +637,8 @@ public class FirstPersonControls : MonoBehaviour
                 
                 if (infoOrb.enemyMove)
                 {
-                    enemy.gameObject.SetActive(true);
-                    enemyAI.canEnemyMove = true;
+                    //enemy.gameObject.SetActive(true);
+                    //enemyAI.canEnemyMove = true;
                 }
 
                 if (infoOrb.openDoor)
@@ -648,11 +649,14 @@ public class FirstPersonControls : MonoBehaviour
                 Keys keys = hit.collider.gameObject.GetComponent<Keys>();
                 soundManager.PlaySFX("Key Pickup");
                 keys.UnlockDoor();
+                
+                //uiManager.LoadScene("Cutscene3");
 
                 isGameplay = false;
                 enemy.gameObject.SetActive(false);
                 //enemyAI.LastEnemyPos();
                 enemyAI.enabled = false;
+                enemyAI.animator.enabled = false;
                 NavMeshAgent agent = enemy.gameObject.GetComponent<NavMeshAgent>();
                 agent.enabled = false;
                 
@@ -680,7 +684,8 @@ public class FirstPersonControls : MonoBehaviour
             else if (hit.collider.CompareTag("EnemyInteract"))
             {
                 isInputEnabled = false;
-                StartCoroutine(FinalMessage());
+                uiManager.LoadScene("Cutscene3");
+                //StartCoroutine(FinalMessage());
             }
         }
     }

@@ -503,8 +503,8 @@ MonoBehaviour:
   UIElements: []
   initialButton: {fileID: 0}
   isGame: 0
-  levelLoader: {fileID: 0}
-  levelToLoad: 2
+  levelLoader: {fileID: 1377108140}
+  levelToLoad: 3
 --- !u!114 &480287018
 MonoBehaviour:
   m_ObjectHideFlags: 0

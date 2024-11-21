@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Video;
 
 public class ThoughtCount : MonoBehaviour
 {
@@ -51,6 +52,43 @@ public class ThoughtCount : MonoBehaviour
     public GameObject SoundThree;
     public GameObject SoundFour;
 
+    public GameObject cutscene;
+    public VideoPlayer videoPlayer;
+    public GameObject canvas;
+
+    private void Start()
+    {
+        videoPlayer.loopPointReached += OnVideoEnd;
+        videoPlayer.prepareCompleted += OnVideoPrepared;
+
+        // Start preparing the video
+        videoPlayer.Prepare();
+        Debug.Log("Preparing video...");
+    }
+    
+    void OnVideoPrepared(VideoPlayer vp)
+    {
+        Debug.Log("Video is prepared, starting playback...");
+        videoPlayer.Play();
+    }
+    
+    void OnVideoEnd(VideoPlayer vp)
+    {
+        Debug.Log("Video finished!");
+        firstPersonControlls.enabled = true;
+        enemyAI.canEnemyMove = true;
+        
+        cutscene.SetActive(false);
+        canvas.SetActive(true);
+    }
+    
+    void OnDestroy()
+    {
+        // Unsubscribe from the event to prevent memory leaks
+        videoPlayer.loopPointReached -= OnVideoEnd;
+        videoPlayer.prepareCompleted -= OnVideoPrepared;
+    }
+
     public void AddThought()
     {
         if (phaseCount == 2)
@@ -61,6 +99,17 @@ public class ThoughtCount : MonoBehaviour
 
         if (thoughtCount >= thoughtTotal)
         {
+            //firstPersonControlls.enabled = false;
+            enemyAI.canEnemyMove = false;
+            
+            cutscene.SetActive(true);
+            canvas.SetActive(false);
+            
+            Debug.Log("Video is about to play!");
+            videoPlayer.time = 0;
+            videoPlayer.Play();
+            Debug.Log("Video state: " + videoPlayer.isPlaying);
+            
             key.SetActive(true);
             glowingKey.SetActive(true);
             ShowMessage("The key is in the attic. Be quick...");
@@ -116,6 +165,7 @@ public class ThoughtCount : MonoBehaviour
                 
                 enemyAI.gameObject.SetActive(true);
                 enemyAI.canEnemyMove = true;
+                enemyAI.animator.enabled = true;
                 
                 enemyAI.audioSource.PlayOneShot(enemyAI.laughingSpawn);
                 enemyAI.PlayHumming();
