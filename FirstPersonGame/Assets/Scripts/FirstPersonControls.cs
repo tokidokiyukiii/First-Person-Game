@@ -92,6 +92,7 @@ public class FirstPersonControls : MonoBehaviour
     public Transform finalEnemyWaypoint;
     public GameObject endVolume;
     public UIManager uiManager;
+    public RawImage charImage;
         
     [Header("UI SETTINGS")]
     [Space(5)]
@@ -737,10 +738,12 @@ public class FirstPersonControls : MonoBehaviour
         messagesObject.SetActive(false);
         ThoughtBackground.SetActive(true);
         writtenThoughtText.gameObject.SetActive(true);
+        charImage.texture = thoughts.charTexture;
 
         // Wait for the specified duration
         yield return new WaitForSeconds(duration);
         writtenThoughtText.gameObject.SetActive(false);
+        charImage.gameObject.SetActive(false);
         
         sfxSource.PlayOneShot(thoughts.voiceOver);
         myThoughtText.gameObject.SetActive(true);
@@ -763,6 +766,7 @@ public class FirstPersonControls : MonoBehaviour
         }
 
         messagesObject.SetActive(true);
+        charImage.gameObject.SetActive(true);
 
         isShowingMessage = false;
     }

@@ -250,7 +250,7 @@ public class EnemyAI : MonoBehaviour
     
     private IEnumerator PlayRandomSound()
     {
-        while (firstPersonControls.isGameplay && !isSeen && !playerInSightRange)// || isOnSameFloor)
+        while (firstPersonControls.isGameplay && !isSeen && !playerInSightRange && !levelLoader.isPlaying)// || isOnSameFloor)
         {
             // Wait for a random interval between minInterval and maxInterval
             isPlaying = true;

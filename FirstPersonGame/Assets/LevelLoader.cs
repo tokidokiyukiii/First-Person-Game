@@ -23,18 +23,23 @@ public class LevelLoader : MonoBehaviour
     public GameObject audioManager;
     public GameObject finalPhase;
     public bool isGame = false;
+    public bool isPlaying;
     
     private void Start()
     {
         if (controller != null)
             controller = player.GetComponent<CharacterController>();
         
-        videoPlayer.loopPointReached += OnVideoEnd;
-        videoPlayer.prepareCompleted += OnVideoPrepared;
+        if (playsVideo)
+        {
+            videoPlayer.loopPointReached += OnVideoEnd;
+            videoPlayer.prepareCompleted += OnVideoPrepared;
 
-        // Start preparing the video
-        videoPlayer.Prepare();
-        Debug.Log("Preparing video...");
+            // Start preparing the video
+        
+            videoPlayer.Prepare();
+            Debug.Log("Preparing video...");
+        }
     }
     
     void OnVideoPrepared(VideoPlayer vp)
@@ -66,6 +71,8 @@ public class LevelLoader : MonoBehaviour
             finalPhase.SetActive(true);
             playsVideo = false;
         }
+
+        isPlaying = false;
     }
     
     void OnDestroy()
@@ -124,6 +131,7 @@ public class LevelLoader : MonoBehaviour
             Debug.Log("Video is about to play!");
             videoPlayer.time = 0.1f;
             videoPlayer.Play();
+            isPlaying = true;
             Debug.Log("Video state: " + videoPlayer.isPlaying);
         }
         else

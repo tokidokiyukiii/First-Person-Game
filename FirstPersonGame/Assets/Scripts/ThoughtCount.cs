@@ -165,6 +165,7 @@ public class ThoughtCount : MonoBehaviour
                         enemyAI.MoveFloors(2);
                     else
                         enemyAI.MoveFloors(1);
+                    enemyAI.isOnSameFloor = true;
                 }
                 
                 if (firstPersonControls.isNormalView)

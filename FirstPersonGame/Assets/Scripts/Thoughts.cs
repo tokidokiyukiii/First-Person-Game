@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Thoughts : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class Thoughts : MonoBehaviour
     public Light lightIntensity;
 
     public AudioClip voiceOver;
+    public RawImage charImage;
+    public Texture charTexture;
 
 
     private void Start()

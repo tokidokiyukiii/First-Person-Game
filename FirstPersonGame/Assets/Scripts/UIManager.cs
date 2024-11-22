@@ -46,6 +46,17 @@ public class UIManager : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
     }
+
+    public void EndGame()
+    {
+        StartCoroutine(WaitToEnd());
+    }
+
+    private IEnumerator WaitToEnd()
+    {
+        yield return new WaitForSeconds(10f);
+        LoadScene(0);
+    }
     
     // Coroutine to smoothly rotate the camera
     private IEnumerator RotateCameraCoroutine(float angle)
