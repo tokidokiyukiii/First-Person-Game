@@ -24,6 +24,7 @@ public class LevelLoader : MonoBehaviour
     public GameObject finalPhase;
     public bool isGame = false;
     public bool isPlaying;
+    public bool isCredits = false;
     
     private void Start()
     {
@@ -77,6 +78,8 @@ public class LevelLoader : MonoBehaviour
             Debug.Log("Enemy can move");
         }
 
+        if (isCredits)
+            Cursor.visible = true;
         //levelLoaderObject.SetActive(true);
         Debug.Log("Video end");
         StopTransition(player);

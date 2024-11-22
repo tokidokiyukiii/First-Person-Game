@@ -757,10 +757,12 @@ public class FirstPersonControls : MonoBehaviour
             levelLoader.playsVideo = true;
             levelLoader.InGameTransition(transform);
             infoOrb.infoMessage = "This should be a safe space...";
-            sprintText.gameObject.SetActive(true);
 
             yield return new WaitForSeconds(20f);
             
+            sprintText.gameObject.SetActive(true);
+
+            yield return new WaitForSeconds(10f);
             sprintText.gameObject.SetActive(false);
             thoughtCount.ShowMessage("The key is in the attic. Be quick...");
         }

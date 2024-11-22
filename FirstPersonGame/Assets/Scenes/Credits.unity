@@ -137,6 +137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6471563826922091204, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
         type: 3}
+      propertyPath: isCredits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471563826922091204, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
+        type: 3}
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 0}

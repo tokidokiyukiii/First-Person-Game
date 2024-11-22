@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &733976673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   UIElements: []
   initialButton: {fileID: 0}
   isGame: 0
+  firstPersonControls: {fileID: 0}
   levelLoader: {fileID: 1232590135}
 --- !u!114 &733976674
 MonoBehaviour:
@@ -376,9 +377,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.98490566, g: 0.8529655, b: 0.8529655, a: 1}
+    m_PressedColor: {r: 1, g: 0.48113203, b: 0.48113203, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -706,6 +707,7 @@ MonoBehaviour:
   UIElements: []
   initialButton: {fileID: 0}
   isGame: 0
+  firstPersonControls: {fileID: 0}
   levelLoader: {fileID: 1232590135}
 --- !u!1 &1185705472
 GameObject:
@@ -863,6 +865,11 @@ PrefabInstance:
       propertyPath: videoPlayer
       value: 
       objectReference: {fileID: 1798713346}
+    - target: {fileID: 6471563826922091204, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
+        type: 3}
+      propertyPath: imgTransition
+      value: 
+      objectReference: {fileID: 1710171471}
     - target: {fileID: 7641562199574082208, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1235,6 +1242,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1710171471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9026813086570182169, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1232590134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1736882115
 GameObject:
   m_ObjectHideFlags: 0
