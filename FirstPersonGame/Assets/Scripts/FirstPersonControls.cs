@@ -149,6 +149,11 @@ public class FirstPersonControls : MonoBehaviour
     public bool isSprint = false;
     public float sprintSpeed = 20f;
 
+    [Header("PAUSE")] [Space(5)] 
+    public GameObject pauseCanvas;
+    public GameObject pauseVolume;
+    public bool isPaused = false;
+
     private void Awake()
     {
         // Get and store the CharacterController component attached to this GameObject
@@ -199,7 +204,10 @@ public class FirstPersonControls : MonoBehaviour
         playerInput.Player.Sprint.performed += ctx => ToggleSprint(); // Change speed
         
         // Subscribe to the quit input event
-        //playerInput.Player.Quit.performed += ctx => QuitInteract(); // Change speed
+        //playerInput.Player.Quit.performed += ctx => QuitInteract();
+        
+        // Subscribe to the pause input event
+        playerInput.Player.Pause.performed += ctx => TogglePause(); // Change speed
     }
 
     private void Update()
@@ -507,7 +515,7 @@ public class FirstPersonControls : MonoBehaviour
                     if (pullLadder.hasFinishedMoving)
                     {
                         CharacterController controller = GetComponent<CharacterController>();
-                        if (!isInAttic)
+                        //if (!isInAttic)
                         {
                             Debug.Log("Moving player to attic");
                             
@@ -517,7 +525,7 @@ public class FirstPersonControls : MonoBehaviour
                                 //transform.position = upLadderWaypoint.position;
                                 levelLoader.playsVideo = false;
                                 levelLoader.InGameTransition(upLadderWaypoint);
-                                controller.enabled = true;
+                                //controller.enabled = true;
                             }
                             
                             //transform.position = upLadderWaypoint.position;
@@ -684,7 +692,7 @@ public class FirstPersonControls : MonoBehaviour
             else if (hit.collider.CompareTag("EnemyInteract"))
             {
                 isInputEnabled = false;
-                uiManager.LoadScene("Cutscene3");
+                uiManager.LoadScene(3);
                 //StartCoroutine(FinalMessage());
             }
         }
@@ -751,6 +759,7 @@ public class FirstPersonControls : MonoBehaviour
             yield return new WaitForSeconds(20f);
             
             sprintText.gameObject.SetActive(false);
+            thoughtCount.ShowMessage("The key is in the attic. Be quick...");
         }
 
         messagesObject.SetActive(true);
@@ -1020,6 +1029,49 @@ public class FirstPersonControls : MonoBehaviour
                 NormalViewEye.SetActive(true);
                 
                 //secondView.StopView();
+            }
+        }
+    }
+
+    public void TogglePause()
+    {
+        if (!isShowing)
+        {
+            if (isPaused)
+            {
+                Cursor.visible = false;
+                isInputEnabled = true;
+                
+                if (enemyAI.enemyMoves)
+                    enemyAI.canEnemyMove = true;
+                
+                HUDCanvas.SetActive(true);
+                ThoughtCanvas.SetActive(true);
+                
+                ChangeView();
+                ChangeView();
+
+                pauseCanvas.SetActive(false);
+                pauseVolume.SetActive(false);
+                isPaused = false;
+            }
+            else
+            {
+                Cursor.visible = true;
+                isInputEnabled = false;
+                enemyAI.canEnemyMove = false;
+                
+                HUDCanvas.SetActive(false);
+                ThoughtCanvas.SetActive(false);
+                
+                finalNormalVolume.SetActive(false);
+                finalSecondVolume.SetActive(false);
+                NormalViewVolume.SetActive(false);
+                SecondViewVolume.SetActive(false);
+
+                pauseCanvas.SetActive(true);
+                pauseVolume.SetActive(true);
+                isPaused = true;
             }
         }
     }

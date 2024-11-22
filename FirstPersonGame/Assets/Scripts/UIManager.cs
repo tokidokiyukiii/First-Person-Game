@@ -13,8 +13,9 @@ public class UIManager : MonoBehaviour
     
     public bool isGame = false;
 
+    public FirstPersonControls firstPersonControls;
     public LevelLoader levelLoader;
-    public int levelToLoad = 1;
+    //public int levelToLoad = 1;
 
     void Start()
     {
@@ -31,7 +32,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadScene(int levelToLoad)
     {
         levelLoader.LoadNextLevel(levelToLoad);
         //SceneManager.LoadScene(sceneName);
@@ -67,6 +68,11 @@ public class UIManager : MonoBehaviour
         {
             UIelement.SetActive(true);
         }
+    }
+
+    public void ClosePause()
+    {
+        firstPersonControls.TogglePause();
     }
 }
 

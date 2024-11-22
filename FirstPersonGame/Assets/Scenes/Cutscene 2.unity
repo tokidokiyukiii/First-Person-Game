@@ -1063,6 +1063,11 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6471563826922091204, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
+        type: 3}
+      propertyPath: imgTransition
+      value: 
+      objectReference: {fileID: 1377108141}
     - target: {fileID: 7641562199574082208, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1135,6 +1140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da476548bcd2e541ae61c59a012d831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1377108141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9026813086570182169, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1377108139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1409213239
 GameObject:
   m_ObjectHideFlags: 0

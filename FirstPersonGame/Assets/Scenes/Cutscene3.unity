@@ -145,6 +145,16 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6471563826922091204, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
+        type: 3}
+      propertyPath: videoPlayer
+      value: 
+      objectReference: {fileID: 1510656561}
+    - target: {fileID: 6471563826922091204, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
+        type: 3}
+      propertyPath: imgTransition
+      value: 
+      objectReference: {fileID: 286367037}
     - target: {fileID: 7641562199574082208, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -217,6 +227,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da476548bcd2e541ae61c59a012d831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &286367037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9026813086570182169, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 286367035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &289639745
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1510656562}
   - component: {fileID: 1510656561}
+  - component: {fileID: 1510656563}
   m_Layer: 0
   m_Name: VideoPlayer
   m_TagString: Untagged
@@ -739,6 +756,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1510656563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510656560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f9b9f4fd73b41b4aa3cc066eb3a0260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 1510656561}
+  sceneName: '"Main Menu"'
+  uiManager: {fileID: 1951509900}
 --- !u!1 &1817809892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,7 +1075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1969123610
 MonoBehaviour:
   m_ObjectHideFlags: 0

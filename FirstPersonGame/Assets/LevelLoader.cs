@@ -22,10 +22,12 @@ public class LevelLoader : MonoBehaviour
     public GameObject canvas;
     public GameObject audioManager;
     public GameObject finalPhase;
+    public bool isGame = false;
     
     private void Start()
     {
-        controller = player.GetComponent<CharacterController>();
+        if (controller != null)
+            controller = player.GetComponent<CharacterController>();
         
         videoPlayer.loopPointReached += OnVideoEnd;
         videoPlayer.prepareCompleted += OnVideoPrepared;
@@ -45,17 +47,25 @@ public class LevelLoader : MonoBehaviour
     {
         Debug.Log("Video finished!");
         //firstPersonControlls.enabled = true;
-        firstPersonControls.isInputEnabled = true;
-        enemyAI.canEnemyMove = true;
-        
+        if (isGame)
+        {
+            firstPersonControls.enabled = true;
+            firstPersonControls.isInputEnabled = true;
+            enemyAI.canEnemyMove = true;
+            Debug.Log("Enemy can move");
+        }
+
         //levelLoaderObject.SetActive(true);
         StopTransition(player);
-        
-        cutscene.SetActive(false);
-        audioManager.SetActive(true);
-        canvas.SetActive(true);
-        finalPhase.SetActive(true);
-        playsVideo = false;
+
+        if (isGame)
+        {
+            cutscene.SetActive(false);
+            audioManager.SetActive(true);
+            canvas.SetActive(true);
+            finalPhase.SetActive(true);
+            playsVideo = false;
+        }
     }
     
     void OnDestroy()
@@ -91,16 +101,21 @@ public class LevelLoader : MonoBehaviour
         transition.SetTrigger("Start");
         
         //CharacterController controller = player.GetComponent<CharacterController>();
-        firstPersonControls.isInputEnabled = false;
+        //firstPersonControls.isInputEnabled = false;
         //controller.enabled = false;
 
         yield return new WaitForSeconds(transitionTime);
 
-        if (playsVideo)
+        if (isGame)
         {
             firstPersonControls.isInputEnabled = false;
+            controller.enabled = false;
             enemyAI.canEnemyMove = false;
-            
+            Debug.Log("Enemy can't move");
+        }
+        
+        if (playsVideo)
+        {
             audioManager.SetActive(false);
             cutscene.SetActive(true);
             canvas.SetActive(false);
@@ -128,13 +143,19 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator EndTransition(Transform waypoint)
     {
-        imgTransition.SetActive(true);
-        player.position = waypoint.position;
+        if (playsVideo)
+            imgTransition.SetActive(true);
         transition.SetTrigger("End");
+        if (isGame)
+            player.position = waypoint.position;
         
         yield return new WaitForSeconds(transitionTime);
-        
-        firstPersonControls.isInputEnabled = true;
-        controller.enabled = true;
+
+        if (isGame)
+        {
+            controller.enabled = true;
+            firstPersonControls.isInputEnabled = true;
+            enemyAI.canEnemyMove = true;
+        }
     }
 }

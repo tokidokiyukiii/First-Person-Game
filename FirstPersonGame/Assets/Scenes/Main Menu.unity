@@ -164,7 +164,6 @@ MonoBehaviour:
   initialButton: {fileID: 1896076869}
   isGame: 0
   levelLoader: {fileID: 1773279503}
-  levelToLoad: 1
 --- !u!114 &92927843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,13 +375,13 @@ MonoBehaviour:
       - m_Target: {fileID: 92927842}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: Cutscene1
+          m_StringArgument: 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &96434244
@@ -692,6 +691,16 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6471563826922091204, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
+        type: 3}
+      propertyPath: videoPlayer
+      value: 
+      objectReference: {fileID: 1322980083}
+    - target: {fileID: 6471563826922091204, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
+        type: 3}
+      propertyPath: imgTransition
+      value: 
+      objectReference: {fileID: 1377905233}
     - target: {fileID: 6471563826922091204, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
         type: 3}
       propertyPath: transitionTime
@@ -1253,7 +1262,6 @@ MonoBehaviour:
   initialButton: {fileID: 1896076869}
   isGame: 0
   levelLoader: {fileID: 1773279503}
-  levelToLoad: 1
 --- !u!1 &767765552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,6 +2099,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1377905233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9026813086570182169, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 190722227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1661847427
 GameObject:
   m_ObjectHideFlags: 0

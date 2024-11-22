@@ -54,7 +54,7 @@ public class EnemyMove : MonoBehaviour
         // Ensure the object reaches the exact target position at the end
         enemy.position = targetPosition;
         
-        sfxSource.PlayOneShot(sfxSound);
+        //sfxSource.PlayOneShot(sfxSound);
         
         Debug.Log("Moving Enemy to new position");
         enemy.position = newPos.position;

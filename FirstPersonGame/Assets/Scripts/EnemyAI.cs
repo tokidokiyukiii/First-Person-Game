@@ -62,6 +62,8 @@ public class EnemyAI : MonoBehaviour
     public Animator animator;
     public LevelLoader levelLoader;
 
+    public bool enemyMoves = false;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -93,7 +95,7 @@ public class EnemyAI : MonoBehaviour
                 else
                 {
                     agent.isStopped = false;
-                    if ((playerInSightRange && !firstPersonControls.isInAttic && isOnSameFloor && !isInBedroom) || isKeyActive)
+                    if ((playerInSightRange || isKeyActive) && !firstPersonControls.isInAttic && isOnSameFloor && !isInBedroom)// || isKeyActive)
                     {
                         //if (isPlaying)
                           //  StopCoroutine(PlayRandomSound());
@@ -126,7 +128,7 @@ public class EnemyAI : MonoBehaviour
                             }
                         }
                     }
-                    else if (!playerInSightRange || !isOnSameFloor)
+                    else if (!playerInSightRange || !isOnSameFloor || isInBedroom || firstPersonControls.isInAttic)
                     {
                         //Change to Patrol Speed and Acceleration
                         agent.speed = 10f;

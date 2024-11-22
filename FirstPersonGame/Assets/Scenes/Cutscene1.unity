@@ -160,7 +160,6 @@ MonoBehaviour:
   initialButton: {fileID: 0}
   isGame: 0
   levelLoader: {fileID: 1232590135}
-  levelToLoad: 2
 --- !u!114 &733976674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,13 +401,13 @@ MonoBehaviour:
       - m_Target: {fileID: 974360737}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: Game
+          m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &842289041
@@ -708,7 +707,6 @@ MonoBehaviour:
   initialButton: {fileID: 0}
   isGame: 0
   levelLoader: {fileID: 1232590135}
-  levelToLoad: 2
 --- !u!1 &1185705472
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,6 +858,11 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6471563826922091204, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
+        type: 3}
+      propertyPath: videoPlayer
+      value: 
+      objectReference: {fileID: 1798713346}
     - target: {fileID: 7641562199574082208, guid: d7a9aadd5f5db3543bc364e3b15d79a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1437,6 +1440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1798713346}
   sceneName: Game
+  sceneNum: 2
   uiManager: {fileID: 974360737}
 --- !u!1 &2139146323
 GameObject:

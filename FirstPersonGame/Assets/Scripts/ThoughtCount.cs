@@ -81,11 +81,12 @@ public class ThoughtCount : MonoBehaviour
                     enemyAI.MoveFloors(2);
                 else
                     enemyAI.MoveFloors(1);
+                enemyAI.isOnSameFloor = true;
             }
 
             key.SetActive(true);
             glowingKey.SetActive(true);
-            ShowMessage("The key is in the attic. Be quick...");
+            //ShowMessage("The key is in the attic. Be quick...");
             
             enemyAI.isKeyActive = true;
             firstPersonControls.canSprint = true;
@@ -140,6 +141,7 @@ public class ThoughtCount : MonoBehaviour
                 
                 enemyAI.gameObject.SetActive(true);
                 enemyAI.canEnemyMove = true;
+                enemyAI.enemyMoves = true;
                 enemyAI.animator.enabled = true;
                 
                 enemyAI.audioSource.PlayOneShot(enemyAI.laughingSpawn);
