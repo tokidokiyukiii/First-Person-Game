@@ -73,6 +73,7 @@ public class FirstPersonControls : MonoBehaviour
     public ThoughtCount thoughtCount;
     public GameObject getOutSound;
     public SoundManager soundManager;
+    public AudioSource sfxSource;
     public LevelLoader levelLoader;
     public bool isShowingMessage;
     public TextMeshProUGUI infoMessageText;
@@ -615,7 +616,7 @@ public class FirstPersonControls : MonoBehaviour
 
                     //ThoughtBackground.SetActive(true);
 
-                    StartCoroutine(ActivateForDuration());
+                    StartCoroutine(ActivateForDuration(thoughts));
 
                     if (thoughts.openDoor)
                     {
@@ -718,7 +719,7 @@ public class FirstPersonControls : MonoBehaviour
         }
     }
 
-    private IEnumerator ActivateForDuration()
+    private IEnumerator ActivateForDuration(Thoughts thoughts)
     {
         // Set the object to active
         //display.gameObject.SetActive(true);
@@ -733,18 +734,21 @@ public class FirstPersonControls : MonoBehaviour
         yield return new WaitForSeconds(duration);
         writtenThoughtText.gameObject.SetActive(false);
         
+        sfxSource.PlayOneShot(thoughts.voiceOver);
         myThoughtText.gameObject.SetActive(true);
         yield return new WaitForSeconds(duration);
         
         myThoughtText.gameObject.SetActive(false);
         ThoughtBackground.SetActive(false);
 
-        if (thoughtCount.thoughtCount == thoughtCount.thoughtTotal)
+        if (thoughtCount.thoughtCount >= thoughtCount.thoughtTotal)
         {
+            levelLoader.playsVideo = true;
+            levelLoader.InGameTransition(transform);
             infoOrb.infoMessage = "This should be a safe space...";
             sprintText.gameObject.SetActive(true);
 
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(20f);
             
             sprintText.gameObject.SetActive(false);
         }

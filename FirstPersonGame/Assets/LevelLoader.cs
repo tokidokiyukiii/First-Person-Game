@@ -20,6 +20,8 @@ public class LevelLoader : MonoBehaviour
     public EnemyAI enemyAI;
     public GameObject cutscene;
     public GameObject canvas;
+    public GameObject audioManager;
+    public GameObject finalPhase;
     
     private void Start()
     {
@@ -50,7 +52,9 @@ public class LevelLoader : MonoBehaviour
         StopTransition(player);
         
         cutscene.SetActive(false);
+        audioManager.SetActive(true);
         canvas.SetActive(true);
+        finalPhase.SetActive(true);
         playsVideo = false;
     }
     
@@ -58,7 +62,7 @@ public class LevelLoader : MonoBehaviour
     {
         // Unsubscribe from the event to prevent memory leaks
         videoPlayer.loopPointReached -= OnVideoEnd;
-        videoPlayer.prepareCompleted -= OnVideoPrepared;
+        //videoPlayer.prepareCompleted -= OnVideoPrepared;
     }
 
     public void LoadNextLevel(int buildNum)
@@ -86,9 +90,9 @@ public class LevelLoader : MonoBehaviour
     {
         transition.SetTrigger("Start");
         
-        CharacterController controller = player.GetComponent<CharacterController>();
+        //CharacterController controller = player.GetComponent<CharacterController>();
         firstPersonControls.isInputEnabled = false;
-        controller.enabled = false;
+        //controller.enabled = false;
 
         yield return new WaitForSeconds(transitionTime);
 
@@ -97,11 +101,13 @@ public class LevelLoader : MonoBehaviour
             firstPersonControls.isInputEnabled = false;
             enemyAI.canEnemyMove = false;
             
+            audioManager.SetActive(false);
             cutscene.SetActive(true);
             canvas.SetActive(false);
+            imgTransition.SetActive(false);
             
             Debug.Log("Video is about to play!");
-            videoPlayer.time = 0;
+            videoPlayer.time = 0.1f;
             videoPlayer.Play();
             Debug.Log("Video state: " + videoPlayer.isPlaying);
         }
@@ -109,8 +115,6 @@ public class LevelLoader : MonoBehaviour
         {
             StopTransition(waypoint);
         }
-        
-        imgTransition.SetActive(false);
 
         //player.position = waypoint.position;
         //controller.enabled = true;

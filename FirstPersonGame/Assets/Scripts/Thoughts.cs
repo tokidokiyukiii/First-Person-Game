@@ -19,6 +19,8 @@ public class Thoughts : MonoBehaviour
     public GameObject candleLight;
     public Light lightIntensity;
 
+    public AudioClip voiceOver;
+
 
     private void Start()
     {

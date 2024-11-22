@@ -58,43 +58,7 @@ public class ThoughtCount : MonoBehaviour
     public LevelLoader levelLoader;
     public GameObject levelLoaderObject;
     public Transform player;
-
-    private void Start()
-    {
-        videoPlayer.loopPointReached += OnVideoEnd;
-        videoPlayer.prepareCompleted += OnVideoPrepared;
-
-        // Start preparing the video
-        videoPlayer.Prepare();
-        Debug.Log("Preparing video...");
-    }
-    
-    void OnVideoPrepared(VideoPlayer vp)
-    {
-        Debug.Log("Video is prepared, starting playback...");
-        videoPlayer.Play();
-    }
-    
-    void OnVideoEnd(VideoPlayer vp)
-    {
-        Debug.Log("Video finished!");
-        //firstPersonControlls.enabled = true;
-        firstPersonControls.isInputEnabled = true;
-        enemyAI.canEnemyMove = true;
-        
-        //levelLoaderObject.SetActive(true);
-        levelLoader.StopTransition(player);
-        
-        cutscene.SetActive(false);
-        canvas.SetActive(true);
-    }
-    
-    void OnDestroy()
-    {
-        // Unsubscribe from the event to prevent memory leaks
-        videoPlayer.loopPointReached -= OnVideoEnd;
-        videoPlayer.prepareCompleted -= OnVideoPrepared;
-    }
+    public GameObject finalPhase;
 
     public void AddThought()
     {
@@ -107,19 +71,26 @@ public class ThoughtCount : MonoBehaviour
         if (thoughtCount >= thoughtTotal)
         {
             //firstPersonControlls.enabled = false;
-            levelLoader.playsVideo = true;
+            //levelLoader.playsVideo = true;
             
-            
-            levelLoader.InGameTransition(player);
+            //levelLoader.InGameTransition(player);
             //levelLoaderObject.SetActive(false);
-            
-            
+            if (!enemyAI.isOnSameFloor)
+            {
+                if (enemyAI.isOnFirst)
+                    enemyAI.MoveFloors(2);
+                else
+                    enemyAI.MoveFloors(1);
+            }
+
             key.SetActive(true);
             glowingKey.SetActive(true);
             ShowMessage("The key is in the attic. Be quick...");
             
             enemyAI.isKeyActive = true;
             firstPersonControls.canSprint = true;
+
+            //finalPhase.SetActive(true);
             
             //StartCoroutine(ActivateSprintText());
         }
@@ -185,6 +156,14 @@ public class ThoughtCount : MonoBehaviour
             case 10:
                 phaseText.text = "FINAL PHASE";
                 phaseCount = 3;
+                
+                if (!enemyAI.isOnSameFloor)
+                {
+                    if (enemyAI.isOnFirst)
+                        enemyAI.MoveFloors(2);
+                    else
+                        enemyAI.MoveFloors(1);
+                }
                 
                 if (firstPersonControls.isNormalView)
                 {

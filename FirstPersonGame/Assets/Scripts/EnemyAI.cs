@@ -120,13 +120,13 @@ public class EnemyAI : MonoBehaviour
                             
                             MoveFloors(1);
                             //StartCoroutine(MoveFloors(1));
-                            if (thoughtCount.thoughtCount <= 10 && player.position == playerWaypoint.position)
+                            if (thoughtCount.thoughtCount < 10 )//&& player.position == playerWaypoint.position)
                             {
                                 isOnSameFloor = false;
                             }
                         }
                     }
-                    else if (!playerInSightRange)
+                    else if (!playerInSightRange || !isOnSameFloor)
                     {
                         //Change to Patrol Speed and Acceleration
                         agent.speed = 10f;
@@ -197,7 +197,10 @@ public class EnemyAI : MonoBehaviour
 
     public void MoveFloors(int floor)
     {
-        StartCoroutine(RespawnDelay(floor));
+        if (thoughtCount.thoughtCount >= 10)
+            StartCoroutine(RespawnDelay(floor));
+        else if (thoughtCount.thoughtCount < 10)
+            isOnSameFloor = false;
     }
 
     private IEnumerator RespawnDelay(int floor)
