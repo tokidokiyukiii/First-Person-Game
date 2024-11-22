@@ -52,14 +52,6 @@ public class ThoughtCount : MonoBehaviour
     public GameObject SoundThree;
     public GameObject SoundFour;
 
-    public GameObject cutscene;
-    public VideoPlayer videoPlayer;
-    public GameObject canvas;
-    public LevelLoader levelLoader;
-    public GameObject levelLoaderObject;
-    public Transform player;
-    public GameObject finalPhase;
-
     public void AddThought()
     {
         if (phaseCount == 2)

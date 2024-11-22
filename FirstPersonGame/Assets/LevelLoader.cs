@@ -33,7 +33,10 @@ public class LevelLoader : MonoBehaviour
         if (playsVideo)
         {
             videoPlayer.loopPointReached += OnVideoEnd;
+            Debug.Log("Subscribed to loopPointReached");
             videoPlayer.prepareCompleted += OnVideoPrepared;
+            
+            videoPlayer.isLooping = false;
 
             // Start preparing the video
         
@@ -41,7 +44,20 @@ public class LevelLoader : MonoBehaviour
             Debug.Log("Preparing video...");
         }
     }
-    
+
+    private void Update()
+    {
+        //Debug.Log($"Video time: {videoPlayer.time}/{videoPlayer.length}");
+        if (playsVideo)
+        {
+            if (videoPlayer.isPlaying && videoPlayer.time >= videoPlayer.length - 0.03f) // Allow a 0.1s threshold
+            {
+                Debug.Log("Video close to end. Manually invoking end behavior.");
+                OnVideoEnd(videoPlayer);
+            }
+        }
+    }
+
     void OnVideoPrepared(VideoPlayer vp)
     {
         Debug.Log("Video is prepared, starting playback...");
@@ -54,13 +70,15 @@ public class LevelLoader : MonoBehaviour
         //firstPersonControlls.enabled = true;
         if (isGame)
         {
-            firstPersonControls.enabled = true;
+            //firstPersonControls.enabled = true;
+            controller.enabled = true;
             firstPersonControls.isInputEnabled = true;
             enemyAI.canEnemyMove = true;
             Debug.Log("Enemy can move");
         }
 
         //levelLoaderObject.SetActive(true);
+        Debug.Log("Video end");
         StopTransition(player);
 
         if (isGame)
@@ -69,7 +87,7 @@ public class LevelLoader : MonoBehaviour
             audioManager.SetActive(true);
             canvas.SetActive(true);
             finalPhase.SetActive(true);
-            playsVideo = false;
+            //playsVideo = false;
         }
 
         isPlaying = false;
@@ -126,11 +144,11 @@ public class LevelLoader : MonoBehaviour
             audioManager.SetActive(false);
             cutscene.SetActive(true);
             canvas.SetActive(false);
-            imgTransition.SetActive(false);
             
             Debug.Log("Video is about to play!");
-            videoPlayer.time = 0.1f;
+            videoPlayer.time = 0f;
             videoPlayer.Play();
+            imgTransition.SetActive(false);
             isPlaying = true;
             Debug.Log("Video state: " + videoPlayer.isPlaying);
         }
@@ -152,7 +170,11 @@ public class LevelLoader : MonoBehaviour
     IEnumerator EndTransition(Transform waypoint)
     {
         if (playsVideo)
+        {
             imgTransition.SetActive(true);
+            playsVideo = false;
+        }
+
         transition.SetTrigger("End");
         if (isGame)
             player.position = waypoint.position;

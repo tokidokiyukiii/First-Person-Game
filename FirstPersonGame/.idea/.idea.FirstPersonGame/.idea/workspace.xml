@@ -6,47 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ee58ddc8-76b9-4c00-b5d4-bd37a1809121" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FirstPersonGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/0000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/0000.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/BlueFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/BlueFlame.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/BlueFlame1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/BlueFlame1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Flame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Flame.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Flame2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Flame2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/RedFlame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/RedFlame.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/RedFlame2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/RedFlame2.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/RedFlame3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/RedFlame3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/RedFlame4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/RedFlame4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/RedFlame5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/RedFlame5.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Smoke.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Smoke.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Smoke1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Smoke1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sparkle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sparkle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sparkle2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sparkle2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sparkle3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sparkle3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sparkle4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sparkle4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/Baked Normal Map.002.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/Baked Normal Map.002.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LevelLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LevelLoader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectInteraction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ThoughtCount.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ThoughtCount.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Thoughts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Thoughts.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Fonts/JMH Typewriter SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Fonts/JMH Typewriter SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +158,7 @@
       <workItem from="1732034371807" duration="76000" />
       <workItem from="1732034467443" duration="3364000" />
       <workItem from="1732118084126" duration="5362000" />
-      <workItem from="1732210057601" duration="31521000" />
+      <workItem from="1732210057601" duration="35463000" />
     </task>
     <servers />
   </component>

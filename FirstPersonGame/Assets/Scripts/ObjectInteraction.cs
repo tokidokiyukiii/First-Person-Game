@@ -8,7 +8,7 @@ public class ObjectInteraction : MonoBehaviour
 {
     //public ObjectData objectData;    // Reference to the ScriptableObject database
 
-    public FirstPersonControls firstPersonControls;
+    //public FirstPersonControls firstPersonControls;
     public GameObject objectInfoCanvas;     // The UI panel to display item details
     public GameObject HUDCanvas;
     public TextMeshProUGUI objectNameText;            // UI Text for item name
