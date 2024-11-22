@@ -770,6 +770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1510656561}
   sceneName: '"Main Menu"'
+  sceneNum: 4
   uiManager: {fileID: 1951509900}
 --- !u!1 &1817809892
 GameObject:
@@ -972,8 +973,8 @@ MonoBehaviour:
   UIElements: []
   initialButton: {fileID: 0}
   isGame: 0
+  firstPersonControls: {fileID: 0}
   levelLoader: {fileID: 286367036}
-  levelToLoad: 0
 --- !u!114 &1951509901
 MonoBehaviour:
   m_ObjectHideFlags: 0
