@@ -25,29 +25,49 @@ public class LevelLoader : MonoBehaviour
     public bool isGame = false;
     public bool isPlaying;
     public bool isCredits = false;
-    
+
+    private bool videoEndHandled = false;
+
     private void Start()
     {
         if (controller != null)
             controller = player.GetComponent<CharacterController>();
-        
-        if (playsVideo)
-        {
+
+        if (videoPlayer != null)
+        { 
             videoPlayer.loopPointReached += OnVideoEnd;
             Debug.Log("Subscribed to loopPointReached");
             videoPlayer.prepareCompleted += OnVideoPrepared;
-            
-            videoPlayer.isLooping = false;
 
-            // Start preparing the video
-        
+            videoPlayer.isLooping = false;
+        }
+
+        // Start preparing the video
+        if (playsVideo)
+        {
             videoPlayer.Prepare();
             Debug.Log("Preparing video...");
+        }
+
+        if (isCredits)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+            Debug.Log("CREDITS SCENE DETECTED");
+            Debug.Log("Cursor visible: " + Cursor.visible);
+            Debug.Log("Cursor lock state: " + Cursor.lockState);
         }
     }
 
     private void Update()
     {
+        if (isCredits)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
         //Debug.Log($"Video time: {videoPlayer.time}/{videoPlayer.length}");
         if (playsVideo)
         {
@@ -67,6 +87,11 @@ public class LevelLoader : MonoBehaviour
     
     void OnVideoEnd(VideoPlayer vp)
     {
+        if (videoEndHandled)
+            return;
+
+        videoEndHandled = true;
+
         Debug.Log("Video finished!");
         //firstPersonControlls.enabled = true;
         if (isGame)
@@ -77,9 +102,7 @@ public class LevelLoader : MonoBehaviour
             enemyAI.canEnemyMove = true;
             Debug.Log("Enemy can move");
         }
-
-        if (isCredits)
-            Cursor.visible = true;
+                
         //levelLoaderObject.SetActive(true);
         Debug.Log("Video end");
         StopTransition(player);
@@ -94,6 +117,15 @@ public class LevelLoader : MonoBehaviour
         }
 
         isPlaying = false;
+
+        if (isCredits)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            Debug.Log("CREDITS: Cursor visible = " + Cursor.visible);
+            Debug.Log("CREDITS: Cursor lock state = " + Cursor.lockState);
+        }
     }
     
     void OnDestroy()
@@ -141,19 +173,21 @@ public class LevelLoader : MonoBehaviour
             enemyAI.canEnemyMove = false;
             Debug.Log("Enemy can't move");
         }
-        
+
         if (playsVideo)
         {
+            videoEndHandled = false;
             audioManager.SetActive(false);
             cutscene.SetActive(true);
             canvas.SetActive(false);
-            
+
             Debug.Log("Video is about to play!");
+
             videoPlayer.time = 0f;
-            videoPlayer.Play();
+            videoPlayer.Prepare();
+
             imgTransition.SetActive(false);
             isPlaying = true;
-            Debug.Log("Video state: " + videoPlayer.isPlaying);
         }
         else
         {

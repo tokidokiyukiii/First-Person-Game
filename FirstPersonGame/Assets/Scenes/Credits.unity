@@ -1115,7 +1115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 493, y: -26}
+  m_AnchoredPosition: {x: 493, y: -3.5499878}
   m_SizeDelta: {x: 852.64, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1510338275
@@ -1140,8 +1140,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Melissa Mae Luttjeboer\n\nNayuvka Nathan\nKaren Cheng\nMelissa Mae Luttjeboer\n\nMelissa
     Mae Luttjeboer\nNayuvka Nathan\nKaren Cheng\n\nNayuvka Nathan\n\nNatasha Luttjeboer\nLara
-    Sluyter (LARA\u2019S HORROR SOUNDS on YouTube)\n\nRuan Correia\n\nTo all the
-    Friends and Family who took the time to play our game :)"
+    Sluyter (LARA\u2019S HORROR SOUNDS on YouTube)\n\nRuan Correia\n\nMelissa Mae
+    Luttjeboer\n\nTo all the Friends and Family who took the time to play our game
+    :)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a04de5b67890b0e448aca01db485b1b0, type: 2}
   m_sharedMaterial: {fileID: 1564417637033195287, guid: a04de5b67890b0e448aca01db485b1b0,
@@ -1337,7 +1338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -488, y: 0.0027413}
+  m_AnchoredPosition: {x: -488, y: 22.452723}
   m_SizeDelta: {x: 852.64, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2135149692
@@ -1383,6 +1384,9 @@ MonoBehaviour:
 
 
     Sounds and Music:
+
+
+    VO:
 
 
     Special Thanks:

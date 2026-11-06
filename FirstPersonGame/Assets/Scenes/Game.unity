@@ -56474,7 +56474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 12
-  lookSpeed: 0.5
+  lookSpeed: 0.25
   gravity: -40
   jumpHeight: 5
   playerCamera: {fileID: 28213326}
@@ -56570,6 +56570,8 @@ MonoBehaviour:
   pauseCanvas: {fileID: 1142315882}
   pauseVolume: {fileID: 211213063}
   isPaused: 0
+  txtHide: {fileID: 0}
+  txtLeave: {fileID: 0}
 --- !u!143 &635750279
 CharacterController:
   m_ObjectHideFlags: 0
@@ -79535,6 +79537,8 @@ MonoBehaviour:
   pauseCanvas: {fileID: 0}
   pauseVolume: {fileID: 0}
   isPaused: 0
+  txtHide: {fileID: 0}
+  txtLeave: {fileID: 0}
 --- !u!143 &1008018847
 CharacterController:
   m_ObjectHideFlags: 0
@@ -160048,6 +160052,8 @@ MonoBehaviour:
   pauseCanvas: {fileID: 1142315882}
   pauseVolume: {fileID: 211213063}
   isPaused: 0
+  txtHide: {fileID: 0}
+  txtLeave: {fileID: 0}
 --- !u!143 &1836082980
 CharacterController:
   m_ObjectHideFlags: 0
@@ -164666,6 +164672,8 @@ MonoBehaviour:
   pauseCanvas: {fileID: 0}
   pauseVolume: {fileID: 0}
   isPaused: 0
+  txtHide: {fileID: 0}
+  txtLeave: {fileID: 0}
 --- !u!143 &1960505336
 CharacterController:
   m_ObjectHideFlags: 0
@@ -187445,6 +187453,8 @@ MonoBehaviour:
   pauseCanvas: {fileID: 0}
   pauseVolume: {fileID: 0}
   isPaused: 0
+  txtHide: {fileID: 0}
+  txtLeave: {fileID: 0}
 --- !u!143 &2127066314
 CharacterController:
   m_ObjectHideFlags: 0
@@ -196945,6 +196955,8 @@ MonoBehaviour:
   pauseCanvas: {fileID: 0}
   pauseVolume: {fileID: 0}
   isPaused: 0
+  txtHide: {fileID: 0}
+  txtLeave: {fileID: 0}
 --- !u!143 &6371167902281398565
 CharacterController:
   m_ObjectHideFlags: 0
