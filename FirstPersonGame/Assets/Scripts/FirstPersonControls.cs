@@ -155,6 +155,10 @@ public class FirstPersonControls : MonoBehaviour
     public GameObject pauseVolume;
     public bool isPaused = false;
 
+    [Header("Hide")] [Space(5)]
+    public GameObject txtHide;
+    public GameObject txtLeave;
+
     private void Awake()
     {
         // Get and store the CharacterController component attached to this GameObject
